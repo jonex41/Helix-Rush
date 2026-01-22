@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cjsnv76t3iejh" path="res://Scene/special_luncher.tscn" id="1_s2eap"]
 [ext_resource type="PackedScene" uid="uid://in2kkq1hyi07" path="res://Scene/Blocks/BasicThreeSpace/basic_three_ring.tscn" id="2_kqsf7"]
 
-[node name="Ring" type="StaticBody3D"]
+[node name="SpecialLuncherThreeRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="SpecialLauncher" parent="." instance=ExtResource("1_s2eap")]

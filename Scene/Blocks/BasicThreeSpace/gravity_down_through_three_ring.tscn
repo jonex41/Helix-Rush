@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3yjy63be3n01" path="res://Scene/go_down_through_wall.tscn" id="1_txhsg"]
 [ext_resource type="PackedScene" uid="uid://in2kkq1hyi07" path="res://Scene/Blocks/BasicThreeSpace/basic_three_ring.tscn" id="2_58gl7"]
 
-[node name="GoDownThroughRing" type="StaticBody3D"]
+[node name="GoDownThroughThreeRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="go_down_through_wall" parent="." instance=ExtResource("1_txhsg")]

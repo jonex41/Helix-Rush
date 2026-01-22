@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dthi2ysoc85ne" path="res://Scene/antigravity.tscn" id="1_6c4c2"]
 [ext_resource type="PackedScene" uid="uid://btavrfv6o2g4i" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_ak6up"]
 
-[node name="AntigravityRing" type="StaticBody3D"]
+[node name="AntigravityTwoRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="Antigravity" parent="." instance=ExtResource("1_6c4c2")]

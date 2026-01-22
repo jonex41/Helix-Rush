@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="1_jlta7"]
 [ext_resource type="PackedScene" uid="uid://bl5pth8uwowb3" path="res://Scene/Blocks/BasicOneSpaceSmall/spike_small_ring.tscn" id="2_y3qts"]
 
-[node name="SpikeLuncherRing" type="StaticBody3D"]
+[node name="SpikeLuncherSmallRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="Launcher" parent="." instance=ExtResource("1_jlta7")]

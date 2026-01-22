@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://com0bcffch06l" path="res://Script/rotating_basic_ring.gd" id="1_o4jaa"]
 [ext_resource type="PackedScene" uid="uid://d104k4tibp4ng" path="res://Scene/Blocks/BasicFourSpace/basic_four_ring.tscn" id="2_hscq4"]
 
-[node name="RotatingRing" type="StaticBody3D"]
+[node name="RotatingFourRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 script = ExtResource("1_o4jaa")
 
