@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddjb6y34tg18b"]
+
+[ext_resource type="PackedScene" uid="uid://dv6oa3nav3vke" path="res://Assets/Cylinder.glb" id="1_an5r2"]
+[ext_resource type="Script" uid="uid://cdal8nyk3nw0x" path="res://Script/ring_plane.gd" id="1_ojhi0"]
+[ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="2_kgptk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgptk"]
+size = Vector3(1.694624, 0.15429688, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
+size = Vector3(1.8415833, 0.16601563, 1.0297852)
+
+[node name="Ring" type="StaticBody3D"]
+axis_lock_angular_z = true
+script = ExtResource("1_ojhi0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5676714, 0, -0.82325524, 0, 1, 0, 0.82325524, 0, 0.5676714, -0.48664716, 0, 0.13878384)
+shape = SubResource("BoxShape3D_kgptk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7068599, 0, 0.7073536, 0, 1, 0, -0.7073536, 0, 0.7068599, 0.4135608, 0.0029296875, 0.3055423)
+shape = SubResource("BoxShape3D_an5r2")
+
+[node name="Cylinder2" parent="." instance=ExtResource("1_an5r2")]
+
+[node name="Launcher" parent="." instance=ExtResource("2_kgptk")]
+transform = Transform3D(0.9283171, 0, 0.3717891, 0, 0.73701626, 0, -0.3717891, 0, 0.9283171, 0.31725472, 0.15932149, 0.66864836)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="child_exiting_tree" from="CollisionShape3D2" to="." method="_on_collision_shape_3d_2_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="CollisionShape3D" to="." method="_on_collision_shape_3d_child_exiting_tree"]

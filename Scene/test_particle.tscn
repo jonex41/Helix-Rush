@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxn5fhxesv66a"]
+
+[ext_resource type="Texture2D" uid="uid://cx4lms0cyodkc" path="res://Assets/images/blankYellow004.png" id="1_f71i6"]
+
+[sub_resource type="Curve" id="Curve_yejtd"]
+_data = [Vector2(0.08510638, 0.3820225), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_egfak"]
+curve = SubResource("Curve_yejtd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1i0c6"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_egfak")
+
+[node name="TestParticle" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(377, 782)
+amount = 50
+texture = ExtResource("1_f71i6")
+lifetime = 3.8499999999999996
+process_material = SubResource("ParticleProcessMaterial_1i0c6")

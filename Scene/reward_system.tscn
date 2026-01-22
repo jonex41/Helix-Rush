@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://b815lhu2eb36k"]
+
+[ext_resource type="PackedScene" uid="uid://c1kefqcinplw4" path="res://Script/spining_wheel_mean.tscn" id="1_ko6hv"]
+[ext_resource type="Script" uid="uid://vvqp030w7ghc" path="res://Script/reward_system.gd" id="1_u1yxu"]
+[ext_resource type="Texture2D" uid="uid://rq5gm6shv01" path="res://Assets/level/spin_wheel_arrow.png" id="2_tvlqe"]
+[ext_resource type="PackedScene" uid="uid://o2faoesl5kb4" path="res://Scene/cancel_button.tscn" id="4_6ttjh"]
+
+[node name="Reward" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1yxu")
+
+[node name="RewardSystem" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -400.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpiningWheel" parent="CenterContainer" instance=ExtResource("1_ko6hv")]
+layout_mode = 1
+segments = 5
+full_spins = 12
+spin_duration = 4.5
+ease_in_ratio = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 490.0
+offset_top = 85.0
+offset_right = 590.0
+offset_bottom = 185.0
+grow_horizontal = 2
+pivot_offset = Vector2(101.09894, 1.098877)
+size_flags_horizontal = 6
+size_flags_vertical = 2
+texture = ExtResource("2_tvlqe")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 325.0
+offset_right = 200.0
+offset_bottom = 425.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Spin"
+
+[node name="TextureButton" parent="." instance=ExtResource("4_6ttjh")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 85.0
+offset_top = 95.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

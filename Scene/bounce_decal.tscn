@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://q3gb1cnmjx6t"]
+
+[ext_resource type="Texture2D" uid="uid://bjueo1sraddjx" path="res://Assets/texture/T_groundmark_emissive.png" id="1_rsact"]
+
+[node name="Decal" type="Decal"]
+texture_albedo = ExtResource("1_rsact")
+normal_fade = 0.3

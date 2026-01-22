@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://6g3boq6kf5pn"]
+
+[ext_resource type="PackedScene" path="res://Assets/jetpack.glb" id="1_85ct8"]
+[ext_resource type="Script" uid="uid://dtr1w0fdq7kpc" path="res://Script/jet_pack_blink.gd" id="1_oo62r"]
+[ext_resource type="PackedScene" uid="uid://dwj5iiwsx4nys" path="res://Scene/jetpack/jet_thruster.tscn" id="2_wj1p8"]
+[ext_resource type="AudioStream" uid="uid://b5nlp6kbpmn3d" path="res://Assets/Audio/jetpack.wav" id="4_amwel"]
+
+[node name="JetPack" type="Node3D" node_paths=PackedStringArray("thrust_vfx", "sound")]
+transform = Transform3D(0.020837778, 0, -0.11817692, 0, 0.12, 0, 0.11817692, 0, 0.020837778, 0, 0, 0)
+script = ExtResource("1_oo62r")
+thrust_vfx = NodePath("Demo")
+sound = NodePath("AudioStreamPlayer3D")
+
+[node name="jetpack" parent="." instance=ExtResource("1_85ct8")]
+transform = Transform3D(0.98270017, 0, -0.18520355, 0, 0.99999994, 0, 0.18520355, 0, 0.98270017, 0, 0, 0)
+
+[node name="Demo" parent="." instance=ExtResource("2_wj1p8")]
+transform = Transform3D(-4.371138e-08, 0.99999994, 1.4901161e-08, -0.99999976, -4.371138e-08, 0, 0, 0, 1, 0, -3.7603526, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_amwel")
+pitch_scale = 2.04

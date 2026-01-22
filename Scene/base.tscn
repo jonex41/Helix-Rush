@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci01jxyccmjtu"]
+
+[ext_resource type="Script" uid="uid://bspvatspsjgl1" path="res://Script/base.gd" id="1_d3q2k"]
+[ext_resource type="PackedScene" path="res://Scene/launcher.tscn" id="2_7lj54"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dlvfn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ce0i"]
+albedo_color = Color(0.28311273, 0.28311273, 0.28311273, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dlvfn"]
+
+[node name="Base" type="StaticBody3D"]
+transform = Transform3D(1.3242972, 0, 0, 0, 1, 0, 0, 0, 1.3242972, 0, 0, 0)
+script = ExtResource("1_d3q2k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.9523185, 0, 0, 0, 0.06701477, 0, 0, 0, 1.9523185, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dlvfn")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ce0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.9637369, 0, 0, 0, 0.07176237, 0, 0, 0, 1.9637369, 0, 0, 0)
+shape = SubResource("CylinderShape3D_dlvfn")
+
+[node name="Launcher" parent="." instance=ExtResource("2_7lj54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07157731, 0.14790553, -0.69119364)

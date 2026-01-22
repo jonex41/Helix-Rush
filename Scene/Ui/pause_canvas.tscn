@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://cogfmgb3j66r4"]
+
+[ext_resource type="Texture2D" uid="uid://b5f3etomrxqd3" path="res://Assets/background/blankBrown002.png" id="1_68dbg"]
+[ext_resource type="Script" uid="uid://cei0fj8cxrvbv" path="res://Script/pause_canvas.gd" id="1_721l6"]
+[ext_resource type="Texture2D" uid="uid://bk2c6toaosrwe" path="res://Assets/images/Icon_Large_Audio_Blank.png" id="2_762l3"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_nn7uw"]
+[ext_resource type="Texture2D" uid="uid://cke2sr4u0qlcw" path="res://Assets/images/Icon_Large_AudioOff_Grey.png" id="3_i0n1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2o2l"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvcnh"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[node name="PauseCanvas" type="CanvasLayer"]
+script = ExtResource("1_721l6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="Pause" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -475.0
+offset_bottom = 475.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="TextureRect" type="TextureRect" parent="Pause/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_68dbg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nn7uw")
+theme_override_font_sizes/font_size = 120
+text = "Level 01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 94
+
+[node name="TextureButton" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_762l3")
+
+[node name="TextureButton2" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_i0n1k")
+
+[node name="Continue" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nn7uw")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u2o2l")
+text = "Continue"
+
+[node name="Home" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nn7uw")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u2o2l")
+text = "Home"
+
+[node name="TryAgain" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nn7uw")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qvcnh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qvcnh")
+text = "Try Again"
+
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Continue" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]

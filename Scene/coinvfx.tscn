@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=3 uid="uid://dx75pdjtlugd8"]
+
+[ext_resource type="Shader" uid="uid://ckxbgoli0oer6" path="res://shader/coin_spark.tres" id="1_lvsl3"]
+[ext_resource type="Texture2D" uid="uid://duuy2nvu7xbgp" path="res://Assets/texture/T_flare81.png" id="2_r0arw"]
+[ext_resource type="Script" uid="uid://duj4a0wugyvjq" path="res://Script/coinvfx.gd" id="3_r0arw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_imvy1"]
+render_priority = 0
+shader = ExtResource("1_lvsl3")
+shader_parameter/HitTexture = ExtResource("2_r0arw")
+
+[sub_resource type="Curve" id="Curve_vi8bh"]
+_data = [Vector2(0, 0.123595595), 0.0, 0.0, 0, 0, Vector2(0.53723407, 1), 0.0, 0.0, 0, 0, Vector2(0.98936176, 0.08988774), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ensst"]
+curve = SubResource("Curve_vi8bh")
+
+[sub_resource type="Gradient" id="Gradient_5874p"]
+offsets = PackedFloat32Array(0, 0.91358024)
+colors = PackedColorArray(2.454227, 0, 0, 0.563, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hpv58"]
+gradient = SubResource("Gradient_5874p")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_kpc2a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_d1505"]
+curve = SubResource("Curve_kpc2a")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_456sw"]
+angle_min = -179.99998
+angle_max = 180.00002
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_d1505")
+color_ramp = SubResource("GradientTexture1D_hpv58")
+alpha_curve = SubResource("CurveTexture_ensst")
+
+[sub_resource type="QuadMesh" id="QuadMesh_emdbp"]
+
+[node name="Coinvfx" type="GPUParticles3D"]
+material_override = SubResource("ShaderMaterial_imvy1")
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_456sw")
+draw_pass_1 = SubResource("QuadMesh_emdbp")
+script = ExtResource("3_r0arw")

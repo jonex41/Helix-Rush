@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://d48wb720j85h"]
+
+[ext_resource type="Script" uid="uid://4rl3eh68d00x" path="res://Script/objective.gd" id="1_05stc"]
+[ext_resource type="Script" uid="uid://cbc6r3x84ejtj" path="res://addons/radial_progress/RadialProgress.gd" id="1_n0a23"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="3_u2eeh"]
+
+[sub_resource type="Gradient" id="Gradient_05stc"]
+colors = PackedColorArray(0.14370939, 0.37859228, 0.99999875, 1, 0.34801942, 0.24908894, 0.9637943, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u2eeh"]
+gradient = SubResource("Gradient_05stc")
+fill_from = Vector2(0.7606838, 0.4059829)
+fill_to = Vector2(0.64529914, 0.7777778)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4i2r7"]
+texture = SubResource("GradientTexture2D_u2eeh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4dkg"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 75
+corner_radius_top_right = 75
+corner_radius_bottom_right = 75
+corner_radius_bottom_left = 75
+
+[node name="Objective" type="Control"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -579.0
+offset_bottom = -579.0
+grow_vertical = 2
+scale = Vector2(1.0050772, 1)
+pivot_offset = Vector2(-132.32814, 1)
+size_flags_horizontal = 10
+size_flags_vertical = 6
+mouse_filter = 1
+script = ExtResource("1_05stc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ColorRect" type="Panel" parent="MarginContainer"]
+custom_minimum_size = Vector2(260, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_4i2r7")
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045
+anchor_top = 0.5
+anchor_right = 0.145
+anchor_bottom = 0.5
+offset_top = -24.5
+offset_right = 122.0
+offset_bottom = 24.5
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 20
+text = "Bounce only 20 
+times in the level"
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Panel" type="Panel" parent="MarginContainer/CenterContainer2"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_i4dkg")
+
+[node name="RadialProgress" type="Control" parent="MarginContainer/CenterContainer2"]
+layout_mode = 2
+script = ExtResource("1_n0a23")
+radius = 70.27
+progress = 100.0
+bg_color = Color(0.20784314, 0.20784314, 0.20784314, 0.90588236)
+bar_color = Color(0.17254902, 0.27450982, 1, 1)
+ring = true
+metadata/_custom_type_script = "uid://cbc6r3x84ejtj"
+
+[node name="BallBounceCount" type="Label" parent="MarginContainer/CenterContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+theme_override_fonts/font = ExtResource("3_u2eeh")
+theme_override_font_sizes/font_size = 46
+text = "20"

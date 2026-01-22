@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvk6ilde3ee0e"
+path="res://.godot/imported/CS_Safe Haven - Short Loop.mp3-9ae730faca54d6d6f89f22d2236c94fb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/CS_Safe Haven - Short Loop.mp3"
+dest_files=["res://.godot/imported/CS_Safe Haven - Short Loop.mp3-9ae730faca54d6d6f89f22d2236c94fb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

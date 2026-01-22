@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7flm5edrnc3r"]
+
+[ext_resource type="Script" uid="uid://c8hu08keyhn56" path="res://Script/spawn_point.gd" id="1_wqg1h"]
+
+[node name="SpawnPoint" type="Node3D" groups=["SpawnPoint"]]
+script = ExtResource("1_wqg1h")
+spawn_point = NodePath("SpawnBall")
+
+[node name="SpawnBall" type="Marker3D" parent="." groups=["SPawnBalls"]]
+
+[connection signal="ready" from="." to="." method="_on_ready"]

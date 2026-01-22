@@ -1,0 +1,214 @@
+[gd_scene load_steps=15 format=3 uid="uid://cssagjqmnhxme"]
+
+[ext_resource type="Script" uid="uid://77bm3y2saxgo" path="res://Script/play_ui_bottom.gd" id="1_itjyq"]
+[ext_resource type="Texture2D" uid="uid://dwmtgm3vggrvw" path="res://Assets/images/jetpack1-removebg-preview.png" id="2_874fm"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_itjyq"]
+[ext_resource type="Shader" uid="uid://ihcaq5drhggn" path="res://shader/round_corner.gdshader" id="2_sev2x"]
+[ext_resource type="Texture2D" uid="uid://42ft4c2ys05q" path="res://Assets/Atlas/BUTTON2.PNG" id="3_874fm"]
+[ext_resource type="PackedScene" uid="uid://g5b36b05y5aq" path="res://Scene/Ui/health_bar.tscn" id="4_sev2x"]
+[ext_resource type="Texture2D" uid="uid://7028rar3moxe" path="res://Assets/images/jetpackninja-removebg-preview.png" id="4_ymiq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ymiq4"]
+bg_color = Color(0, 0, 0, 0.45882353)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymiq4"]
+shader = ExtResource("2_sev2x")
+shader_parameter/radius = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1sdf"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rmtjk"]
+shader = ExtResource("2_sev2x")
+shader_parameter/radius = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itjyq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmtjk"]
+bg_color = Color(0, 0, 0, 0.46666667)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwosg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 0.46666667)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="PlayUiBottom" type="Control" node_paths=PackedStringArray("xp_bar") groups=["ProgressBarControl"]]
+layout_mode = 3
+anchor_left = -0.024
+anchor_right = 1.0
+anchor_bottom = 0.264
+offset_left = 25.92
+offset_bottom = 0.11999512
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_itjyq")
+xp_bar = NodePath("VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2/Health_bar")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -472.0
+offset_right = 357.0
+grow_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+
+[node name="ColorRect" type="Panel" parent="VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(180, 230)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymiq4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Power1" type="TextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_ymiq4")
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("2_874fm")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PowerText1" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_itjyq")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_n1sdf")
+text = "2"
+flat = true
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+
+[node name="ColorRect" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(180, 230)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ymiq4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Power2" type="TextureButton" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+material = SubResource("ShaderMaterial_rmtjk")
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("4_ymiq4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PowerText2" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_itjyq")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_itjyq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_n1sdf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_n1sdf")
+text = "2"
+flat = true
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = -6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(130, 140)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmtjk")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(115, 110)
+layout_mode = 2
+texture = ExtResource("3_874fm")
+expand_mode = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iwosg")
+
+[node name="Health_bar" parent="VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2" instance=ExtResource("4_sev2x")]
+custom_minimum_size = Vector2(275, 70)
+layout_mode = 2
+effect_type = "Flash"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/VBoxContainer/Power1" to="." method="_on_power_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/VBoxContainer/PowerText1" to="." method="_on_power_text_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/Power2" to="." method="_on_power_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/PowerText2" to="." method="_on_power_text_2_pressed"]

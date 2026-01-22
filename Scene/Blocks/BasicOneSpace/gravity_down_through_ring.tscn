@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dggy1qlh88asx"]
+
+[ext_resource type="PackedScene" uid="uid://c3yjy63be3n01" path="res://Scene/go_down_through_wall.tscn" id="1_y228y"]
+[ext_resource type="PackedScene" uid="uid://dcqscracwtb4s" path="res://Scene/Blocks/BasicOneSpace/basic_ring.tscn" id="2_qqrpr"]
+
+[node name="GoDownThroughRing" type="StaticBody3D"]
+axis_lock_angular_z = true
+
+[node name="go_down_through_wall" parent="." instance=ExtResource("1_y228y")]
+transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, -0.019319117, 0.14423943, 0.68280715)
+
+[node name="Ring" parent="." instance=ExtResource("2_qqrpr")]

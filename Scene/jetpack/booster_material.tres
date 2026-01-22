@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bdcwd0g7mnqit"]
+
+[ext_resource type="Shader" uid="uid://dl1glai0orjyp" path="res://Scene/jetpack/thruster.gdshader" id="1_tnkyo"]
+
+[sub_resource type="Gradient" id="Gradient_5hfv0"]
+offsets = PackedFloat32Array(0.154762, 0.714286)
+colors = PackedColorArray(0.858121, 0.00148743, 0.970587, 1, 0, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0bhed"]
+noise_type = 3
+frequency = 0.025
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m0rpm"]
+noise = SubResource("FastNoiseLite_0bhed")
+color_ramp = SubResource("Gradient_5hfv0")
+seamless = true
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_tnkyo")
+shader_parameter/main_color = Color(0, 1, 1, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_m0rpm")
+shader_parameter/emission = Color(0.856968, 0.922955, 1, 1)
+shader_parameter/emission_energy = 20.0
+shader_parameter/scroll_speed = 5.0
+shader_parameter/alpha_threshold = 0.035
+shader_parameter/use_threshold = true
+shader_parameter/invert_boost_direction = true

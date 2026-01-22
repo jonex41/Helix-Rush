@@ -1,0 +1,180 @@
+[gd_scene load_steps=27 format=3 uid="uid://8drfi8rjl2pr"]
+
+[ext_resource type="Script" uid="uid://b2lxm8grsw1v7" path="res://Script/game_win.gd" id="1_d6k10"]
+[ext_resource type="Texture2D" uid="uid://dv0ip87jnyluf" path="res://Assets/images/Icon_Large_StarGrey.png" id="2_6748t"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_pdaxk"]
+[ext_resource type="Texture2D" uid="uid://b2awidx1w5er3" path="res://Assets/images/Icon_Large_StarGrey_WhiteOutline.png" id="3_pdaxk"]
+[ext_resource type="Texture2D" uid="uid://c55ne4nwgp4ma" path="res://Assets/images/PremadeButtons_Replay.png" id="4_s46eg"]
+[ext_resource type="PackedScene" uid="uid://dhllw8nd600sk" path="res://Scene/firework2d.tscn" id="6_pdaxk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql48a"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3ki1"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqhi7"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xvpb"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7bcc"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1n1g"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8jwn"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgbmq"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my8sg"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fl3y"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6748t"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdaxk"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s46eg"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkxye"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv2qi"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2r7s"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uerab"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hftmi"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mprch"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhtk7"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+
+[node name="GameWin" type="CanvasLayer"]
+script = ExtResource("1_d6k10")
+
+[node name="CPUParticles2D" parent="." instance=ExtResource("6_pdaxk")]
+amount = 100
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0.07450981, 0.07450981, 0.7607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 135
+theme_override_fonts/font = ExtResource("2_pdaxk")
+theme_override_font_sizes/font_size = 130
+text = "Hurray you Win!!!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_6748t")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_pdaxk")
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_6748t")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 130
+theme_override_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_s46eg")
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ql48a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_r3ki1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gqhi7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_4xvpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c7bcc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_e1n1g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_x8jwn")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pgbmq")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_my8sg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1fl3y")
+flat = true
+
+[node name="continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pdaxk")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6748t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pdaxk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_s46eg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gkxye")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vv2qi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_m2r7s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_uerab")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_hftmi")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_mprch")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mhtk7")
+text = "Continue"
+flat = true
+autowrap_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_no_thanks_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

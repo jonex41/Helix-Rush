@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://fwr0466n1y1m"]
+
+[ext_resource type="Script" uid="uid://vevt57njipou" path="res://Script/rod.gd" id="1_q2jf2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdf8x"]
+albedo_color = Color(0.6293669, 0.6295537, 0.21805972, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wdf8x"]
+
+[node name="Rod" type="StaticBody3D"]
+script = ExtResource("1_q2jf2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wdf8x")
+mesh = SubResource("CylinderMesh_wdf8x")

@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1kefqcinplw4"]
+
+[ext_resource type="Script" uid="uid://cnefl05bd3n22" path="res://Script/spining_wheel.gd" id="1_qu1pa"]
+[ext_resource type="Script" uid="uid://b08h1lfth3hlq" path="res://Script/selection_wheel.gd" id="2_8lbm4"]
+[ext_resource type="Texture2D" uid="uid://cg225sosjnw1q" path="res://Assets/level/Medium_Open_fullWeb_Body_202.png" id="3_s2emh"]
+[ext_resource type="Texture2D" uid="uid://bwb7wa7qcr3xr" path="res://Assets/Atlas/COIN5.PNG" id="4_ctllv"]
+[ext_resource type="Texture2D" uid="uid://bhyca6b8uajef" path="res://Assets/Atlas/COIN2.PNG" id="5_1vjc3"]
+[ext_resource type="Texture2D" uid="uid://sxg4njtfmb6m" path="res://Assets/Atlas/COIN3.PNG" id="6_a5j6k"]
+[ext_resource type="Texture2D" uid="uid://chr3r4hatdctw" path="res://Assets/Atlas/COIN4.PNG" id="7_a5dr6"]
+[ext_resource type="Texture2D" uid="uid://nyvrxf6usl22" path="res://Assets/Atlas/COIN.PNG" id="8_32pip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvsgs"]
+atlas = ExtResource("3_s2emh")
+region = Rect2(64, 64, 64, 64)
+script = ExtResource("2_8lbm4")
+name = "Option1"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew0uf"]
+atlas = ExtResource("4_ctllv")
+region = Rect2(-8, 0, 224, 264)
+script = ExtResource("2_8lbm4")
+name = "option1"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ww70"]
+atlas = ExtResource("5_1vjc3")
+region = Rect2(-8, 0, 216, 208)
+script = ExtResource("2_8lbm4")
+name = "Option2"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8yc6"]
+atlas = ExtResource("6_a5j6k")
+region = Rect2(0, 0, 232, 208)
+script = ExtResource("2_8lbm4")
+name = "Option3"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbwa8"]
+atlas = ExtResource("7_a5dr6")
+region = Rect2(8, 0, 216, 192)
+script = ExtResource("2_8lbm4")
+name = "Option4"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rntpp"]
+atlas = ExtResource("8_32pip")
+region = Rect2(0, 0, 152, 152)
+script = ExtResource("2_8lbm4")
+name = "Option5"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[node name="SpiningWheel" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qu1pa")
+bkg_color = Color(0.88235295, 0.23921569, 0.09019608, 1)
+line_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
+options = Array[ExtResource("2_8lbm4")]([SubResource("AtlasTexture_mvsgs"), SubResource("AtlasTexture_ew0uf"), SubResource("AtlasTexture_4ww70"), SubResource("AtlasTexture_e8yc6"), SubResource("AtlasTexture_dbwa8"), SubResource("AtlasTexture_rntpp")])
+segments = null
+full_spins = null
+spin_duration = null
+ease_in_ratio = null

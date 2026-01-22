@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://csmx7af51rbwu"]
+
+[ext_resource type="PackedScene" uid="uid://ci5h61rk5k41r" path="res://Scene/Balls/ball.tscn" id="1_coohi"]
+[ext_resource type="PackedScene" uid="uid://c3o3ye83ic7cp" path="res://Scene/Blocks/BasicOneSpace/rotating_basic_ring.tscn" id="2_hfanv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nrimp"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_d8egu"]
+
+[node name="CirclePowerUp" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-9.1793915e-09, -0.21, 0, 0.21, -9.1793915e-09, 0, 0, 0, 0.21, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nrimp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.69, 0, 0, 0, 1.69, 0, 0, 0, 1.69, 2.5829875, 0.0078193545, 0)
+mesh = SubResource("TorusMesh_d8egu")
+
+[node name="Ball" parent="." instance=ExtResource("1_coohi")]
+
+[node name="RotatingRing" parent="." instance=ExtResource("2_hfanv")]

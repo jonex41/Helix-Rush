@@ -1,0 +1,57 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Ball Bounce 3d"
+run/main_scene="uid://c2newc706u68c"
+config/features=PackedStringArray("4.5", "Mobile")
+config/icon="res://icon.svg"
+
+[audio]
+
+driver/mix_rate=48000
+
+[autoload]
+
+EventBus="*res://Script/event_bus.gd"
+ScoreManager="*res://Script/score_manager.gd"
+GameTimer="*res://Script/game_timer.gd"
+SceneManager="*res://Script/scene_manager.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GPUTrail-main/plugin.cfg", "res://addons/radial_progress/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
+
+[global_group]
+
+Player="For all players"
+SpawnPoint=""
+CameraRig=""
+ProgressBarControl=""
+Levels=""
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

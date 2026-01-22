@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2newc706u68c"]
+
+[ext_resource type="Script" uid="uid://vlrx81lp5fuw" path="res://Script/main.gd" id="1_r34rm"]
+[ext_resource type="PackedScene" uid="uid://bmi2gia35svee" path="res://Scene/Levels/LevelSegments/level_base.tscn" id="2_r34rm"]
+[ext_resource type="AudioStream" uid="uid://bvk6ilde3ee0e" path="res://Assets/Audio/CS_Safe Haven - Short Loop.mp3" id="2_sblpm"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r34rm")
+
+[node name="LevelBase" parent="." instance=ExtResource("2_r34rm")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_sblpm")

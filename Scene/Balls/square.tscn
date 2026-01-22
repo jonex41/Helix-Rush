@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqj1sqywb3hr7"]
+
+[ext_resource type="Script" uid="uid://c6ytgjujfgx21" path="res://Script/square.gd" id="1_pxxrn"]
+[ext_resource type="PackedScene" uid="uid://bcohd6c4eqykv" path="res://Scene/jet_pack.tscn" id="2_pxlhb"]
+[ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="3_vv3uq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
+friction = 0.0
+bounce = 1.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0auh2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxlhb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wd17"]
+albedo_color = Color(1, 0.21568628, 1, 1)
+metallic = 1.0
+roughness = 0.35
+emission_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0wd17"]
+
+[node name="Square" type="RigidBody3D" groups=["Player"]]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_c2f4g")
+script = ExtResource("1_pxxrn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0auh2")
+mesh = SubResource("BoxMesh_pxlhb")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wd17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
+shape = SubResource("SphereShape3D_0wd17")
+
+[node name="JetPack" parent="." instance=ExtResource("2_pxlhb")]
+transform = Transform3D(0.003141239, 0, -0.11995887, 0, 0.12, 0, 0.11995887, 0, 0.003141239, 0, -0.07844024, -0.285881)
+visible = false
+
+[node name="GPUTrail3D" parent="." instance=ExtResource("3_vv3uq")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

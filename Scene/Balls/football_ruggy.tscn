@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqisaikae5jkf"]
+
+[ext_resource type="Script" uid="uid://cwqii5qlqd3xk" path="res://Script/football_ruggy.gd" id="1_utgqy"]
+[ext_resource type="AudioStream" uid="uid://df1mco6cf2uif" path="res://Assets/Audio/coin.ogg" id="2_r36gi"]
+[ext_resource type="PackedScene" uid="uid://6lsvd4qkbwkp" path="res://Assets/FootBall.glb" id="3_r36gi"]
+[ext_resource type="PackedScene" uid="uid://bcohd6c4eqykv" path="res://Scene/jet_pack.tscn" id="4_2bx31"]
+[ext_resource type="Script" uid="uid://632w6thf8tlh" path="res://Script/foot_ball_ruggy.gd" id="4_gxs0i"]
+[ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="5_utgqy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
+friction = 0.0
+bounce = 1.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0wd17"]
+
+[node name="FootballRubgy" type="RigidBody3D" groups=["Player"]]
+transform = Transform3D(4.563, 0, 0, 0, 4.563, 0, 0, 0, 4.563, 0, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_c2f4g")
+script = ExtResource("1_utgqy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
+shape = SubResource("SphereShape3D_0wd17")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_r36gi")
+volume_db = 44.484
+
+[node name="FootBall" parent="." instance=ExtResource("3_r36gi")]
+transform = Transform3D(0.085, 0, 0, 0, 0.085, 0, 0, 0, 0.085, 0, 0, 0)
+script = ExtResource("4_gxs0i")
+
+[node name="JetPack" parent="." instance=ExtResource("4_2bx31")]
+transform = Transform3D(0.020837778, 0, -0.118176915, 0, 0.12, 0, 0.118176915, 0, 0.020837778, 0, -0.050181255, -0.20067236)
+visible = false
+
+[node name="GPUTrail3D" parent="." instance=ExtResource("5_utgqy")]
+transform = Transform3D(-5.0268096e-09, -0.115, 0, 0.115, -5.0268096e-09, 0, 0, 0, 0.115, 0, -0.056637704, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,214 @@
+[gd_scene load_steps=23 format=3 uid="uid://dabsoucyt4jkq"]
+
+[ext_resource type="Texture2D" uid="uid://swurlcvtpyot" path="res://Assets/level/image1.png" id="1_17j3h"]
+[ext_resource type="Script" uid="uid://b0bdg22rwhp3c" path="res://Script/level_button.gd" id="1_deev0"]
+[ext_resource type="Texture2D" uid="uid://dv0ip87jnyluf" path="res://Assets/images/Icon_Large_StarGrey.png" id="3_gkil0"]
+[ext_resource type="Texture2D" uid="uid://b2awidx1w5er3" path="res://Assets/images/Icon_Large_StarGrey_WhiteOutline.png" id="4_evwbb"]
+[ext_resource type="Texture2D" uid="uid://cg225sosjnw1q" path="res://Assets/level/Medium_Open_fullWeb_Body_202.png" id="5_evwbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjfx5"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(0, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wgti"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(180, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n1b3"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(360, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5igf"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(540, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odv2k"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(0, 180, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nny7"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(180, 180, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gy0f"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(360, 180, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sofgk"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(540, 180, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyblt"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(0, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2utf4"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(180, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_estam"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(360, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri2o4"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(540, 360, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0qc0"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(0, 540, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t5l"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(180, 540, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc1iv"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(360, 540, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7skw"]
+atlas = ExtResource("5_evwbb")
+region = Rect2(540, 540, 180, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5igf"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjfx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wgti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n1b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5igf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odv2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nny7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gy0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sofgk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyblt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2utf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_estam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri2o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0qc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1t5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc1iv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7skw")
+}],
+"loop": true,
+"name": &"open",
+"speed": 20.0
+}]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(600, 1000)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -542.0
+offset_right = 537.0
+offset_bottom = 1247.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+disabled = true
+flat = true
+script = ExtResource("1_deev0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -461.0
+offset_right = 461.0
+offset_bottom = 807.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 86
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("1_17j3h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_gkil0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("4_evwbb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_gkil0")
+expand_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(451, 462.99997)
+scale = Vector2(1.62, 1.62)
+skew = 0.20071286
+sprite_frames = SubResource("SpriteFrames_j5igf")
+animation = &"open"
+autoplay = "open"
+frame = 15
+frame_progress = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0.42352942)

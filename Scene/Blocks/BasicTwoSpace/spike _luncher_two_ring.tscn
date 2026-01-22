@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dts7bnlmsg6xw"]
+
+[ext_resource type="PackedScene" uid="uid://dwkn2qv5f0be2" path="res://Scene/Blocks/BasicTwoSpace/spike_two_ring.tscn" id="1_pguyc"]
+[ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="2_fsh48"]
+
+[node name="SpikeLuncherRing" type="StaticBody3D"]
+axis_lock_angular_z = true
+
+[node name="SpikeRing" parent="." instance=ExtResource("1_pguyc")]
+
+[node name="Launcher" parent="." instance=ExtResource("2_fsh48")]
+transform = Transform3D(0.7551216, 0, -0.6555847, 0, 1, 0, 0.6555847, 0, 0.7551216, -0.6767176, 0.15983605, 0.14614236)

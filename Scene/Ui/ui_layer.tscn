@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c3nvbnvekxghr"]
+
+[node name="UiLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27592593
+anchor_top = 0.148
+anchor_right = 0.82592595
+anchor_bottom = 0.248
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRectStart" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.22284997, 0.32523414, 0.8941298, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRectEnd" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.22352941, 0.3254902, 0.89411765, 1)

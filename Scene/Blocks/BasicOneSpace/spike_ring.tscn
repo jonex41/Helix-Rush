@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpd7mi0ixb1p5"]
+
+[ext_resource type="PackedScene" uid="uid://n2b8fnub5smr" path="res://Assets/CylinderSpike.glb" id="1_7v2lb"]
+[ext_resource type="Script" uid="uid://ci58tmqqhfq40" path="res://Script/spike_ball.gd" id="2_ueuoi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgptk"]
+size = Vector3(1.1501575, 0.15429688, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
+size = Vector3(2.01503, 0.16601563, 1.0307617)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j66qo"]
+size = Vector3(0.33, 0.15, 0.69)
+
+[node name="SpikeRing" type="StaticBody3D"]
+axis_lock_angular_z = true
+
+[node name="CylinderSpike" parent="." instance=ExtResource("1_7v2lb")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5676714, 0, -0.82325524, 0, 1, 0, 0.82325524, 0, 0.5676714, -0.6411862, 0, -0.085333616)
+shape = SubResource("BoxShape3D_kgptk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.72291887, 0, 0.6909329, 0, 1, 0, -0.6909329, 0, 0.72291887, 0.34258872, 0.0029296875, 0.35722226)
+shape = SubResource("BoxShape3D_an5r2")
+
+[node name="Area3D" type="Area3D" parent="." groups=["CameraRig"]]
+script = ExtResource("2_ueuoi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.9116114, 0, -0.41105303, 0, 1, 0, 0.41105303, 0, 0.9116114, -0.23875487, 0.07726395, 0.6028727)
+shape = SubResource("BoxShape3D_j66qo")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
