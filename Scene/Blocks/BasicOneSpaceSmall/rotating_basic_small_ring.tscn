@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bw082b1ml8r"]
+
+[ext_resource type="Script" uid="uid://com0bcffch06l" path="res://Script/rotating_basic_ring.gd" id="1_xqxdc"]
+[ext_resource type="PackedScene" uid="uid://cvmsb0osl2qsv" path="res://Scene/Blocks/BasicOneSpaceSmall/basic_small_ring.tscn" id="2_je3yq"]
+
+[node name="RotatingRing" type="StaticBody3D"]
+axis_lock_angular_z = true
+script = ExtResource("1_xqxdc")
+
+[node name="BasicSmallRing" parent="." instance=ExtResource("2_je3yq")]

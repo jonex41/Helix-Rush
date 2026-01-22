@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwkn2qv5f0be2"]
+[gd_scene load_steps=6 format=3 uid="uid://ybaiw7h112d0"]
 
-[ext_resource type="PackedScene" uid="uid://vcb03u1togrf" path="res://Assets/cylindertwospacespike.glb" id="1_mpldu"]
-[ext_resource type="Script" uid="uid://ci58tmqqhfq40" path="res://Script/spike_ball.gd" id="2_kwsb1"]
+[ext_resource type="PackedScene" uid="uid://vcb03u1togrf" path="res://Assets/cylindertwospacespike.glb" id="1_w3xmh"]
+[ext_resource type="Script" uid="uid://ci58tmqqhfq40" path="res://Script/spike_ball.gd" id="2_hhh2q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6hv3"]
 size = Vector3(1.1568823, 0.15429688, 1)
@@ -15,7 +15,7 @@ size = Vector3(0.20351796, 0.10771485, 0.8326745)
 [node name="SpikeRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
-[node name="cylindertwospacespike" parent="." instance=ExtResource("1_mpldu")]
+[node name="cylindertwospacespike" parent="." instance=ExtResource("1_w3xmh")]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.7200427, 0, -0.69392973, 0, 1, 0, 0.69392973, 0, 0.7200427, -0.77488345, 0, -0.031239793)
@@ -27,7 +27,7 @@ shape = SubResource("BoxShape3D_1ycke")
 
 [node name="Area3D" type="Area3D" parent="." groups=["CameraRig"]]
 transform = Transform3D(-0.7194609, 0, -0.69453293, 0, 1, 0, 0.69453293, 0, -0.7194609, -0.3916527, 0.0029491186, -0.21550821)
-script = ExtResource("2_kwsb1")
+script = ExtResource("2_hhh2q")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.99946576, 0, 0.032666296, 0, 1, 0, -0.032666296, 0, 0.99946576, -0.022690922, 0.043464884, 0.28119904)

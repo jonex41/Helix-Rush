@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://in2kkq1hyi07"]
+[gd_scene load_steps=4 format=3 uid="uid://btavrfv6o2g4i"]
 
-[ext_resource type="PackedScene" uid="uid://pxwvqu56gqsi" path="res://Assets/CylinderTwoSlice.glb" id="1_yq2mm"]
+[ext_resource type="PackedScene" uid="uid://pxwvqu56gqsi" path="res://Assets/CylinderTwoSlice.glb" id="1_eiysg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kgptk"]
 size = Vector3(1.1568823, 0.15429688, 1)
@@ -19,4 +19,4 @@ shape = SubResource("BoxShape3D_kgptk")
 transform = Transform3D(0.7068599, 0, 0.7073536, 0, 1, 0, -0.7073536, 0, 0.7068599, 0.70033646, 0.0029296875, 0.009240866)
 shape = SubResource("BoxShape3D_an5r2")
 
-[node name="CylinderTwoSlice" parent="." instance=ExtResource("1_yq2mm")]
+[node name="CylinderTwoSlice" parent="." instance=ExtResource("1_eiysg")]

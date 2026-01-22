@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpdnwkbbj5v2s"]
+[gd_scene load_steps=3 format=3 uid="uid://dwmkh7huncshm"]
 
-[ext_resource type="Script" uid="uid://com0bcffch06l" path="res://Script/rotating_basic_ring.gd" id="1_fb18i"]
-[ext_resource type="PackedScene" uid="uid://in2kkq1hyi07" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_ffqtc"]
+[ext_resource type="Script" uid="uid://com0bcffch06l" path="res://Script/rotating_basic_ring.gd" id="1_pcju1"]
+[ext_resource type="PackedScene" uid="uid://btavrfv6o2g4i" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_b3p4s"]
 
 [node name="RotatingRing" type="StaticBody3D"]
 axis_lock_angular_z = true
-script = ExtResource("1_fb18i")
+script = ExtResource("1_pcju1")
 
-[node name="BasicTwoRing" parent="." instance=ExtResource("2_ffqtc")]
+[node name="BasicTwoRing" parent="." instance=ExtResource("2_b3p4s")]
