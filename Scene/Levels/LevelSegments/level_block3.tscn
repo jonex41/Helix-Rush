@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://c80ftye3sbqeh"]
+
+[ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_el1y4"]
+[ext_resource type="PackedScene" uid="uid://p8b4t3vvfa61" path="res://Scene/Blocks/BasicOneSpace/luncher_big_ring.tscn" id="2_r0een"]
+[ext_resource type="PackedScene" uid="uid://bsfr0825hamv5" path="res://Scene/Blocks/BasicThreeSpace/luncher_three_ring.tscn" id="3_8of81"]
+[ext_resource type="PackedScene" uid="uid://kavnvtdnmicy" path="res://Scene/Blocks/BasicFourSpace/luncher_four_ring.tscn" id="5_8gg1m"]
+[ext_resource type="PackedScene" uid="uid://ybaiw7h112d0" path="res://Scene/Blocks/BasicTwoSpace/spike_two_ring.tscn" id="6_8of81"]
+[ext_resource type="PackedScene" uid="uid://c4x0tf8r5qsxw" path="res://Scene/Blocks/BasicOneSpaceSmall/luncher_small_ring.tscn" id="7_o7784"]
+
+[node name="LevelBlock1" type="Node3D"]
+
+[node name="Rod" parent="." instance=ExtResource("1_el1y4")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
+target = NodePath("../Node3D")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Rings" type="Node3D" parent="Node3D"]
+
+[node name="SpecialLuncherThreeRing2" parent="Node3D/Rings" instance=ExtResource("3_8of81")]
+transform = Transform3D(0.43837115, 0, 0.89879405, 0, 1, 0, -0.89879405, 0, 0.43837115, 0, 0.9860846, 0)
+
+[node name="SpecialLuncherThreeRing" parent="Node3D/Rings" instance=ExtResource("3_8of81")]
+
+[node name="LuncherFourRing" parent="Node3D/Rings" instance=ExtResource("5_8gg1m")]
+transform = Transform3D(-0.9304176, 0, -0.36650115, 0, 1, 0, 0.36650115, 0, -0.9304176, 0, 2.9752123, 0)
+
+[node name="LuncherBigRing2" parent="Node3D/Rings" instance=ExtResource("2_r0een")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.992961, 0)
+
+[node name="LuncherBigRing3" parent="Node3D/Rings" instance=ExtResource("2_r0een")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9850616, 0)
+
+[node name="LuncherBigRing" parent="Node3D/Rings" instance=ExtResource("2_r0een")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9684873, 0)
+
+[node name="SpikeTwoRing" parent="Node3D/Rings" instance=ExtResource("6_8of81")]
+transform = Transform3D(-0.7933534, 0, -0.60876137, 0, 1, 0, 0.60876137, 0, -0.7933534, 0, 6.975662, 0)
+
+[node name="SPecialLuncherSmallRing" parent="Node3D/Rings" instance=ExtResource("7_o7784")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9936113, 0)
+
+[node name="SPecialLuncherSmallRing2" parent="Node3D/Rings" instance=ExtResource("7_o7784")]
+transform = Transform3D(-0.53729963, 0, -0.8433914, 0, 1, 0, 0.8433914, 0, -0.53729963, 0, 8.992733, 0)
+
+[node name="SPecialLuncherSmallRing3" parent="Node3D/Rings" instance=ExtResource("7_o7784")]
+transform = Transform3D(-0.23344539, 0, 0.9723699, 0, 1, 0, -0.9723699, 0, -0.23344539, 0, 2.0029447, 0)
+
+[node name="Coins" type="Node3D" parent="Node3D"]
+
+[node name="Key" type="Node3D" parent="Node3D"]

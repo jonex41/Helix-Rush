@@ -8,7 +8,7 @@ size = Vector3(0.99862945, 0.15429688, 1.0014648)
 [sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
 size = Vector3(2.0433502, 0.16601563, 1.0166016)
 
-[node name="OneRing" type="StaticBody3D"]
+[node name="OneBigRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]

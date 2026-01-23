@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvhmx3dqamq21"]
 
 [ext_resource type="PackedScene" uid="uid://daj3eebqac0j3" path="res://Scene/go_up_through_wall.tscn" id="1_bqpoc"]
-[ext_resource type="PackedScene" uid="uid://dcqscracwtb4s" path="res://Scene/Blocks/BasicOneSpace/basic_ring.tscn" id="2_bqpoc"]
+[ext_resource type="PackedScene" uid="uid://dcqscracwtb4s" path="res://Scene/Blocks/BasicOneSpace/basic_big_ring.tscn" id="2_bqpoc"]
 
-[node name="GravityUpThroughRing" type="StaticBody3D"]
+[node name="GravityUpThroughBigRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="GravityUpThrough" parent="." instance=ExtResource("1_bqpoc")]

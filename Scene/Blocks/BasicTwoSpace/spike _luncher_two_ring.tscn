@@ -9,4 +9,4 @@ axis_lock_angular_z = true
 [node name="SpikeRing" parent="." instance=ExtResource("1_2vio3")]
 
 [node name="Launcher" parent="." instance=ExtResource("2_c38no")]
-transform = Transform3D(0.7551216, 0, -0.6555847, 0, 1, 0, 0.6555847, 0, 0.7551216, -0.6767176, 0.15983605, 0.14614236)
+transform = Transform3D(0.2179728, 0, -0.97595483, 0, 1, 0, 0.97595483, 0, 0.2179728, -0.80733705, 0.13117337, 0.14614236)

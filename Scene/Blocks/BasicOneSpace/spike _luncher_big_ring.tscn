@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bianiih52vxs2"]
 
-[ext_resource type="PackedScene" uid="uid://dpd7mi0ixb1p5" path="res://Scene/Blocks/BasicOneSpace/spike_ring.tscn" id="2_3njta"]
+[ext_resource type="PackedScene" uid="uid://dpd7mi0ixb1p5" path="res://Scene/Blocks/BasicOneSpace/spike_big_ring.tscn" id="2_3njta"]
 [ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="2_c8tbb"]
 
-[node name="SpikeLuncherOneRing" type="StaticBody3D"]
+[node name="SpikeLuncherOneBigRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="Launcher" parent="." instance=ExtResource("2_c8tbb")]

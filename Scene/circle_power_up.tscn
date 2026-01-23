@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csmx7af51rbwu"]
 
 [ext_resource type="PackedScene" uid="uid://ci5h61rk5k41r" path="res://Scene/Balls/ball.tscn" id="1_coohi"]
-[ext_resource type="PackedScene" uid="uid://c3o3ye83ic7cp" path="res://Scene/Blocks/BasicOneSpace/rotating_basic_ring.tscn" id="2_hfanv"]
+[ext_resource type="PackedScene" uid="uid://c3o3ye83ic7cp" path="res://Scene/Blocks/BasicOneSpace/rotating_basic_big_ring.tscn" id="2_hfanv"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_nrimp"]
 

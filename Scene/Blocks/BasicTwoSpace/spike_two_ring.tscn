@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ybaiw7h112d0"]
+[gd_scene load_steps=7 format=3 uid="uid://ybaiw7h112d0"]
 
 [ext_resource type="PackedScene" uid="uid://vcb03u1togrf" path="res://Assets/cylindertwospacespike.glb" id="1_w3xmh"]
 [ext_resource type="Script" uid="uid://ci58tmqqhfq40" path="res://Script/spike_ball.gd" id="2_hhh2q"]
+[ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="3_kwsb1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6hv3"]
 size = Vector3(1.1568823, 0.15429688, 1)
@@ -44,5 +45,8 @@ shape = SubResource("BoxShape3D_j66qo")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.067945, 0, -0.9976889, 0, 1, 0, 0.9976889, 0, 0.067945, -0.72102106, 0.038111225, -0.521456)
 shape = SubResource("BoxShape3D_j66qo")
+
+[node name="Launcher" parent="." instance=ExtResource("3_kwsb1")]
+transform = Transform3D(-0.2126211, 0, -0.9771348, 0, 1, 0, 0.9771348, 0, -0.2126211, 0.87464297, 0.14594442, 0.10041407)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

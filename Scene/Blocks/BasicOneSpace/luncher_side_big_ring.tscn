@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2i5om2rgqt0d"]
+
+[ext_resource type="PackedScene" uid="uid://dcqscracwtb4s" path="res://Scene/Blocks/BasicOneSpace/basic_big_ring.tscn" id="1_d00jd"]
+[ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="2_nwat2"]
+
+[node name="LuncherSideBigRing" type="StaticBody3D"]
+axis_lock_angular_z = true
+
+[node name="Ring" parent="." instance=ExtResource("1_d00jd")]
+
+[node name="Launcher" parent="." instance=ExtResource("2_nwat2")]
+transform = Transform3D(0.6134999, 0, -0.7896948, 0, 1, 0, 0.7896948, 0, 0.6134999, 0.7717069, 0.1405642, -0.29633188)

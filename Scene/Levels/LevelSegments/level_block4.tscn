@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5o0ew1mpt2fn"]
+
+[ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_lt2cy"]
+[ext_resource type="PackedScene" uid="uid://bj8ef00542xxk" path="res://Scene/Blocks/BasicOneSpace/special_luncher_big_ring.tscn" id="3_vh0v2"]
+[ext_resource type="PackedScene" uid="uid://p8b4t3vvfa61" path="res://Scene/Blocks/BasicOneSpace/luncher_big_ring.tscn" id="4_7wlcd"]
+
+[node name="LevelBlock1" type="Node3D"]
+
+[node name="Rod" parent="." instance=ExtResource("1_lt2cy")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
+target = NodePath("../Node3D")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Rings" type="Node3D" parent="Node3D"]
+
+[node name="LuncherBigRing2" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.97265804, 0)
+
+[node name="LuncherBigRing3" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9902188, 0)
+
+[node name="LuncherBigRing6" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.8159685, 0)
+
+[node name="LuncherBigRing7" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 7.8433104, 0)
+
+[node name="LuncherBigRing8" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.870652, 0)
+
+[node name="LuncherBigRing9" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.897994, 0)
+
+[node name="LuncherBigRing5" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9526777, 0)
+
+[node name="LuncherBigRing4" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.9800196, 0)
+
+[node name="LuncherBigRing" parent="Node3D/Rings" instance=ExtResource("4_7wlcd")]
+
+[node name="SpecialLuncherBigRing" parent="Node3D/Rings" instance=ExtResource("3_vh0v2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 4.9802723, 0)
+
+[node name="Coins" type="Node3D" parent="Node3D"]
+
+[node name="Key" type="Node3D" parent="Node3D"]

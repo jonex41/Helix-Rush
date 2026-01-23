@@ -9,7 +9,7 @@ size = Vector3(1.694624, 0.15429688, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
 size = Vector3(1.8415833, 0.16601563, 1.0166016)
 
-[node name="AntigravityRing" type="StaticBody3D"]
+[node name="AntigravityBigRing" type="StaticBody3D"]
 axis_lock_angular_z = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
