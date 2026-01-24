@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://q8fr7oc86skd"]
+
+[ext_resource type="PackedScene" uid="uid://dcqscracwtb4s" path="res://Scene/Blocks/BasicOneSpace/basic_big_ring.tscn" id="1_8t403"]
+[ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="2_smvj8"]
+[ext_resource type="PackedScene" uid="uid://c3yjy63be3n01" path="res://Scene/go_down_through_wall.tscn" id="3_smvj8"]
+
+[node name="LuncherSideBigRing" type="StaticBody3D"]
+axis_lock_angular_z = true
+
+[node name="Ring" parent="." instance=ExtResource("1_8t403")]
+
+[node name="Launcher" parent="." instance=ExtResource("2_smvj8")]
+transform = Transform3D(0.6134999, 0, -0.7896948, 0, 1, 0, 0.7896948, 0, 0.6134999, 0.7717069, 0.1405642, -0.29633188)
+
+[node name="go_down_through_wall" parent="." instance=ExtResource("3_smvj8")]
+transform = Transform3D(0.34948355, 0, 0.0863784, 0, 0.23138244, 0, -0.0863784, 0, 0.34948355, -0.6704773, 0.13230908, -0.29767329)

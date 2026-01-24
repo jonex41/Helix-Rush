@@ -9,6 +9,7 @@
 
 [node name="Rod" parent="." instance=ExtResource("1_8d6a8")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
+visible = false
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="."]

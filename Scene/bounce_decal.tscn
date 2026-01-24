@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://q3gb1cnmjx6t"]
+[gd_scene load_steps=3 format=3 uid="uid://q3gb1cnmjx6t"]
 
 [ext_resource type="Texture2D" uid="uid://bjueo1sraddjx" path="res://Assets/texture/T_groundmark_emissive.png" id="1_rsact"]
+[ext_resource type="Script" uid="uid://c7d4hewgdgfg0" path="res://Script/bounce_decal.gd" id="2_3v3ny"]
 
 [node name="Decal" type="Decal"]
 texture_albedo = ExtResource("1_rsact")
 normal_fade = 0.3
+script = ExtResource("2_3v3ny")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

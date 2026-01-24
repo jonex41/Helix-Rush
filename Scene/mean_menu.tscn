@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://5h8nrph4ngi" path="res://Assets/images/ButtonText_Small_Orange_Round.png" id="1_4r8hx"]
 [ext_resource type="Script" uid="uid://dxdximcf148u3" path="res://Script/mean_menu.gd" id="1_ouvks"]
-[ext_resource type="PackedScene" path="res://Scene/coin_bar.tscn" id="2_38suq"]
+[ext_resource type="PackedScene" uid="uid://l7ysbryrqk6b" path="res://Scene/coin_bar.tscn" id="2_38suq"]
 [ext_resource type="Texture2D" uid="uid://cphm1hgf5v8sy" path="res://Assets/Atlas/SETTINGS.PNG" id="2_72c26"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="3_4kkba"]
-[ext_resource type="PackedScene" path="res://Scene/key_bar.tscn" id="3_tspsl"]
+[ext_resource type="PackedScene" uid="uid://btkdhnfxwmby7" path="res://Scene/key_bar.tscn" id="3_tspsl"]
 [ext_resource type="Texture2D" uid="uid://ccgmgnyead0j4" path="res://Assets/Atlas/USER.PNG" id="5_cchtj"]
 [ext_resource type="Texture2D" uid="uid://d0nm3e7dp26lk" path="res://Assets/images/IconButton_Small_Orange_Circle.png" id="5_jyqvl"]
 [ext_resource type="Texture2D" uid="uid://c8ijr5kxyw5rx" path="res://Assets/Atlas/ADS.PNG" id="6_tspsl"]
@@ -135,7 +135,7 @@ size_flags_horizontal = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer"]
+[node name="LevelLabel" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9843137, 0.6627451, 0, 1)
 theme_override_fonts/font = ExtResource("3_4kkba")

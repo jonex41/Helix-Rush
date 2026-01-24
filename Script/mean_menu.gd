@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power1.text = str(GameTimer.initial_power_antigravity)
 	$VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power2.text = str(GameTimer.initial_power_collision)
+	$VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/LevelLabel.text = "X"+str(GameTimer.current_level)
 	pass
 
 

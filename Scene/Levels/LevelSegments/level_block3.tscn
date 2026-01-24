@@ -11,6 +11,7 @@
 
 [node name="Rod" parent="." instance=ExtResource("1_el1y4")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
+visible = false
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -35,7 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9850616, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9684873, 0)
 
 [node name="SpikeTwoRing" parent="Node3D/Rings" instance=ExtResource("6_8of81")]
-transform = Transform3D(-0.7933534, 0, -0.60876137, 0, 1, 0, 0.60876137, 0, -0.7933534, 0, 6.975662, 0)
+transform = Transform3D(-0.7933533, 0, -0.6087614, 0, 1, 0, 0.6087614, 0, -0.7933533, 0, 6.975662, 0)
 
 [node name="SPecialLuncherSmallRing" parent="Node3D/Rings" instance=ExtResource("7_o7784")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9936113, 0)

@@ -21,12 +21,6 @@ target = NodePath("../Node3D")
 [node name="LuncherBigRing4" parent="Node3D/Rings" instance=ExtResource("2_8t74h")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.985577, 0)
 
-[node name="LuncherBigRing5" parent="Node3D/Rings" instance=ExtResource("2_8t74h")]
-transform = Transform3D(-0.51947445, 0, 0.85448605, 0, 1, 0, -0.85448605, 0, -0.51947445, 0, 4.987854, 0)
-
-[node name="LuncherBigRing6" parent="Node3D/Rings" instance=ExtResource("2_8t74h")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.9879713, 0)
-
 [node name="LuncherBigRing7" parent="Node3D/Rings" instance=ExtResource("2_8t74h")]
 transform = Transform3D(-0.7466383, 0, 0.66523033, 0, 1, 0, -0.66523033, 0, -0.7466383, 0, 8.98731, 0)
 
@@ -38,6 +32,12 @@ transform = Transform3D(-0.9999254, 0, -0.012217067, 0, 1, 0, 0.012217067, 0, -0
 
 [node name="SpecialLuncherThreeRing2" parent="Node3D/Rings" instance=ExtResource("3_cinvx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.993839, 0)
+
+[node name="SpecialLuncherThreeRing3" parent="Node3D/Rings" instance=ExtResource("3_cinvx")]
+transform = Transform3D(-0.06975648, 0, 0.9975641, 0, 1, 0, -0.9975641, 0, -0.06975648, 0, 5.988234, 0)
+
+[node name="SpecialLuncherThreeRing4" parent="Node3D/Rings" instance=ExtResource("3_cinvx")]
+transform = Transform3D(-0.9986295, 0, -0.052335985, 0, 1, 0, 0.052335985, 0, -0.9986295, 0, 4.991419, 0)
 
 [node name="SpikeLuncherTwoRing" parent="Node3D/Rings" instance=ExtResource("4_gx2jp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.995869, 0)
