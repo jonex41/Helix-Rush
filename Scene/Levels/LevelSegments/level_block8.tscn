@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnhohscuo82um"]
+[gd_scene load_steps=6 format=3 uid="uid://bnhohscuo82um"]
 
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_hcspq"]
+[ext_resource type="Script" uid="uid://du4h6f1a3wfq" path="res://Script/level_block.gd" id="1_p4363"]
 [ext_resource type="PackedScene" uid="uid://bsfr0825hamv5" path="res://Scene/Blocks/BasicThreeSpace/luncher_three_ring.tscn" id="2_crtyg"]
+[ext_resource type="PackedScene" uid="uid://btqywn11ker2i" path="res://Scene/coin.tscn" id="3_6r7je"]
+[ext_resource type="PackedScene" uid="uid://d4bjdxskuibcm" path="res://Scene/jetpack_pick.tscn" id="4_w1ko6"]
 
 [node name="LevelBlock1" type="Node3D"]
+script = ExtResource("1_p4363")
 
 [node name="Rod" parent="." instance=ExtResource("1_hcspq")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
-visible = false
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -45,4 +48,34 @@ transform = Transform3D(-0.61977893, 0, 0.78477645, 0, 1, 0, -0.78477645, 0, -0.
 
 [node name="Coins" type="Node3D" parent="Node3D"]
 
+[node name="Coin" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 1.0736074, 0.8323007)
+
+[node name="Coin2" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.84124446, 2.1229422, 0.28421217)
+
+[node name="Coin3" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.0052292347, 3.0336657, 0.7689377)
+
+[node name="Coin4" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.75698626, 4.048136, 0.31783104)
+
+[node name="Coin5" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.066702366, 5.1401258, 0.82018757)
+
+[node name="Coin6" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.71232224, 6.06527, 0.25056124)
+
+[node name="Coin7" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.104710996, 6.9878545, 0.77529514)
+
+[node name="Coin8" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.78071797, 8.022297, 0.26687974)
+
+[node name="Coin9" parent="Node3D/Coins" instance=ExtResource("3_6r7je")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.5980543, 9.111772, 0.6098848)
+
 [node name="Key" type="Node3D" parent="Node3D"]
+
+[node name="JetpackPick" parent="Node3D/Key" instance=ExtResource("4_w1ko6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06868249, 6.521478, -0.70568395)

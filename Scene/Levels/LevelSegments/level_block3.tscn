@@ -1,17 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://c80ftye3sbqeh"]
+[gd_scene load_steps=10 format=3 uid="uid://c80ftye3sbqeh"]
 
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_el1y4"]
+[ext_resource type="Script" uid="uid://du4h6f1a3wfq" path="res://Script/level_block.gd" id="1_o7784"]
 [ext_resource type="PackedScene" uid="uid://p8b4t3vvfa61" path="res://Scene/Blocks/BasicOneSpace/luncher_big_ring.tscn" id="2_r0een"]
 [ext_resource type="PackedScene" uid="uid://bsfr0825hamv5" path="res://Scene/Blocks/BasicThreeSpace/luncher_three_ring.tscn" id="3_8of81"]
 [ext_resource type="PackedScene" uid="uid://kavnvtdnmicy" path="res://Scene/Blocks/BasicFourSpace/luncher_four_ring.tscn" id="5_8gg1m"]
 [ext_resource type="PackedScene" uid="uid://ybaiw7h112d0" path="res://Scene/Blocks/BasicTwoSpace/spike_two_ring.tscn" id="6_8of81"]
 [ext_resource type="PackedScene" uid="uid://c4x0tf8r5qsxw" path="res://Scene/Blocks/BasicOneSpaceSmall/luncher_small_ring.tscn" id="7_o7784"]
+[ext_resource type="PackedScene" uid="uid://btqywn11ker2i" path="res://Scene/coin.tscn" id="7_r0een"]
+[ext_resource type="PackedScene" uid="uid://bdalbkl2781jm" path="res://Scene/key.tscn" id="8_8of81"]
 
 [node name="LevelBlock1" type="Node3D"]
+script = ExtResource("1_o7784")
 
 [node name="Rod" parent="." instance=ExtResource("1_el1y4")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
-visible = false
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -49,4 +52,34 @@ transform = Transform3D(-0.23344539, 0, 0.9723699, 0, 1, 0, -0.9723699, 0, -0.23
 
 [node name="Coins" type="Node3D" parent="Node3D"]
 
+[node name="Coin" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.22727633, 1.2002635, 0.7758257)
+
+[node name="Coin2" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.7337427, 2.0007682, 0.36299008)
+
+[node name="Coin3" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.7337427, 2.7036028, -0.31554806)
+
+[node name="Coin4" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.37125844, 4.138693, -0.69375664)
+
+[node name="Coin5" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.2652431, 5.097818, 0.8118269)
+
+[node name="Coin6" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.14222777, 6.0656567, -0.7890056)
+
+[node name="Coin7" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.6775137, 6.6661735, -0.53552693)
+
+[node name="Coin8" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.7462419, 7.9875174, 0.42202836)
+
+[node name="Coin9" parent="Node3D/Coins" instance=ExtResource("7_r0een")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.07659334, 9.096329, -0.82117146)
+
 [node name="Key" type="Node3D" parent="Node3D"]
+
+[node name="Key" parent="Node3D/Key" instance=ExtResource("8_8of81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83019686, 7.3432784, 0)

@@ -1,17 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cceqtmpc23h6k"]
+[gd_scene load_steps=10 format=3 uid="uid://cceqtmpc23h6k"]
 
+[ext_resource type="Script" uid="uid://du4h6f1a3wfq" path="res://Script/level_block.gd" id="1_1tdgd"]
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_irhk0"]
 [ext_resource type="PackedScene" uid="uid://p8b4t3vvfa61" path="res://Scene/Blocks/BasicOneSpace/luncher_big_ring.tscn" id="2_8t74h"]
 [ext_resource type="PackedScene" uid="uid://bsfr0825hamv5" path="res://Scene/Blocks/BasicThreeSpace/luncher_three_ring.tscn" id="3_cinvx"]
 [ext_resource type="PackedScene" uid="uid://btry6ao6ev543" path="res://Scene/Blocks/BasicTwoSpace/spike _luncher_two_ring.tscn" id="4_gx2jp"]
 [ext_resource type="PackedScene" uid="uid://kavnvtdnmicy" path="res://Scene/Blocks/BasicFourSpace/luncher_four_ring.tscn" id="5_g102n"]
 [ext_resource type="PackedScene" uid="uid://bj8ef00542xxk" path="res://Scene/Blocks/BasicOneSpace/special_luncher_big_ring.tscn" id="6_vx5oe"]
+[ext_resource type="PackedScene" uid="uid://btqywn11ker2i" path="res://Scene/coin.tscn" id="7_g102n"]
+[ext_resource type="PackedScene" uid="uid://d4bjdxskuibcm" path="res://Scene/jetpack_pick.tscn" id="8_vx5oe"]
 
 [node name="LevelBlock1" type="Node3D"]
+script = ExtResource("1_1tdgd")
 
 [node name="Rod" parent="." instance=ExtResource("1_irhk0")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
-visible = false
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -49,4 +52,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9844837, 0)
 
 [node name="Coins" type="Node3D" parent="Node3D"]
 
+[node name="Coin" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 0.95235234, 0.8679338)
+
+[node name="Coin2" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 2.017731, 0.8679338)
+
+[node name="Coin3" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 3.0203907, 0.8679338)
+
+[node name="Coin4" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 4.048052, 0.8679338)
+
+[node name="Coin5" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 5.0135717, 0.8679338)
+
+[node name="Coin6" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.63789284, 5.5726805, -0.6273775)
+
+[node name="Coin7" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.43601632, 6.534414, -0.6273775)
+
+[node name="Coin8" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.43601632, 7.522066, 0.5796288)
+
+[node name="Coin9" parent="Node3D/Coins" instance=ExtResource("7_g102n")]
+transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.088362575, 8.513527, 0.75966275)
+
 [node name="Key" type="Node3D" parent="Node3D"]
+
+[node name="JetpackPick" parent="Node3D/Key" instance=ExtResource("8_vx5oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6808378, 4.362741, -0.43064746)

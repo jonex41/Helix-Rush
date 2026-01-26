@@ -7,24 +7,20 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5e757"]
 margin = 0.0
 height = 1.9426819
-radius = 0.98291016
+radius = 1.778
 
 [node name="Coin" type="StaticBody3D"]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0, 0, -0.09062904)
 script = ExtResource("1_5e757")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8703854, 0.094200775, -0.14697446, 0.012450737, 1.0062826, 0.17484033, 0.27078795, -0.349055, 0.4643766, -0.0042497218, -0.011754528, 0.01574722)
-shape = SubResource("CylinderShape3D_5e757")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShape3D"]
-transform = Transform3D(0.8703854, 0.094200775, -0.14697446, 0.012450737, 1.0062826, 0.17484033, 0.27078795, -0.349055, 0.4643766, -0.0042497218, -0.011754528, 0.01574722)
-shape = SubResource("CylinderShape3D_5e757")
+[node name="coin" parent="." instance=ExtResource("2_5e757")]
+transform = Transform3D(0.9999999, -2.2351742e-08, 8.940697e-08, -4.4703484e-08, 1, 5.9604645e-08, -5.9604645e-08, 1.1920929e-07, 0.99999994, 0.026090786, -0.0339147, 0.13555881)
 
 [node name="Area3D" type="Area3D" parent="."]
 
-[node name="coin" parent="." instance=ExtResource("2_5e757")]
-transform = Transform3D(0.99999994, 7.450581e-09, 2.9802322e-08, -1.4901161e-08, 1, 2.9802322e-08, 0, 0, 0.9999999, 0.02609074, -0.033914708, 0.1355588)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.87038547, 0.09420076, -0.14697444, 0.0124507435, 1.0062826, 0.17484036, 0.2707879, -0.34905496, 0.46437663, 0.02063702, 0.23514013, -0.091499776)
+shape = SubResource("CylinderShape3D_5e757")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_1g4lx")

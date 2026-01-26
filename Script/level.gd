@@ -53,75 +53,79 @@ func show_hide_blink_screen(show:bool):
 	$BlinkCanvasLayer.visible = false
 	
 func spawn_level_block():
-	var currentLevel = GameTimer.current_level
+	var currentLevel = GameTimer.current_level-1
 	print(grid.size())
-	var listOfBlocks = grid[currentLevel-1]
+	print("Level")
+	print(str(currentLevel))
+	var listOfBlocks = grid[currentLevel]
+	
 	for n in range(listOfBlocks.size()):
+		print(listOfBlocks[n])
 		if listOfBlocks[n]==1:
-			addScenes(level_block1, n)
+			addScenes(level_block1, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==2:
-			addScenes(level_block2, n)
+			addScenes(level_block2, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==3:
-			addScenes(level_block3, n)
+			addScenes(level_block3, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==4:
-			addScenes(level_block4, n)
+			addScenes(level_block4, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==5:
-			addScenes(level_block5, n)
+			addScenes(level_block5, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==6:
-			addScenes(level_block6, n)
+			addScenes(level_block6, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==7:
-			addScenes(level_block7, n)
+			addScenes(level_block7, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==8:
-			addScenes(level_block8, n)
+			addScenes(level_block8, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==9:
-			addScenes(level_block9, n)
+			addScenes(level_block9, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==10:
-			addScenes(level_block10, n)
+			addScenes(level_block10, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==11:
-			addScenes(level_block11, n)
+			addScenes(level_block11, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==12:
-			addScenes(level_block12, n)
+			addScenes(level_block12, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==13:
-			addScenes(level_block13, n)
+			addScenes(level_block13, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==14:
-			addScenes(level_block14, n)
+			addScenes(level_block14, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==15:
-			addScenes(level_block15, n)
+			addScenes(level_block15, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==16:
-			addScenes(level_block16, n)
+			addScenes(level_block16, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==17:
-			addScenes(level_block17, n)
+			addScenes(level_block17, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==18:
-			addScenes(level_block18, n)
+			addScenes(level_block18, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==19:
-			#addScenes(level_block19, n)
+			addScenes(level_block19, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==20:
-			addScenes(level_block20, n)
+			addScenes(level_block20, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==21:
-			addScenes(level_block21, n)
+			addScenes(level_block21, n,currentLevel)
 			pass
 		if  listOfBlocks[n]==0:
-			addScenes(empty_block, n)
+			addScenes(empty_block, n,currentLevel)
 			pass
 		
 		
@@ -139,9 +143,15 @@ func spawn_level_block():
 	#instance3.global_position.y = spawn_pos2.y
 	#add_child(instance3)
 	pass
-func addScenes (scene : PackedScene,  index:int):
+func addScenes (scene : PackedScene,  index:int, currentLevel :int):
 	var instance := scene.instantiate()
 	var spawn_pos = $Node3D/Level/SpawnBlock1.global_position if index ==0 else $Node3D/Level/SpawnBlock2.global_position
 	instance.global_position.y = spawn_pos.y
+	if currentLevel % 11 == 0:
+		instance.show_key_jetpack()
+	else :
+		instance.hide_key_jetpack()
+	if currentLevel  == 0:
+		instance.show_key_jetpack()
 	add_child(instance)
 	pass

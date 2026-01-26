@@ -42,6 +42,7 @@ func _on_no_thanks_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	#queue_free()
+	GameTimer.decrease_level()
 	get_tree().reload_current_scene()
 	pass # Replace with function body.
 	

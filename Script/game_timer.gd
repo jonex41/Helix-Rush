@@ -54,6 +54,9 @@ func puase_lossing_stat()->void:
 	pause_loosing_for_seconds= false
 func increase_level()-> void:
 	current_level+=1
+
+func decrease_level()-> void:
+	current_level-=1
 	
 func increase_ball_bounce()-> void:
 	if can_count_bounce:
