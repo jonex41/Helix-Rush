@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpt843tx1ajru"]
+[gd_scene load_steps=6 format=3 uid="uid://dpt843tx1ajru"]
 
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_3viul"]
 [ext_resource type="PackedScene" uid="uid://p8b4t3vvfa61" path="res://Scene/Blocks/BasicOneSpace/luncher_big_ring.tscn" id="2_4uicn"]
 [ext_resource type="PackedScene" uid="uid://o0sbv3fe1fs5" path="res://Scene/Blocks/BasicOneSpace/luncher_side_right_big_ring.tscn" id="3_3viul"]
+[ext_resource type="PackedScene" uid="uid://bdalbkl2781jm" path="res://Scene/key.tscn" id="4_4uicn"]
+[ext_resource type="PackedScene" uid="uid://d4bjdxskuibcm" path="res://Scene/jetpack_pick.tscn" id="5_ap4i7"]
 
 [node name="LevelBlock1" type="Node3D"]
 
@@ -47,3 +49,9 @@ transform = Transform3D(-0.8949343, 0, 0.4461977, 0, 1, 0, -0.4461977, 0, -0.894
 [node name="Coins" type="Node3D" parent="Node3D"]
 
 [node name="Key" type="Node3D" parent="Node3D"]
+
+[node name="Key" parent="Node3D/Key" instance=ExtResource("4_4uicn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56134033, 4.221878, 0.6056061)
+
+[node name="JetpackPick" parent="Node3D/Key" instance=ExtResource("5_ap4i7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7887192, 6.3537903, 0)

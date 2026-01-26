@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdalbkl2781jm"]
+[gd_scene load_steps=5 format=3 uid="uid://bdalbkl2781jm"]
 
-[ext_resource type="PackedScene" path="res://Assets/key.glb" id="1_56wr5"]
+[ext_resource type="PackedScene" uid="uid://2ui5ihjdc1lo" path="res://Assets/key.glb" id="1_56wr5"]
 [ext_resource type="Script" uid="uid://beyryvdk3i76j" path="res://Script/key.gd" id="1_eg3k7"]
+[ext_resource type="PackedScene" uid="uid://chsmvj25xgvbr" path="res://Scene/pick_up_vfx.tscn" id="3_se02u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_56wr5"]
+size = Vector3(1, 1.3671875, 1.4562988)
 
 [node name="Key" type="StaticBody3D"]
 script = ExtResource("1_eg3k7")
@@ -11,10 +13,13 @@ script = ExtResource("1_eg3k7")
 [node name="Area3d" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3d"]
-transform = Transform3D(0.685, 0, 0, 0, 0.685, 0, 0, 0, 0.685, 0, 0.32730812, 0)
+transform = Transform3D(0.685, 0, 0, 0, 0.685, 0, 0, 0, 0.685, 0, 0.45306984, 0.013295293)
 shape = SubResource("BoxShape3D_56wr5")
 
 [node name="key2" parent="Area3d" instance=ExtResource("1_56wr5")]
 transform = Transform3D(0.014338099, -0.037743334, 0, 0.037743334, 0.014338099, 0, 0, 0, 0.040375, 0, 0.1261856, 0)
+
+[node name="PickUpVfx" parent="." instance=ExtResource("3_se02u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9643797, 0)
 
 [connection signal="body_entered" from="Area3d" to="." method="_on_area_3d_body_entered"]

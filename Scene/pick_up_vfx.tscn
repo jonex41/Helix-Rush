@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://chsmvj25xgvbr"]
+
+[ext_resource type="Shader" uid="uid://c7b35i5eylpih" path="res://shader/pick_up.tres" id="1_7i456"]
+[ext_resource type="Texture2D" uid="uid://yhhjt8l81dpv" path="res://Assets/texture/T_Aura7.png" id="2_hmn6k"]
+[ext_resource type="Texture2D" uid="uid://8ilo7uqi2sl1" path="res://Assets/images/Icon_Small_CoinDollar.png" id="3_hmn6k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2nfeh"]
+render_priority = 0
+shader = ExtResource("1_7i456")
+shader_parameter/main_color2 = Color(0.3019608, 1, 1, 1)
+shader_parameter/transparency_color = ExtResource("2_hmn6k")
+shader_parameter/BlinkingSpeed = 8.0
+shader_parameter/ProximityFade = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_weado"]
+size = Vector2(1, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nfeh"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
+albedo_texture = ExtResource("3_hmn6k")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_weado"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9731183, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rf8cv"]
+curve = SubResource("Curve_weado")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jb00h"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.2
+emission_ring_cone_angle = 90.0
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.39999998
+initial_velocity_max = 0.79999995
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_rf8cv")
+color = Color(0.4, 0.8, 0.90588236, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_in8j6"]
+
+[node name="PickUpVfx" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3493042, 0)
+material_override = SubResource("ShaderMaterial_2nfeh")
+mesh = SubResource("QuadMesh_weado")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04655838, 0.63531494, 0)
+material_override = SubResource("StandardMaterial3D_2nfeh")
+amount = 10
+lifetime = 3.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_jb00h")
+draw_pass_1 = SubResource("QuadMesh_in8j6")
