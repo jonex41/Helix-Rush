@@ -18,6 +18,7 @@ var can_count_bounce = false
 var is_playing = false
 var can_play_sound = false
 var can_vibrate = true
+var current_color_background: float = 0
 
 
 
@@ -72,7 +73,11 @@ func set_is_playing(is_playing_inner: bool) :
 func set_can_play_sound(can_play: bool) :
 	can_play_sound = can_play	
 
+func increase_current_color_background()-> void:
+	current_color_background+=1
 
+func decrease_current_color_background()-> void:
+	current_color_background-=1
 func reset():
 
 	bounce_count = 0

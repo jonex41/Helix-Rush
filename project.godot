@@ -29,6 +29,7 @@ EventBus="*res://Script/event_bus.gd"
 ScoreManager="*res://Script/score_manager.gd"
 GameTimer="*res://Script/game_timer.gd"
 SceneManager="*res://Script/scene_manager.gd"
+FlatMaterials="*uid://c8h4fpot4tqwp"
 
 [display]
 

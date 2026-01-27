@@ -1,4 +1,9 @@
 extends Node3D
+
+@onready var world_env := $WorldEnvironment
+@onready var sky_mat: ShaderMaterial = (
+	world_env.environment.sky.sky_material as ShaderMaterial
+)
 var level_block1 :Resource= preload("res://Scene/Levels/LevelSegments/level_block1.tscn")
 var level_block2 :Resource= preload("res://Scene/Levels/LevelSegments/level_block2.tscn")
 var level_block3 :Resource= preload("res://Scene/Levels/LevelSegments/level_block3.tscn")
@@ -27,13 +32,83 @@ var grid: Array = [
 
 
 ]
+var colorGrid = [
+	["#2E3192",	"#1BFFFF"],
+	[	"#D4145A"	,"#FBB03B"],
+	[	"#009245",	"#FCEE21" ],
+	[	"#11998E",	"#38EF7D"],
+	[	"#FFECD2",	"#FCB69F"],
+	[	"#00FF87",	"#60EFFF"],
+	[	"#FF1B6B",	"#45CAFF"],
+	[	"#40C9FF",	"#E81CFF"],
+	[	"#FFA585",	"#FFEDA0"],
+	[	"#9BAFD9",	"#103783"],
+	[	"#82F4B1",	"#30C67C"],
+	#chatgpt
+	["#2193FF ","#6E3AFF"],
+	["#FF512F",  "#DD2476"],
+	["#00F5FF",  "#0061FF"],
+	["#8E2DE2",  "#FF6FD8"],
+	["#89F7FE",  "#66A6FF"],
+	["#A8E6CF"  ,"#FDFFAB"],
+	["#C3A3FF",  "#FFB7A5"],
+	["#A1C4FD",  "#FBC2EB"],
+	["#1A0638",  "#0F4C75"],
+	["#000000",  "#8B0000"],
+	["#0F2027",  "#2C5364"],
+	["#00FF88" , "#001A12"],
+	["#FFD200" , "#FF7A00"],
+	["#FF416C" , "#FF4B2B"],
+	["#00C6FF",  "#0072FF"],
+	["#FF00CC" , "#333399"],
+	["#56AB2F" , "#FBD786"],
+	["#134E5E" , "#71B280"],
+	["#5A3F37" , "#2C7744"],
+	["#FFB347",  "#FFCC33" ,"#87CEEB"],
+	["#FF5F6D",  "#FFC371"],
+	["#8E2DE2"  ,"#FF6FD8" , "#FFD1DC"],
+	["#FFAF7B" , "#FFD194" ,"#87CEFA"],
+	["#87CEEB",  "#4FACFE"],
+	["#00C6FF",  "#0072FF"],
+	["#A1C4FD" , "#C2E9FB"],
+	["#74B9FF",  "#0984E3"],
+	["#FBD3A3",  "#87CEEB"],
+	["#D7E1EC" , "#A3BDCC"],
+	["#E0EAFC",  "#CFDEF3"],
+	["#FF512F" , "#DD2476"],
+	["#FF8008" , "#753A88"],
+	["#FF416C" , "#FF4B2B" , "#1F1C2C"],
+	["#FEC163",  "#DE4313"],
+	["#2C5364",  "#203A43",  "#0F2027"],
+	["#4B6CB7" , "#182848"],
+	["#6A5ACD",  "#483D8B"],
+	["#0F2027" ,"#203A43",  "#2C5364"],
+	["#020024" , "#090979" , "#000000"],
+	["#050A30" , "#000000"],
+	["#BDC3C7" , "#2C3E50"],
+	["#232526",  "#414345"],
+	["#141E30" , "#243B55"],
+	["#00C9FF" , "#92FE9D"],
+	["#FBC2EB" , "#A6C1EE"],
+	["#3A1C71" , "#D76D77",  "#FFAF7B"],
+	["#41295A" , "#2F0743"],
+	
+]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cycle_sky_gradient_new()
 	spawn_level_block()
 	
 	
 	pass # Replace with function body.
-
+	
+func cycle_sky_gradient_new() -> void:
+	var total_pairs:float = colorGrid.size() 
+	GameTimer.current_color_background =fmod( (GameTimer.current_color_background + 1) , total_pairs)
+	sky_mat.set_shader_parameter("skyColor", Color.html(colorGrid[GameTimer.current_color_background][0]))
+	sky_mat.set_shader_parameter("horizonColor", Color.html(colorGrid[GameTimer.current_color_background][1]))
+	pass
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

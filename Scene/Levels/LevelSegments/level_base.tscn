@@ -2,27 +2,34 @@
 
 [ext_resource type="Script" uid="uid://dk06f37dawspa" path="res://Script/level.gd" id="1_iijdn"]
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="2_7eref"]
+[ext_resource type="Shader" uid="uid://d1q1fiku5x8ku" path="res://shader/sky_shader.gdshader" id="2_j8rdk"]
 [ext_resource type="Script" uid="uid://cqdu0t74wpddi" path="res://Script/level_block_1.gd" id="3_j8rdk"]
 [ext_resource type="PackedScene" uid="uid://bywp8rinwm0sp" path="res://Scene/camera_rig.tscn" id="14_yuq13"]
-[ext_resource type="Texture2D" uid="uid://6dmjtlpfk3hm" path="res://Assets/images/sky.jpg" id="15_is2a6"]
 [ext_resource type="PackedScene" uid="uid://ci01jxyccmjtu" path="res://Scene/base.tscn" id="16_vwm6b"]
 [ext_resource type="PackedScene" uid="uid://cjjl1y3eyfvk0" path="res://Scene/mean_menu.tscn" id="17_an35y"]
 [ext_resource type="PackedScene" uid="uid://b7flm5edrnc3r" path="res://Scene/spawn_point.tscn" id="18_c0tx2"]
 [ext_resource type="PackedScene" uid="uid://7lcwgay4rs3n" path="res://Scene/blink_layer.tscn" id="19_o3r7s"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_btxmf"]
-panorama = ExtResource("15_is2a6")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe3wc"]
+shader = ExtResource("2_j8rdk")
+shader_parameter/skyColor = Color(1, 0.31764707, 0.18431373, 1)
+shader_parameter/horizonColor = Color(0.5349078, 0.39815497, 0.819144, 1)
 
-[sub_resource type="Sky" id="Sky_k0fkb"]
-sky_material = SubResource("PanoramaSkyMaterial_btxmf")
-radiance_size = 0
+[sub_resource type="Sky" id="Sky_l2irs"]
+sky_material = SubResource("ShaderMaterial_fe3wc")
 
-[sub_resource type="Environment" id="Environment_3d31u"]
+[sub_resource type="Environment" id="Environment_lsgyi"]
 background_mode = 2
-background_energy_multiplier = 1.18
-sky = SubResource("Sky_k0fkb")
-sky_custom_fov = 59.0
-reflected_light_source = 2
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.7
+sky = SubResource("Sky_l2irs")
+sky_rotation = Vector3(-0.83775806, 0, 0)
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+tonemap_mode = 2
+tonemap_exposure = 0.35
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_btxmf"]
 emission_shape = 3
@@ -39,6 +46,9 @@ height = 0.01
 
 [node name="LevelBase" type="Node3D" unique_id=949538127]
 script = ExtResource("1_iijdn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036549846]
+environment = SubResource("Environment_lsgyi")
 
 [node name="Rod" parent="." unique_id=9971236 instance=ExtResource("2_7eref")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 10.116836, 0, -1.509958e-07, 0, -1, 0, 9.456473, 0)
@@ -62,9 +72,6 @@ script = ExtResource("3_j8rdk")
 
 [node name="CameraRig" parent="." unique_id=1109486061 instance=ExtResource("14_yuq13")]
 transform = Transform3D(-1, -1.6712052e-08, -1.4501353e-07, 2.4363802e-08, 0.9603812, -0.2786894, 1.4392576e-07, -0.2786894, -0.9603812, 0.48168015, -0.44955635, -2.065948)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1957005041]
-environment = SubResource("Environment_3d31u")
 
 [node name="Base" parent="." unique_id=630986293 instance=ExtResource("16_vwm6b")]
 transform = Transform3D(1.3242972, 0, 0, 0, 1, 0, 0, 0, 1.3242972, 0, -0.72038364, 0)
@@ -91,5 +98,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.96151686)
 
 [node name="BlinkCanvasLayer" parent="." unique_id=1741975763 groups=["Levels"] instance=ExtResource("19_o3r7s")]
 visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=230916194]
+transform = Transform3D(-0.99999094, 0, 0.0042586327, 0, 1, 0, -0.0042586327, 0, -0.99999094, 0, 0.78948, -3.594263)
+light_energy = 2.0
+light_indirect_energy = 8.769
+light_bake_mode = 1
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 1.0
+sky_mode = 1
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="." unique_id=1125667653]
+transform = Transform3D(-0.99999094, 2.9103569e-11, 0.004258632, -0.0042399764, 0.09350018, -0.99561024, -0.0003981829, -0.9956193, -0.09349933, 1.8818035, -3.7180984, -1.3674119)
+light_energy = 1.2
+light_bake_mode = 1
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 1.0
+sky_mode = 1
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="." unique_id=2044293395]
+transform = Transform3D(0.9840708, 0.15353532, 0.08961989, -0.117659524, 0.1845742, 0.9757503, 0.13327062, -0.97075194, 0.19969897, 0.076263666, 19.845795, -0.34824646)
+light_energy = 0.75
+light_bake_mode = 1
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 1.0
+sky_mode = 1
 
 [connection signal="body_entered" from="GameFinish/Area3D" to="." method="_on_area_3d_body_entered"]
