@@ -43,7 +43,7 @@ func _integrate_forces(state):
 			GameTimer.increase_ball_bounce()
 			if  GameTimer.can_play_sound:
 				$AudioStreamPlayer3D.play()
-			_spawn_decal(state, point, normal)
+			#_spawn_decal(state, point, normal)
 			bounce_cooldown = true
 			
 			break

@@ -5,7 +5,7 @@ extends StaticBody3D
 @export var base_area: NodePath
 
 @onready var other := get_node(target)
-@onready var other2 := get_node(base_area)
+
 
 
 

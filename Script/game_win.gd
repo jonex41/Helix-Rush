@@ -10,7 +10,7 @@ func _ready() -> void:
 	view_size = get_viewport().get_visible_rect().size
 
 	spawn_firewaork()
-	GameTimer.increase_level()
+	
 	ScoreManager.reset()
 	#await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://reward_system.tscn")
@@ -51,3 +51,11 @@ func _on_button_pressed() -> void:
 func _on_timer_timeout() -> void:
 	spawn_firewaork()
 	pass # Replace with function body.
+
+
+func _on_replay_btn_pressed() -> void:
+	GameTimer.decrease_level()
+	get_tree().reload_current_scene()
+	pass # Replace with function body.
+	
+	

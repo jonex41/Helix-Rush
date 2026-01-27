@@ -4,7 +4,8 @@ var running := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$MarginContainer/VBoxContainer/HBoxContainer/Panel/HBoxContainer/levelLabel.text = "X"+str(GameTimer.current_level)
+	$MarginContainer/VBoxContainer/HBoxContainer/Panel/HBoxContainer/levelLabel.text = "Lv"+str(GameTimer.current_level)
+	#$MarginContainer/VBoxContainer/HBoxContainer/Panel/HBoxContainer/levelLabel.text = "X"+str(1)
 	pass # Replace with function body.
 
 

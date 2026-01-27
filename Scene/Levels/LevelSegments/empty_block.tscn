@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxtqkkupqyo7l"]
+[gd_scene format=3 uid="uid://dxtqkkupqyo7l"]
 
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_wx7wa"]
 [ext_resource type="Script" uid="uid://du4h6f1a3wfq" path="res://Script/level_block.gd" id="1_yqdpy"]
 [ext_resource type="PackedScene" uid="uid://d2i5om2rgqt0d" path="res://Scene/Blocks/BasicOneSpace/luncher_side_big_ring.tscn" id="2_g4eve"]
 
-[node name="LevelBlock1" type="Node3D"]
+[node name="LevelBlock1" type="Node3D" unique_id=152561599]
 script = ExtResource("1_yqdpy")
 
-[node name="Rod" parent="." instance=ExtResource("1_wx7wa")]
+[node name="Rod" parent="." unique_id=2088678658 instance=ExtResource("1_wx7wa")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
 visible = false
 target = NodePath("../Node3D")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=1109564211]
 
-[node name="Rings" type="Node3D" parent="Node3D"]
+[node name="Rings" type="Node3D" parent="Node3D" unique_id=213861012]
 
-[node name="LuncherSideBigRing" parent="Node3D/Rings" instance=ExtResource("2_g4eve")]
+[node name="LuncherSideBigRing" parent="Node3D/Rings" unique_id=819449459 instance=ExtResource("2_g4eve")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.987, 0)
 
-[node name="Coins" type="Node3D" parent="Node3D"]
+[node name="Coins" type="Node3D" parent="Node3D" unique_id=472173627]
 
-[node name="Key" type="Node3D" parent="Node3D"]
+[node name="Key" type="Node3D" parent="Node3D" unique_id=1064227721]

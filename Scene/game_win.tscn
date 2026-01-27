@@ -1,41 +1,22 @@
-[gd_scene load_steps=27 format=3 uid="uid://8drfi8rjl2pr"]
+[gd_scene format=3 uid="uid://8drfi8rjl2pr"]
 
 [ext_resource type="Script" uid="uid://b2lxm8grsw1v7" path="res://Script/game_win.gd" id="1_d6k10"]
 [ext_resource type="Texture2D" uid="uid://dv0ip87jnyluf" path="res://Assets/images/Icon_Large_StarGrey.png" id="2_6748t"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_pdaxk"]
-[ext_resource type="Texture2D" uid="uid://b2awidx1w5er3" path="res://Assets/images/Icon_Large_StarGrey_WhiteOutline.png" id="3_pdaxk"]
-[ext_resource type="Texture2D" uid="uid://c55ne4nwgp4ma" path="res://Assets/images/PremadeButtons_Replay.png" id="4_s46eg"]
+[ext_resource type="Script" uid="uid://ckbdc3xxv5kdc" path="res://Script/star_1.gd" id="5_gkxye"]
 [ext_resource type="PackedScene" uid="uid://dhllw8nd600sk" path="res://Scene/firework2d.tscn" id="6_pdaxk"]
+[ext_resource type="Script" uid="uid://8bgs0dxrmos4" path="res://Script/star_2.gd" id="6_vv2qi"]
+[ext_resource type="PackedScene" uid="uid://b815lhu2eb36k" path="res://Scene/reward_system.tscn" id="7_s46eg"]
+[ext_resource type="Script" uid="uid://c6nr5lsq7ow2j" path="res://Script/star_3.gd" id="7_vv2qi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql48a"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3ki1"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqhi7"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xvpb"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7bcc"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1n1g"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8jwn"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgbmq"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my8sg"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fl3y"]
-bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+shadow_color = Color(0.88235295, 0.23921569, 0.09019608, 1)
+shadow_size = 22
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6748t"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
@@ -67,91 +48,116 @@ bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhtk7"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
 
-[node name="GameWin" type="CanvasLayer"]
+[node name="GameWin" type="CanvasLayer" unique_id=1090034403]
 script = ExtResource("1_d6k10")
 
-[node name="CPUParticles2D" parent="." instance=ExtResource("6_pdaxk")]
+[node name="CPUParticles2D" parent="." unique_id=1015806112 instance=ExtResource("6_pdaxk")]
 amount = 100
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=205554632]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.07450981, 0.07450981, 0.07450981, 0.7607843)
+color = Color(0.07846785, 0.07846785, 0.07846785, 0.9480001)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=698558567]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -11.5
-offset_right = 0.5
-offset_bottom = 11.5
+offset_left = -500.0
+offset_top = -860.0
+offset_right = 483.214
+offset_bottom = 840.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=908319127]
 layout_mode = 2
 theme_override_constants/outline_size = 135
 theme_override_fonts/font = ExtResource("2_pdaxk")
-theme_override_font_sizes/font_size = 130
+theme_override_font_sizes/font_size = 97
 text = "Hurray you Win!!!
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1230869318]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 92
+
+[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/HBoxContainer" unique_id=1228805411]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer3" unique_id=860235785]
+custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ql48a")
+
+[node name="Star1" type="TextureRect" parent="VBoxContainer/HBoxContainer/CenterContainer3" unique_id=643731502]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 0
 texture = ExtResource("2_6748t")
+expand_mode = 2
+script = ExtResource("5_gkxye")
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer" unique_id=1417503897]
 layout_mode = 2
-texture = ExtResource("3_pdaxk")
 
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer2" unique_id=1577669542]
+custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ql48a")
+
+[node name="Star2" type="TextureRect" parent="VBoxContainer/HBoxContainer/CenterContainer2" unique_id=914686788]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_vertical = 0
 texture = ExtResource("2_6748t")
+expand_mode = 2
+script = ExtResource("6_vv2qi")
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer" unique_id=215066285]
 layout_mode = 2
-theme_override_constants/margin_top = 130
-theme_override_constants/margin_bottom = 100
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer" unique_id=874593118]
+custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ql48a")
+
+[node name="Star3" type="TextureRect" parent="VBoxContainer/HBoxContainer/CenterContainer" unique_id=532094438]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_6748t")
+expand_mode = 2
+script = ExtResource("7_vv2qi")
+
+[node name="Reward" parent="VBoxContainer" unique_id=234166329 instance=ExtResource("7_s46eg")]
+custom_minimum_size = Vector2(600, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=317650000]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+theme_override_constants/margin_bottom = 22
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2" unique_id=1001432425]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 203
 alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
-layout_mode = 2
-
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_s46eg")
-
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
-theme_override_styles/normal = SubResource("StyleBoxFlat_ql48a")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_r3ki1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gqhi7")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_4xvpb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c7bcc")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_e1n1g")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_x8jwn")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pgbmq")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_my8sg")
-theme_override_styles/focus = SubResource("StyleBoxFlat_1fl3y")
-flat = true
-
-[node name="continue" type="Button" parent="VBoxContainer"]
+[node name="continue" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1545435272]
+custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pdaxk")
 theme_override_font_sizes/font_size = 100
@@ -169,12 +175,29 @@ text = "Continue"
 flat = true
 autowrap_mode = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1612134038]
+layout_mode = 2
 
-[node name="Timer" type="Timer" parent="."]
+[node name="ReplayBtn" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer" unique_id=1770239080]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pdaxk")
+theme_override_font_sizes/font_size = 115
+text = "Replay"
+flat = true
+icon_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=577986245]
+
+[node name="Timer" type="Timer" parent="." unique_id=1001528741]
 wait_time = 0.4
 autostart = true
 
-[connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_no_thanks_pressed"]
+[node name="Marker2D" type="Marker2D" parent="." unique_id=597054596]
+position = Vector2(49, 1845)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=368727803]
+position = Vector2(550, 952)
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer/continue" to="." method="_on_no_thanks_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

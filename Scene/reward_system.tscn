@@ -1,22 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://b815lhu2eb36k"]
+[gd_scene format=3 uid="uid://b815lhu2eb36k"]
 
 [ext_resource type="PackedScene" uid="uid://c1kefqcinplw4" path="res://Script/spining_wheel_mean.tscn" id="1_ko6hv"]
 [ext_resource type="Script" uid="uid://vvqp030w7ghc" path="res://Script/reward_system.gd" id="1_u1yxu"]
 [ext_resource type="Texture2D" uid="uid://rq5gm6shv01" path="res://Assets/level/spin_wheel_arrow.png" id="2_tvlqe"]
 [ext_resource type="PackedScene" uid="uid://o2faoesl5kb4" path="res://Scene/cancel_button.tscn" id="4_6ttjh"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="4_gh30k"]
 
-[node name="Reward" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rma5b"]
+bg_color = Color(0, 0, 0, 0.53000003)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Reward" type="Control" unique_id=234166329]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -1414.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
 script = ExtResource("1_u1yxu")
 
-[node name="RewardSystem" type="CanvasLayer" parent="."]
+[node name="RewardSystem" type="CanvasLayer" parent="." unique_id=873514294]
 
-[node name="CenterContainer" type="Control" parent="."]
+[node name="CenterContainer" type="Control" parent="." unique_id=1300442200]
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 1
 anchors_preset = 14
@@ -28,30 +43,32 @@ offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SpiningWheel" parent="CenterContainer" instance=ExtResource("1_ko6hv")]
+[node name="SpiningWheel" parent="CenterContainer" unique_id=878136814 instance=ExtResource("1_ko6hv")]
 layout_mode = 1
-segments = 5
-full_spins = 12
-spin_duration = 4.5
-ease_in_ratio = 0.1
 
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1846064144]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = -1
-offset_left = 490.0
-offset_top = 85.0
-offset_right = 590.0
-offset_bottom = 185.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
 grow_horizontal = 2
+grow_vertical = 2
 pivot_offset = Vector2(101.09894, 1.098877)
 size_flags_horizontal = 6
 size_flags_vertical = 2
 texture = ExtResource("2_tvlqe")
 expand_mode = 1
+flip_v = true
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(400, 100)
+[node name="Button" type="Button" parent="." unique_id=1407311282]
+custom_minimum_size = Vector2(400, 150)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,14 +76,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = 325.0
+offset_top = 444.0
 offset_right = 200.0
-offset_bottom = 425.0
+offset_bottom = 594.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_gh30k")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/normal = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_rma5b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rma5b")
 text = "Spin"
 
-[node name="TextureButton" parent="." instance=ExtResource("4_6ttjh")]
+[node name="TextureButton" parent="." unique_id=738153549 instance=ExtResource("4_6ttjh")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 offset_left = 85.0

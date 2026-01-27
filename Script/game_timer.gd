@@ -20,6 +20,7 @@ var can_play_sound = false
 var can_vibrate = true
 
 
+
 	
 func reduce_power_antigravity()-> void:
 	initial_power_antigravity-=1
@@ -61,6 +62,7 @@ func decrease_level()-> void:
 func increase_ball_bounce()-> void:
 	if can_count_bounce:
 		bounce_count+=1
+		
 	
 func can_count_num_bounce(canCount: bool)-> void:
 	can_count_bounce = canCount
@@ -75,6 +77,7 @@ func reset():
 
 	bounce_count = 0
 	can_count_bounce = false
+	
 	
 
 

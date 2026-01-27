@@ -44,6 +44,10 @@ func _on_area_3d_body_entered(_body: Node3D) -> void:
 	GameTimer.set_is_playing(false) 
 	var scene = preload("res://Scene/game_win.tscn")
 	var instance = scene.instantiate()
+	GameTimer.increase_level()
+
+	
+	$GameFinish/Area3D.set_deferred("monitoring", false)
 	add_child(instance)
 	pass # Replace with function body.
 
@@ -54,6 +58,7 @@ func show_hide_blink_screen(show:bool):
 	
 func spawn_level_block():
 	var currentLevel = GameTimer.current_level-1
+	
 	print(grid.size())
 	print("Level")
 	print(str(currentLevel))
