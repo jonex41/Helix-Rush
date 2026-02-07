@@ -1,28 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://ci5h61rk5k41r"]
+[gd_scene format=3 uid="uid://bs32aypdyrfv3"]
 
-[ext_resource type="Script" uid="uid://chx1jcb5wkq6d" path="res://Script/ball.gd" id="1_c2f4g"]
-[ext_resource type="PackedScene" uid="uid://b2dqk18xw6hct" path="res://Scene/bounce_decal.tscn" id="2_eg6sw"]
+[ext_resource type="Script" uid="uid://cwqii5qlqd3xk" path="res://Script/football_ruggy.gd" id="1_jyxn8"]
 [ext_resource type="AudioStream" uid="uid://df1mco6cf2uif" path="res://Assets/Audio/coin.ogg" id="2_x3mvt"]
-[ext_resource type="PackedScene" uid="uid://bcohd6c4eqykv" path="res://Scene/jet_pack.tscn" id="3_kmbr2"]
+[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="3_kmbr2"]
 [ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="4_kq75t"]
+[ext_resource type="PackedScene" uid="uid://bejixuru0b0h7" path="res://Assets/ball.glb" id="5_eg6sw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
 friction = 0.0
 bounce = 1.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0auh2"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_0wd17"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wd17"]
-albedo_color = Color(1, 0.21568628, 1, 1)
-metallic = 1.0
-roughness = 0.35
-emission_enabled = true
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_0wd17"]
 
-[node name="Ball" type="RigidBody3D" groups=["Player"]]
+[node name="Ball" type="RigidBody3D" unique_id=1117598942 groups=["Player"]]
 transform = Transform3D(4.563, 0, 0, 0, 4.563, 0, 0, 0, 4.563, 0, 0, 0)
 axis_lock_linear_x = true
 axis_lock_linear_z = true
@@ -30,34 +20,29 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_c2f4g")
-contact_monitor = true
-max_contacts_reported = 100
-script = ExtResource("1_c2f4g")
-decal_scene = ExtResource("2_eg6sw")
+script = ExtResource("1_jyxn8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_0auh2")
-mesh = SubResource("SphereMesh_0wd17")
-surface_material_override/0 = SubResource("StandardMaterial3D_0wd17")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813607997]
 transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
 shape = SubResource("SphereShape3D_0wd17")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(2.3094687, 0, 0, 0, 2.3094687, 0, 0, 0, 2.3094687, 1.4239687, 0, 0)
-light_color = Color(1, 0, 1, 1)
-light_energy = 0.5
-omni_range = 0.2
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1843045290]
 stream = ExtResource("2_x3mvt")
+volume_db = 44.484
 
-[node name="JetPack" parent="." instance=ExtResource("3_kmbr2")]
-transform = Transform3D(0.026616454, 0, -0.11701095, 0, 0.12, 0, 0.11701095, 0, 0.026616454, 0, -0.11821144, -0.34486005)
+[node name="JetPack" parent="." unique_id=1835005919 instance=ExtResource("3_kmbr2")]
+transform = Transform3D(0.020837778, 0, -0.118176915, 0, 0.12, 0, 0.118176915, 0, 0.020837778, 0, -0.050181255, -0.20067236)
 visible = false
 
-[node name="GPUTrail3D" parent="." instance=ExtResource("4_kq75t")]
+[node name="GPUTrail3D" parent="." unique_id=157134242 instance=ExtResource("4_kq75t")]
+transform = Transform3D(-3.496911e-09, -0.08, 0, 0.08, -3.496911e-09, 0, 0, 0, 0.08, 0, -0.056637704, 0)
+amount = 16
+amount_ratio = 0.995
+lifetime = 21.0
+length = 21
+length_seconds = 0.35
+
+[node name="ball" parent="." unique_id=897850433 instance=ExtResource("5_eg6sw")]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

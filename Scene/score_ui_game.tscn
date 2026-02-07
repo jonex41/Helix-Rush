@@ -1,0 +1,461 @@
+[gd_scene format=3 uid="uid://bqgop24ot0ffs"]
+
+[ext_resource type="Script" uid="uid://dc74ytay0p610" path="res://Script/score_ui_game.gd" id="1_p4xow"]
+[ext_resource type="Texture2D" uid="uid://dodi54s8o7mqc" path="res://Assets/images/Icon_Small_Diamond.png" id="2_rbf1k"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_wu80v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu80v"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i14bu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fd6ab"]
+bg_color = Color(0.13335153, 0.38709083, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdeak"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npvfl"]
+bg_color = Color(0.42744142, 0.6694196, 0.88249177, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipu2c"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 1
+shadow_offset = Vector2(1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4xow"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=477187516]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1728819397]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16206557, 0.1620656, 0.16206557, 0.65500003)
+
+[node name="ScoreUiGame" type="Control" parent="." unique_id=495554270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 325.0
+offset_right = -40.0
+offset_bottom = -560.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = ExtResource("1_p4xow")
+
+[node name="Label" type="Label" parent="ScoreUiGame" unique_id=515430655]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 453.0
+offset_bottom = 170.0
+theme_override_font_sizes/font_size = 95
+text = "Excellent"
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame" unique_id=167744061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wu80v")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer" unique_id=266414075]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer" unique_id=216205119]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i14bu")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer" unique_id=270664159]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="Control" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer" unique_id=731051603]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control" unique_id=1370302017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fd6ab")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer" unique_id=397024524]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=1622234351]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer" unique_id=1789103433]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdeak")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer" unique_id=1587001057]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="PanelContainer2" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=1992988070]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer2" unique_id=353875846]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1028452522]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=78497707]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 55
+text = "Perfect Bounce"
+
+[node name="Label2" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=246266995]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 35
+text = "
+(Green)"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=1453634409]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer3" unique_id=182674781]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 49
+
+[node name="GreenScore" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=824867380]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipu2c")
+text = "  100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=2061413468]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_rbf1k")
+expand_mode = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=1663316034]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2" unique_id=77966195]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdeak")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer" unique_id=1360846395]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="PanelContainer2" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer" unique_id=2027613708]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer2" unique_id=1119967723]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=119840302]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=869517017]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 55
+text = "Good Bounce"
+
+[node name="Label2" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1248363820]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 30
+text = "
+(Green-
+Yellow)"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer" unique_id=901027515]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer3" unique_id=1060862085]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 49
+
+[node name="GreenYellowScore" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=2010632613]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipu2c")
+text = "  100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=1774805142]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_rbf1k")
+expand_mode = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=1774833713]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3" unique_id=1507111544]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdeak")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer" unique_id=1072578337]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="PanelContainer2" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer" unique_id=1835937574]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer2" unique_id=895881976]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=463696391]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1947608727]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 55
+text = "Three Bounce"
+
+[node name="Label2" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1410699701]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 35
+text = "
+(Red)"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer" unique_id=1432698145]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer3" unique_id=1465421056]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 49
+
+[node name="RedScore" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=725129335]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipu2c")
+text = "  100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer3/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=1801531714]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_rbf1k")
+expand_mode = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=2125588153]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer5" unique_id=289724864]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4xow")
+
+[node name="MarginContainer4" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=156200614]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4" unique_id=2004355045]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdeak")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer" unique_id=379937321]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="PanelContainer2" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer" unique_id=1290554430]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer2" unique_id=1978946020]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1473919506]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1538525597]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 96
+text = "Total"
+
+[node name="Label2" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer2/HBoxContainer" unique_id=1190081927]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer" unique_id=232130325]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_npvfl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer3" unique_id=295287069]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 49
+
+[node name="TotalScore" type="Label" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=987676270]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_ipu2c")
+text = "  200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/MarginContainer4/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer" unique_id=1221233639]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_rbf1k")
+expand_mode = 1
+
+[node name="MarginContainer6" type="MarginContainer" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=1711473625]
+layout_mode = 2
+theme_override_constants/margin_top = 78
+
+[node name="Continue" type="Button" parent="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer" unique_id=687410406]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wu80v")
+theme_override_font_sizes/font_size = 82
+text = "Continue"
+flat = true
+
+[connection signal="pressed" from="ScoreUiGame/PanelContainer/MarginContainer/PanelContainer/MarginContainer/Control/PanelContainer/VBoxContainer/Continue" to="ScoreUiGame" method="_on_continue_pressed"]

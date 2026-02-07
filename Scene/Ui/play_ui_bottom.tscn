@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cssagjqmnhxme"]
+[gd_scene format=3 uid="uid://cssagjqmnhxme"]
 
 [ext_resource type="Script" uid="uid://77bm3y2saxgo" path="res://Script/play_ui_bottom.gd" id="1_itjyq"]
 [ext_resource type="Texture2D" uid="uid://dwmtgm3vggrvw" path="res://Assets/images/jetpack1-removebg-preview.png" id="2_874fm"]
@@ -52,7 +52,7 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[node name="PlayUiBottom" type="Control" node_paths=PackedStringArray("xp_bar") groups=["ProgressBarControl"]]
+[node name="PlayUiBottom" type="Control" unique_id=2063436274 node_paths=PackedStringArray("xp_bar") groups=["ProgressBarControl"]]
 layout_mode = 3
 anchor_left = -0.024
 anchor_right = 1.0
@@ -64,7 +64,7 @@ grow_vertical = 2
 script = ExtResource("1_itjyq")
 xp_bar = NodePath("VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2/Health_bar")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2081057754]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -74,7 +74,7 @@ offset_right = 357.0
 grow_vertical = 0
 theme_override_constants/separation = 15
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=677813150]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 5
@@ -82,18 +82,18 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 2
 
-[node name="ColorRect" type="Panel" parent="VBoxContainer/MarginContainer2"]
+[node name="ColorRect" type="Panel" parent="VBoxContainer/MarginContainer2" unique_id=1964543773]
 custom_minimum_size = Vector2(180, 230)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ymiq4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2" unique_id=907056509]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Power1" type="TextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Power1" type="TextureButton" parent="VBoxContainer/MarginContainer2/VBoxContainer" unique_id=795657112]
 material = SubResource("ShaderMaterial_ymiq4")
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
@@ -101,7 +101,7 @@ texture_normal = ExtResource("2_874fm")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PowerText1" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="PowerText1" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer" unique_id=730433748]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_itjyq")
 theme_override_font_sizes/font_size = 60
@@ -120,10 +120,10 @@ text = "2"
 flat = true
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1925912002]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer" unique_id=1990449917]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/margin_left = 5
@@ -131,18 +131,18 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 2
 
-[node name="ColorRect" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="ColorRect" type="Panel" parent="VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1085239331]
 custom_minimum_size = Vector2(180, 230)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ymiq4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1589026572]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Power2" type="TextureButton" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Power2" type="TextureButton" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=751817223]
 material = SubResource("ShaderMaterial_rmtjk")
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
@@ -150,7 +150,7 @@ texture_normal = ExtResource("4_ymiq4")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PowerText2" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="PowerText2" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1083426179]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_itjyq")
 theme_override_font_sizes/font_size = 60
@@ -169,41 +169,41 @@ text = "2"
 flat = true
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1038281627]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = -6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=772567811]
 z_index = 1
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1109201932]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CenterContainer" unique_id=618899139]
 custom_minimum_size = Vector2(130, 140)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_rmtjk")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/CenterContainer" unique_id=1414331978]
 custom_minimum_size = Vector2(115, 110)
 layout_mode = 2
 texture = ExtResource("3_874fm")
 expand_mode = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1876689791]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2"]
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2" unique_id=1471058769]
 custom_minimum_size = Vector2(300, 90)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iwosg")
 
-[node name="Health_bar" parent="VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2" instance=ExtResource("4_sev2x")]
+[node name="Health_bar" parent="VBoxContainer/HBoxContainer/HBoxContainer/CenterContainer2" unique_id=1028291868 instance=ExtResource("4_sev2x")]
 custom_minimum_size = Vector2(275, 70)
 layout_mode = 2
 effect_type = "Flash"

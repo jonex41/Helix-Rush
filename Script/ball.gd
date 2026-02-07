@@ -4,6 +4,7 @@ extends RigidBody3D
 @export var min_impact_speed := 2.0
 @export var cooldown := 0.05
 @export var decal_scene: PackedScene
+var bounce_count :int = 0
 
 #getting count
 
@@ -16,7 +17,7 @@ var bounce_cooldown := false
 # Tune this (VERY IMPORTANT)
 @export var min_bounce_velocity := 0.05
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Reset cooldown once body is clearly falling again
 	if linear_velocity.y < -min_bounce_velocity:
 		bounce_cooldown = false
@@ -30,9 +31,10 @@ func _integrate_forces(state):
 	for i in range(state.get_contact_count()):
 		var normal = state.get_contact_local_normal(i)
 
-		var point = state.get_contact_local_position(i)
+		#var point = state.get_contact_local_position(i)
 		
 		# Must be a TOP surface
+		print("integrate force ", normal.dot(Vector3.UP))
 		if normal.dot(Vector3.UP) < 0.6:
 			continue
 
@@ -83,3 +85,22 @@ func _spawn_decal(state, local_point: Vector3, normal: Vector3):
 
 	# Optional: random rotation for variation
 	decal.rotate_object_local(Vector3.FORWARD, randf_range(0, TAU))
+
+
+
+
+func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	var state = PhysicsServer3D.body_get_direct_state(get_rid())
+	
+	# Check all current contacts
+	for i in range(state.get_contact_count()):
+		var normal = state.get_contact_local_normal(i)
+		
+		# A normal pointing UP (Y > 0.7) means the surface is below the ball
+		# 1.0 is a perfectly flat floor; 0.7 allows for slight slopes
+		#print("my normal ",normal.y)
+		if normal.y > 0.5:
+			bounce_count += 1
+			#print("Bounce counted! Total: ", bounce_count)
+			break # Count only one bounce per impact frame
+	pass # Replace with function body.

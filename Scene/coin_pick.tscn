@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpopns1km1ua0"]
+[gd_scene format=3 uid="uid://dpopns1km1ua0"]
 
 [ext_resource type="Texture2D" uid="uid://8ilo7uqi2sl1" path="res://Assets/images/Icon_Small_CoinDollar.png" id="1_1mvoy"]
 
-[node name="CoinPick" type="CanvasLayer"]
+[node name="CoinPick" type="CanvasLayer" unique_id=406320717]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1108175221]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

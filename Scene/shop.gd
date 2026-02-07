@@ -1,8 +1,10 @@
 extends CanvasLayer
-
+@onready var shop_admob: Admob = $ShopAdmob
+var can_show_rewarded_ad: bool  = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	shop_admob.initialize()
 	pass # Replace with function body.
 
 
@@ -61,4 +63,22 @@ func _on_power_1_add_t_ime_pressed() -> void:
 	if GameTimer.initial_coin_balance > 4999:
 		GameTimer.add_power_antigravity()
 		GameTimer.initial_coin_balance-=5000
+	pass # Replace with function body.
+
+
+func _on_shop_admob_rewarded_ad_loaded(ad_info: AdInfo, response_info: ResponseInfo) -> void:
+	can_show_rewarded_ad = true
+	print("rewarded ad loaded")
+	pass # Replace with function body.
+
+
+func _on_shop_admob_initialization_completed(status_data: InitializationStatus) -> void:
+	shop_admob.load_rewarded_ad()
+	print('rewarded ad initialized')
+	pass # Replace with function body.
+
+
+func _on_show_rewarded_ad_pressed() -> void:
+	if can_show_rewarded_ad:
+		shop_admob.show_rewarded_ad()
 	pass # Replace with function body.

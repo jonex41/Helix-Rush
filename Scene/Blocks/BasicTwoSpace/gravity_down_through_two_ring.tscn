@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5msisx3uqwah"]
+[gd_scene format=3 uid="uid://b5msisx3uqwah"]
 
 [ext_resource type="PackedScene" uid="uid://c3yjy63be3n01" path="res://Scene/go_down_through_wall.tscn" id="1_coere"]
 [ext_resource type="PackedScene" uid="uid://btavrfv6o2g4i" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_vcpxk"]
 
-[node name="GoDownThroughTwoRing" type="StaticBody3D"]
+[node name="GoDownThroughTwoRing" type="StaticBody3D" unique_id=689900549]
 axis_lock_angular_z = true
 
-[node name="go_down_through_wall" parent="." instance=ExtResource("1_coere")]
+[node name="go_down_through_wall" parent="." unique_id=1697933492 instance=ExtResource("1_coere")]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0.66578215, 0.14423943, -0.009111166)
 
-[node name="BasicTwoRing" parent="." instance=ExtResource("2_vcpxk")]
+[node name="BasicTwoRing" parent="." unique_id=929024782 instance=ExtResource("2_vcpxk")]

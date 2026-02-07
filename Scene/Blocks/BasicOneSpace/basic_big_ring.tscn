@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcqscracwtb4s"]
+[gd_scene format=3 uid="uid://dcqscracwtb4s"]
 
 [ext_resource type="PackedScene" uid="uid://dv6oa3nav3vke" path="res://Assets/Cylinder.glb" id="1_1cr8w"]
+[ext_resource type="Script" uid="uid://d3aw2jqfgtu1a" path="res://Script/basic_ring.gd" id="1_3qkb0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kgptk"]
 size = Vector3(0.99862945, 0.15429688, 1.0014648)
@@ -8,15 +9,16 @@ size = Vector3(0.99862945, 0.15429688, 1.0014648)
 [sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
 size = Vector3(2.0433502, 0.16601563, 1.0166016)
 
-[node name="OneBigRing" type="StaticBody3D"]
+[node name="OneBigRing" type="StaticBody3D" unique_id=595827967]
 axis_lock_angular_z = true
+script = ExtResource("1_3qkb0")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=493140879]
 transform = Transform3D(0.71925503, 0, -0.6947462, 0, 1, 0, 0.6947462, 0, 0.71925503, -0.70102966, 0, 0.012332216)
 shape = SubResource("BoxShape3D_kgptk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1239932562]
 transform = Transform3D(0.7068599, 0, 0.7073536, 0, 1, 0, -0.7073536, 0, 0.7068599, 0.3375876, 0.0029296875, 0.3722431)
 shape = SubResource("BoxShape3D_an5r2")
 
-[node name="Cylinder2" parent="." instance=ExtResource("1_1cr8w")]
+[node name="Cylinder2" parent="." unique_id=1664504951 instance=ExtResource("1_1cr8w")]

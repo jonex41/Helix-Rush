@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cjjl1y3eyfvk0"]
+[gd_scene format=3 uid="uid://cjjl1y3eyfvk0"]
 
 [ext_resource type="Texture2D" uid="uid://5h8nrph4ngi" path="res://Assets/images/ButtonText_Small_Orange_Round.png" id="1_4r8hx"]
 [ext_resource type="Script" uid="uid://dxdximcf148u3" path="res://Script/mean_menu.gd" id="1_ouvks"]
@@ -94,10 +94,10 @@ corner_radius_bottom_left = 15
 shader = ExtResource("13_r5ce3")
 shader_parameter/radius = 0.1
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2125524615]
 layer = 2
 
-[node name="MeanMenu" type="Control" parent="."]
+[node name="MeanMenu" type="Control" parent="." unique_id=654172237]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,7 +106,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ouvks")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MeanMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MeanMenu" unique_id=671432397]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,28 +114,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer" unique_id=788982685]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 45
 theme_override_constants/margin_right = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer2" unique_id=703682082]
 layout_mode = 2
 
-[node name="CoinBar" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("2_38suq")]
+[node name="CoinBar" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1861906818 instance=ExtResource("2_38suq")]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="KeyBar" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer" instance=ExtResource("3_tspsl")]
+[node name="KeyBar" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=215065927 instance=ExtResource("3_tspsl")]
 layout_mode = 2
 size_flags_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1212624708]
 layout_mode = 2
 
-[node name="LevelLabel" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer"]
+[node name="LevelLabel" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer" unique_id=95886915]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9843137, 0.6627451, 0, 1)
 theme_override_fonts/font = ExtResource("3_4kkba")
@@ -144,22 +144,22 @@ text = "X1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer" unique_id=40170218]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/CenterContainer" unique_id=595518939]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 texture = ExtResource("5_jyqvl")
 expand_mode = 1
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/CenterContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/CenterContainer" unique_id=343302171]
 visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_h7ltx")
 
-[node name="Settings" type="MenuButton" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/CenterContainer"]
+[node name="Settings" type="MenuButton" parent="MeanMenu/VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/CenterContainer" unique_id=100209331]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_vertical = 0
@@ -173,34 +173,34 @@ vibrate_icon = ExtResource("10_r5ce3")
 vibrate_icon_off = ExtResource("11_oaj43")
 privacy_icon = ExtResource("5_cchtj")
 
-[node name="MarginContainer3" type="MarginContainer" parent="MeanMenu/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="MeanMenu/VBoxContainer" unique_id=918563947]
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 40
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3" unique_id=480662310]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2"]
+[node name="VBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2" unique_id=1290896989]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer" unique_id=459782073]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 30
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer" unique_id=2092698699]
 custom_minimum_size = Vector2(400, 130)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kkba")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel" unique_id=1120737640]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,11 +208,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=272928202]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=414071707]
 clip_contents = true
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
@@ -220,7 +220,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_fimx3")
 
-[node name="TextureRect" type="TextureRect" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Panel" unique_id=452767655]
 material = SubResource("ShaderMaterial_0ccua")
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
@@ -238,21 +238,21 @@ grow_vertical = 2
 texture = ExtResource("13_fimx3")
 expand_mode = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=1794467303]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=1435255195]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=835985596]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cchtj")
 
-[node name="Power1" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel"]
+[node name="Power1" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel" unique_id=1164091528]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
@@ -267,7 +267,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=461572997]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_4kkba")
@@ -275,14 +275,14 @@ theme_override_font_sizes/font_size = 40
 text = "      JetpacK       "
 vertical_alignment = 1
 
-[node name="Power1Add" type="Button" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="Power1Add" type="Button" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=146205841]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add"]
+[node name="CenterContainer" type="CenterContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add" unique_id=1706002320]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -296,13 +296,13 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer" unique_id=183211873]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_tspsl")
 
-[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer"]
+[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer" unique_id=786024980]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -311,24 +311,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="VBoxContainer2" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2"]
+[node name="VBoxContainer2" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2" unique_id=1908448121]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2" unique_id=1292174688]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 30
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer" unique_id=152534982]
 custom_minimum_size = Vector2(400, 130)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kkba")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel" unique_id=2080713434]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -336,11 +336,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=3861598]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=2142772621]
 clip_contents = true
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
@@ -348,7 +348,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_r5ce3")
 
-[node name="TextureRect" type="TextureRect" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Panel" unique_id=720420327]
 material = SubResource("ShaderMaterial_7fceh")
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
@@ -366,21 +366,21 @@ grow_vertical = 2
 texture = ExtResource("15_oaj43")
 expand_mode = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=1246366904]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=1162161412]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=722871807]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cchtj")
 
-[node name="Power2" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel"]
+[node name="Power2" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel" unique_id=1270670278]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
@@ -396,7 +396,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=573373758]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("3_4kkba")
@@ -404,14 +404,14 @@ theme_override_font_sizes/font_size = 40
 text = "ninja Jetpack"
 vertical_alignment = 1
 
-[node name="Power2Add" type="Button" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="Power2Add" type="Button" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=2046925728]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add"]
+[node name="CenterContainer" type="CenterContainer" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add" unique_id=1812912223]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -425,13 +425,13 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer"]
+[node name="Panel" type="Panel" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer" unique_id=1955217166]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_tspsl")
 
-[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer"]
+[node name="Label" type="Label" parent="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer" unique_id=606937688]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -440,19 +440,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer" unique_id=1185628938]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureButton" type="TextureButton" parent="MeanMenu/VBoxContainer/MarginContainer"]
+[node name="TextureButton" type="TextureButton" parent="MeanMenu/VBoxContainer/MarginContainer" unique_id=1177753823]
 layout_mode = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource("6_tspsl")
 script = ExtResource("11_h7ltx")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MeanMenu"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MeanMenu" unique_id=1198193350]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -463,16 +463,16 @@ offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="MeanMenu/VBoxContainer2" unique_id=755771514]
 layout_mode = 2
 theme_override_constants/margin_bottom = 180
 
-[node name="TextureButton" type="TextureButton" parent="MeanMenu/VBoxContainer2/MarginContainer"]
+[node name="TextureButton" type="TextureButton" parent="MeanMenu/VBoxContainer2/MarginContainer" unique_id=1041761458]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("1_4r8hx")
 
-[node name="Label" type="Label" parent="MeanMenu/VBoxContainer2/MarginContainer/TextureButton"]
+[node name="Label" type="Label" parent="MeanMenu/VBoxContainer2/MarginContainer/TextureButton" unique_id=2138068751]
 layout_mode = 0
 offset_left = 267.0
 offset_top = 56.0
@@ -485,24 +485,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer2" unique_id=1763392098]
 layout_mode = 2
 theme_override_constants/separation = 34
 alignment = 1
 
-[node name="Map" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer"]
+[node name="Map" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer" unique_id=445251524]
 layout_mode = 2
 texture_normal = ExtResource("8_h7ltx")
 
-[node name="Skins" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer"]
+[node name="Skins" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer" unique_id=1213409278]
 layout_mode = 2
 texture_normal = ExtResource("9_jyqvl")
 
-[node name="League" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer"]
+[node name="League" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer" unique_id=1988432963]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("10_oj5b4")
 
-[node name="Shop" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer"]
+[node name="Shop" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer" unique_id=1199425025]
 layout_mode = 2
 texture_normal = ExtResource("11_vvd8s")
 
@@ -511,4 +512,5 @@ texture_normal = ExtResource("11_vvd8s")
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/MarginContainer/TextureButton" to="MeanMenu" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/HBoxContainer/Map" to="MeanMenu" method="_on_map_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/HBoxContainer/Skins" to="MeanMenu" method="_on_skins_pressed"]
+[connection signal="pressed" from="MeanMenu/VBoxContainer2/HBoxContainer/League" to="MeanMenu" method="_on_league_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/HBoxContainer/Shop" to="MeanMenu" method="_on_shop_pressed"]

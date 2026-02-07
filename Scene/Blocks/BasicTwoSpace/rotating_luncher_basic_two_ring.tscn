@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://got30srx8aee"]
+[gd_scene format=3 uid="uid://got30srx8aee"]
 
 [ext_resource type="Script" uid="uid://com0bcffch06l" path="res://Script/rotating_basic_ring.gd" id="1_w2xeo"]
 [ext_resource type="PackedScene" uid="uid://btavrfv6o2g4i" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_4pfn4"]
 [ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="3_4pfn4"]
 
-[node name="RotatingLuncherTwoRing" type="StaticBody3D"]
+[node name="RotatingLuncherTwoRing" type="StaticBody3D" unique_id=1149830264]
 axis_lock_angular_z = true
 script = ExtResource("1_w2xeo")
 
-[node name="BasicTwoRing" parent="." instance=ExtResource("2_4pfn4")]
+[node name="BasicTwoRing" parent="." unique_id=1541628237 instance=ExtResource("2_4pfn4")]
 
-[node name="Launcher" parent="." instance=ExtResource("3_4pfn4")]
+[node name="Launcher" parent="." unique_id=1239910238 instance=ExtResource("3_4pfn4")]
 transform = Transform3D(-0.089589596, 0, -0.9959788, 0, 1, 0, 0.9959788, 0, -0.089589596, -0.8088989, 0.1595459, 0)

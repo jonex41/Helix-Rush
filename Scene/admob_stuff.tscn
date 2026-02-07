@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cwd3m115caf8w"]
+
+[ext_resource type="Script" uid="uid://deyimn42si6t4" path="res://Script/admob_stuff.gd" id="1_gxp32"]
+[ext_resource type="Script" uid="uid://dyfo2tjnxrid7" path="res://addons/AdmobPlugin/Admob.gd" id="2_f802x"]
+
+[node name="AdmobStuff" type="Node2D" unique_id=1635727094]
+script = ExtResource("1_gxp32")
+
+[node name="Admob" type="Node" parent="." unique_id=891148094]
+script = ExtResource("2_f802x")
+metadata/_custom_type_script = "uid://dyfo2tjnxrid7"
+
+[connection signal="initialization_completed" from="Admob" to="." method="_on_admob_initialization_completed"]
+[connection signal="rewarded_ad_loaded" from="Admob" to="." method="_on_admob_rewarded_ad_loaded"]

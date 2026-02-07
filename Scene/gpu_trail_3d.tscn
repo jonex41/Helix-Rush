@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cs7swq4j8v48s"]
+[gd_scene format=3 uid="uid://cs7swq4j8v48s"]
 
 [ext_resource type="Shader" uid="uid://d2lqxwpm67mbx" path="res://addons/GPUTrail-main/shaders/trail.gdshader" id="1_u2ra4"]
 [ext_resource type="Shader" uid="uid://slm5jtoxn752" path="res://addons/GPUTrail-main/shaders/trail_draw_pass.gdshader" id="2_ra7c0"]
@@ -37,7 +37,7 @@ shader_parameter/flags = 40
 [sub_resource type="QuadMesh" id="QuadMesh_i4qva"]
 material = SubResource("ShaderMaterial_x8ovd")
 
-[node name="GPUTrail3D" type="GPUParticles3D"]
+[node name="GPUTrail3D" type="GPUParticles3D" unique_id=1996386508]
 transform = Transform3D(-5.0268096e-09, -0.115, 0, 0.115, -5.0268096e-09, 0, 0, 0, 0.115, 0, 0, 0)
 amount = 10
 lifetime = 10.0

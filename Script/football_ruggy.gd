@@ -59,3 +59,10 @@ func show_jetpack(is_show: bool) :
 	$JetPack.visible = is_show	
 		
 	
+
+
+func _on_body_entered(body: Node) -> void:
+	if body is StaticBody3D:
+		print('i am here nw color')
+		body.change_color()
+	pass # Replace with function body.

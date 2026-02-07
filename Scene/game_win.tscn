@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b2lxm8grsw1v7" path="res://Script/game_win.gd" id="1_d6k10"]
 [ext_resource type="Texture2D" uid="uid://dv0ip87jnyluf" path="res://Assets/images/Icon_Large_StarGrey.png" id="2_6748t"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_pdaxk"]
+[ext_resource type="PackedScene" uid="uid://l7ysbryrqk6b" path="res://Scene/coin_bar.tscn" id="3_4xvpb"]
+[ext_resource type="PackedScene" uid="uid://btkdhnfxwmby7" path="res://Scene/key_bar.tscn" id="4_c7bcc"]
 [ext_resource type="Script" uid="uid://ckbdc3xxv5kdc" path="res://Script/star_1.gd" id="5_gkxye"]
 [ext_resource type="PackedScene" uid="uid://dhllw8nd600sk" path="res://Scene/firework2d.tscn" id="6_pdaxk"]
 [ext_resource type="Script" uid="uid://8bgs0dxrmos4" path="res://Script/star_2.gd" id="6_vv2qi"]
@@ -62,20 +64,56 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.07846785, 0.07846785, 0.07846785, 0.9480001)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=698558567]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -860.0
-offset_right = 483.214
-offset_bottom = 840.0
+[node name="Timer" type="Timer" parent="." unique_id=1001528741]
+wait_time = 0.4
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=597054596]
+position = Vector2(49, 1845)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=368727803]
+position = Vector2(550, 952)
+
+[node name="Control" type="Control" parent="." unique_id=1627400694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=908319127]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=698558567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer" unique_id=1242033663]
+layout_mode = 2
+theme_override_constants/margin_top = 42
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=68434223]
+layout_mode = 2
+
+[node name="CoinBar" parent="Control/VBoxContainer/HBoxContainer2" unique_id=371622429 instance=ExtResource("3_4xvpb")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="KeyBar" parent="Control/VBoxContainer/HBoxContainer2" unique_id=698228342 instance=ExtResource("4_c7bcc")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer" unique_id=912475730]
+layout_mode = 2
+theme_override_constants/margin_top = 162
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=908319127]
 layout_mode = 2
 theme_override_constants/outline_size = 135
 theme_override_fonts/font = ExtResource("2_pdaxk")
@@ -85,20 +123,20 @@ text = "Hurray you Win!!!
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1230869318]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1230869318]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 92
 
-[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/HBoxContainer" unique_id=1228805411]
+[node name="CenterContainer3" type="CenterContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=1228805411]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer3" unique_id=860235785]
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/HBoxContainer/CenterContainer3" unique_id=860235785]
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ql48a")
 
-[node name="Star1" type="TextureRect" parent="VBoxContainer/HBoxContainer/CenterContainer3" unique_id=643731502]
+[node name="Star1" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/CenterContainer3" unique_id=643731502]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_vertical = 0
@@ -106,15 +144,15 @@ texture = ExtResource("2_6748t")
 expand_mode = 2
 script = ExtResource("5_gkxye")
 
-[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/HBoxContainer" unique_id=1417503897]
+[node name="CenterContainer2" type="CenterContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=1417503897]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer2" unique_id=1577669542]
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/HBoxContainer/CenterContainer2" unique_id=1577669542]
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ql48a")
 
-[node name="Star2" type="TextureRect" parent="VBoxContainer/HBoxContainer/CenterContainer2" unique_id=914686788]
+[node name="Star2" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/CenterContainer2" unique_id=914686788]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_vertical = 0
@@ -122,15 +160,15 @@ texture = ExtResource("2_6748t")
 expand_mode = 2
 script = ExtResource("6_vv2qi")
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer" unique_id=215066285]
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=215066285]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/CenterContainer" unique_id=874593118]
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/HBoxContainer/CenterContainer" unique_id=874593118]
 custom_minimum_size = Vector2(210, 210)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ql48a")
 
-[node name="Star3" type="TextureRect" parent="VBoxContainer/HBoxContainer/CenterContainer" unique_id=532094438]
+[node name="Star3" type="TextureRect" parent="Control/VBoxContainer/HBoxContainer/CenterContainer" unique_id=532094438]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_vertical = 0
@@ -138,25 +176,39 @@ texture = ExtResource("2_6748t")
 expand_mode = 2
 script = ExtResource("7_vv2qi")
 
-[node name="Reward" parent="VBoxContainer" unique_id=234166329 instance=ExtResource("7_s46eg")]
-custom_minimum_size = Vector2(600, 800)
+[node name="Reward" parent="Control/VBoxContainer" unique_id=234166329 instance=ExtResource("7_s46eg")]
+custom_minimum_size = Vector2(600, 700)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=317650000]
+[node name="ContinueReplay" type="MarginContainer" parent="Control/VBoxContainer" unique_id=317650000]
+visible = false
 layout_mode = 2
-theme_override_constants/margin_top = -2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/margin_top = 178
 theme_override_constants/margin_bottom = 22
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2" unique_id=1001432425]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/ContinueReplay" unique_id=1001432425]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 203
 alignment = 1
 
-[node name="continue" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1545435272]
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer/ContinueReplay/HBoxContainer" unique_id=1612134038]
+layout_mode = 2
+
+[node name="ReplayBtn" type="Button" parent="Control/VBoxContainer/ContinueReplay/HBoxContainer/CenterContainer" unique_id=1770239080]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_pdaxk")
+theme_override_font_sizes/font_size = 115
+text = "Replay"
+flat = true
+icon_alignment = 1
+
+[node name="continue" type="Button" parent="Control/VBoxContainer/ContinueReplay/HBoxContainer" unique_id=1545435272]
 custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pdaxk")
@@ -175,29 +227,30 @@ text = "Continue"
 flat = true
 autowrap_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1612134038]
-layout_mode = 2
+[node name="Marker2DCoin" type="Control" parent="." unique_id=1620577828]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 88.0
+offset_right = 60.0
+offset_bottom = 88.0
 
-[node name="ReplayBtn" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer" unique_id=1770239080]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_pdaxk")
-theme_override_font_sizes/font_size = 115
-text = "Replay"
-flat = true
-icon_alignment = 1
+[node name="Marker2DKey" type="Control" parent="." unique_id=266334680]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 890.0
+offset_top = 91.0
+offset_right = 890.0
+offset_bottom = 91.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=577986245]
+[node name="Marker2DCenter" type="Control" parent="." unique_id=1729456044]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 540.0
+offset_top = 987.0
+offset_right = 540.0
+offset_bottom = 987.0
 
-[node name="Timer" type="Timer" parent="." unique_id=1001528741]
-wait_time = 0.4
-autostart = true
-
-[node name="Marker2D" type="Marker2D" parent="." unique_id=597054596]
-position = Vector2(49, 1845)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=368727803]
-position = Vector2(550, 952)
-
-[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer/continue" to="." method="_on_no_thanks_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Control/VBoxContainer/ContinueReplay/HBoxContainer/CenterContainer/ReplayBtn" to="." method="_on_replay_btn_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/ContinueReplay/HBoxContainer/continue" to="." method="_on_no_thanks_pressed"]

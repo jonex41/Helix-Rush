@@ -1,12 +1,48 @@
 [gd_scene format=3 uid="uid://p8b4t3vvfa61"]
 
+[ext_resource type="Script" uid="uid://b2jbhfmhwpauv" path="res://Script/change_material.gd" id="1_pf44b"]
 [ext_resource type="PackedScene" uid="uid://bsnrtge3ahn5h" path="res://Scene/launcher.tscn" id="2_25hd4"]
 [ext_resource type="PackedScene" uid="uid://dcqscracwtb4s" path="res://Scene/Blocks/BasicOneSpace/basic_big_ring.tscn" id="2_r4q7x"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_25hd4"]
+friction = 0.0
+bounce = 0.65
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4q7x"]
+size = Vector3(1.0239868, 0.13287354, 2.1317139)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pf44b"]
+size = Vector3(0.97476196, 0.13891602, 1.1813965)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdtch"]
+size = Vector3(0.98583984, 0.13421631, 1.010315)
+
 [node name="LuncherSideBigRing" type="StaticBody3D" unique_id=269353617]
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_25hd4")
+script = ExtResource("1_pf44b")
 
 [node name="Ring" parent="." unique_id=267775743 instance=ExtResource("2_r4q7x")]
 
 [node name="Launcher" parent="." unique_id=358365911 instance=ExtResource("2_25hd4")]
-transform = Transform3D(0.9828389, 0, -0.18446591, 0, 1, 0, 0.18446591, 0, 0.9828389, -0.15976366, 0.15510416, 0.7974852)
+transform = Transform3D(0.9828389, 0, -0.18446591, 0, 1, 0, 0.18446591, 0, 0.9828389, -0.15976366, 0.15224636, 0.7974852)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=91554299]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=832106066]
+transform = Transform3D(0.68296796, 0, 0.7304485, 0, 1, 0, -0.7304485, 0, 0.68296796, -0.37730798, 0.011566162, 0.3176341)
+shape = SubResource("BoxShape3D_r4q7x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=795130198]
+transform = Transform3D(0.72620285, 0, -0.68748057, 0, 1, 0, 0.68748057, 0, 0.72620285, 0.7637222, 0.014282227, -0.06500766)
+shape = SubResource("BoxShape3D_pf44b")
+
+[node name="Area3DPlatform" type="Area3D" parent="." unique_id=1357144410]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DPlatform" unique_id=164468306]
+transform = Transform3D(0.69272244, 0, 0.7212043, 0, 1, 0, -0.7212043, 0, 0.69272244, -0.006572176, 0.006011963, -0.70357597)
+shape = SubResource("BoxShape3D_tdtch")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3DPlatform" to="." method="_on_area_3d_platform_body_entered"]

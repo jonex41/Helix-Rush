@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvmsb0osl2qsv"]
+[gd_scene format=3 uid="uid://cvmsb0osl2qsv"]
 
 [ext_resource type="PackedScene" uid="uid://diaqytvvlr3mb" path="res://Assets/CylinderOneSmallSlice.glb" id="1_u1hci"]
 
@@ -8,15 +8,15 @@ size = Vector3(1.750439, 0.15429688, 0.9315796)
 [sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
 size = Vector3(2.1138039, 0.16601563, 0.99609375)
 
-[node name="BasicSmallRing" type="StaticBody3D"]
+[node name="BasicSmallRing" type="StaticBody3D" unique_id=421715448]
 axis_lock_angular_z = true
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1562771367]
 transform = Transform3D(0.9670859, 0, 0.25445014, 0, 1, 0, -0.25445014, 0, 0.9670859, -0.24710107, 0, -0.48491225)
 shape = SubResource("BoxShape3D_kgptk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1172689900]
 transform = Transform3D(0.44222602, 0, 0.8969036, 0, 1, 0, -0.8969036, 0, 0.44222602, 0.43989688, 0.0029296875, 0.1879309)
 shape = SubResource("BoxShape3D_an5r2")
 
-[node name="CylinderOneSmallSlice" parent="." instance=ExtResource("1_u1hci")]
+[node name="CylinderOneSmallSlice" parent="." unique_id=1591758285 instance=ExtResource("1_u1hci")]

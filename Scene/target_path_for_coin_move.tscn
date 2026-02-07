@@ -1,3 +1,3 @@
-[gd_scene load_steps=0 format=3 uid="uid://bp3uo35v2rq0l"]
+[gd_scene format=3 uid="uid://bp3uo35v2rq0l"]
 
-[node name="TargetPathForCoinMove" type="Node3D"]
+[node name="TargetPathForCoinMove" type="Node3D" unique_id=1007907049]

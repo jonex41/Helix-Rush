@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl5pth8uwowb3"]
+[gd_scene format=3 uid="uid://bl5pth8uwowb3"]
 
 [ext_resource type="PackedScene" uid="uid://b7p1ivdr3gccd" path="res://Assets/CylinderOneSmallSliceSpike.glb" id="2_unht4"]
 [ext_resource type="Script" uid="uid://ci58tmqqhfq40" path="res://Script/spike_ball.gd" id="2_vtv7d"]
@@ -18,40 +18,40 @@ size = Vector3(0.9887085, 0.10205078, 0.28821945)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gjrgc"]
 size = Vector3(0.86279297, 0.14575195, 0.42681885)
 
-[node name="SpikeSmallRing" type="StaticBody3D"]
+[node name="SpikeSmallRing" type="StaticBody3D" unique_id=2110036876]
 axis_lock_angular_z = true
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=539626830]
 transform = Transform3D(0.93575835, 0, -0.35264197, 0, 1, 0, 0.35264197, 0, 0.93575835, -0.20802352, 0.015563965, -0.633967)
 shape = SubResource("BoxShape3D_kgptk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1392153996]
 transform = Transform3D(0.94556534, -0.0049406076, 0.32539472, 0.002715382, 0.99996966, 0.007292337, -0.3254209, -0.006011809, 0.94555014, 0.67429894, 0.01423503, 0.3596092)
 shape = SubResource("BoxShape3D_an5r2")
 
-[node name="Area3D" type="Area3D" parent="." groups=["CameraRig"]]
+[node name="Area3D" type="Area3D" parent="." unique_id=1306791278 groups=["CameraRig"]]
 script = ExtResource("2_vtv7d")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1198829713]
 transform = Transform3D(0.8947863, 0, -0.4464947, 0, 1, 0, 0.4464947, 0, 0.8947863, -0.028716592, 0.05346702, 0.57855296)
 shape = SubResource("BoxShape3D_j66qo")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D" unique_id=381775549]
 transform = Transform3D(0.975377, 0, 0.22054425, 0, 1, 0, -0.22054425, 0, 0.975377, -0.6434805, 0.049037755, 0.027722657)
 shape = SubResource("BoxShape3D_bh4ns")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2096045982]
 transform = Transform3D(0.9921452, 0, 0.12509075, 0, 1, 0, -0.12509075, 0, 0.9921452, -0.010936901, 0.06320145, 0.552861)
 shape = SubResource("BoxShape3D_j66qo")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" unique_id=2079759383]
 transform = Transform3D(0.9829867, 0, -0.18367685, 0, 1, 0, 0.18367685, 0, 0.9829867, -0.49459663, 0.04772371, -0.0815913)
 shape = SubResource("BoxShape3D_bh4ns")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D" unique_id=292048607]
 transform = Transform3D(0.8170745, 0, 0.5765321, 0, 1, 0, -0.5765321, 0, 0.8170745, 0.37847465, 0.04699707, -0.3290642)
 shape = SubResource("BoxShape3D_gjrgc")
 
-[node name="CylinderOneSmallSliceSpike" parent="." instance=ExtResource("2_unht4")]
+[node name="CylinderOneSmallSliceSpike" parent="." unique_id=225605475 instance=ExtResource("2_unht4")]
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

@@ -91,7 +91,8 @@ func _remove_gravity() -> void:
 			if not is_instance_valid(rb):
 				return
 			rb.linear_velocity.y = upward_speed
-			await get_tree().physics_frame
+			if is_inside_tree():
+				await get_tree().physics_frame
 
 		# Restore physics
 		
@@ -144,7 +145,8 @@ func _removeCollision() -> void:
 			if not is_instance_valid(rb):
 				return
 			rb.linear_velocity.y = upward_speed_collision
-			await get_tree().physics_frame
+			if is_inside_tree():
+				await get_tree().physics_frame
 
 		# Restore physics
 		if is_instance_valid(rb):
@@ -175,8 +177,8 @@ func _on_power_2_pressed() -> void:
 func _on_power_text_2_pressed() -> void:
 	_removeCollision()
 	pass # Replace with function body.
-func show_progress_bar(is_visible:bool)->void:
-	$VBoxContainer/HBoxContainer/HBoxContainer.visible = is_visible
+func show_progress_bar(my_is_visible:bool)->void:
+	$VBoxContainer/HBoxContainer/HBoxContainer.visible = my_is_visible
 	
 func update_progress(isCollision)->void :
 	show_progress_bar(true)

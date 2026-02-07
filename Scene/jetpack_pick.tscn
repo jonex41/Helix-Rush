@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4bjdxskuibcm"]
+[gd_scene format=3 uid="uid://d4bjdxskuibcm"]
 
 [ext_resource type="Script" uid="uid://c1afj3566poi5" path="res://Scene/jetpack_pick.gd" id="1_af71t"]
 [ext_resource type="PackedScene" uid="uid://cvi2tuls14w2x" path="res://Assets/jetpack.glb" id="2_xanol"]
@@ -6,18 +6,18 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_af71t"]
 
-[node name="JetpackPick" type="StaticBody3D"]
+[node name="JetpackPick" type="StaticBody3D" unique_id=472328285]
 script = ExtResource("1_af71t")
 
-[node name="jetpack" parent="." instance=ExtResource("2_xanol")]
+[node name="jetpack" parent="." unique_id=1839989902 instance=ExtResource("2_xanol")]
 transform = Transform3D(-0.050342336, -0.08056456, 0, 0.08056456, -0.050342336, 0, 0, 0, 0.095, 0, 0, 0)
 
-[node name="PickUpVfx" parent="." instance=ExtResource("3_llecm")]
+[node name="PickUpVfx" parent="." unique_id=787385138 instance=ExtResource("3_llecm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0365295, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=898185709]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=566188084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.348938, 0)
 shape = SubResource("BoxShape3D_af71t")
 

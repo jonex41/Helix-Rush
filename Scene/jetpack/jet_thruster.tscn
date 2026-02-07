@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwj5iiwsx4nys"]
+[gd_scene format=3 uid="uid://dwj5iiwsx4nys"]
 
 [ext_resource type="Material" uid="uid://bdcwd0g7mnqit" path="res://Scene/jetpack/booster_material.tres" id="1_5hfv0"]
 
@@ -13,13 +13,13 @@ cap_top = false
 cap_bottom = false
 curve = SubResource("Curve_0bhed")
 
-[node name="JetThruster" type="Node3D"]
+[node name="JetThruster" type="Node3D" unique_id=968127687]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1006166937]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 visible = false
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=912297821]
 transform = Transform3D(-4.371139e-08, 0.445, 0, -1, -1.9451567e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TubeTrailMesh_c6xj6")

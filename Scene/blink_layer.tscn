@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7lcwgay4rs3n"]
+[gd_scene format=3 uid="uid://7lcwgay4rs3n"]
 
 [ext_resource type="Shader" path="res://shader/red_blink.gdshader" id="1_lk7f4"]
 [ext_resource type="Script" uid="uid://ca46tvuakiwnt" path="res://Script/color_rect_blink.gd" id="2_uy711"]
@@ -12,9 +12,9 @@ shader_parameter/edge_power = 2.5
 shader_parameter/inner_ratio = 0.75
 shader_parameter/feather = 0.4
 
-[node name="BlinkCanvasLayer" type="CanvasLayer"]
+[node name="BlinkCanvasLayer" type="CanvasLayer" unique_id=1691836547]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=29977813]
 material = SubResource("ShaderMaterial_qglei")
 anchors_preset = 15
 anchor_right = 1.0

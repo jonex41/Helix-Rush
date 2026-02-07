@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cogfmgb3j66r4"]
+[gd_scene format=3 uid="uid://cogfmgb3j66r4"]
 
 [ext_resource type="Texture2D" uid="uid://b5f3etomrxqd3" path="res://Assets/background/blankBrown002.png" id="1_68dbg"]
 [ext_resource type="Script" uid="uid://cei0fj8cxrvbv" path="res://Script/pause_canvas.gd" id="1_721l6"]
@@ -16,10 +16,10 @@ bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 50
 corner_radius_bottom_right = 50
 
-[node name="PauseCanvas" type="CanvasLayer"]
+[node name="PauseCanvas" type="CanvasLayer" unique_id=629013641]
 script = ExtResource("1_721l6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=993496559]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.65882355)
 
-[node name="Pause" type="Control" parent="."]
+[node name="Pause" type="Control" parent="." unique_id=435214188]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+[node name="MarginContainer" type="MarginContainer" parent="Pause" unique_id=170398364]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -48,18 +48,18 @@ grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="TextureRect" type="TextureRect" parent="Pause/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="Pause/MarginContainer" unique_id=1550731064]
 layout_mode = 2
 texture = ExtResource("1_68dbg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer" unique_id=1887495274]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer" unique_id=251225065]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nn7uw")
 theme_override_font_sizes/font_size = 120
@@ -67,20 +67,20 @@ text = "Level 01"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer" unique_id=2076566259]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 94
 
-[node name="TextureButton" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1312046033]
 layout_mode = 2
 texture_normal = ExtResource("2_762l3")
 
-[node name="TextureButton2" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer" unique_id=919192465]
 layout_mode = 2
 texture_normal = ExtResource("3_i0n1k")
 
-[node name="Continue" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+[node name="Continue" type="Button" parent="Pause/MarginContainer/VBoxContainer" unique_id=541106459]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nn7uw")
 theme_override_font_sizes/font_size = 110
@@ -91,7 +91,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_u2o2l")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u2o2l")
 text = "Continue"
 
-[node name="Home" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+[node name="Home" type="Button" parent="Pause/MarginContainer/VBoxContainer" unique_id=728599628]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nn7uw")
 theme_override_font_sizes/font_size = 110
@@ -102,7 +102,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_u2o2l")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u2o2l")
 text = "Home"
 
-[node name="TryAgain" type="Button" parent="Pause/MarginContainer/VBoxContainer"]
+[node name="TryAgain" type="Button" parent="Pause/MarginContainer/VBoxContainer" unique_id=1046177584]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nn7uw")
 theme_override_font_sizes/font_size = 110

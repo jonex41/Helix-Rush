@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://3jhcx01gtywo"]
+
+[ext_resource type="Script" uid="uid://0shxr1s6mw85" path="res://Script/leader_board.gd" id="1_w1jv0"]
+
+[node name="LeaderBoard" type="Control" unique_id=447908463]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w1jv0")
+
+[node name="Label" type="Label" parent="." unique_id=1439652843]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

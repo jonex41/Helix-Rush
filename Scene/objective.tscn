@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d48wb720j85h"]
+[gd_scene format=3 uid="uid://d48wb720j85h"]
 
 [ext_resource type="Script" uid="uid://4rl3eh68d00x" path="res://Script/objective.gd" id="1_05stc"]
 [ext_resource type="Script" uid="uid://cbc6r3x84ejtj" path="res://addons/radial_progress/RadialProgress.gd" id="1_n0a23"]
@@ -22,7 +22,7 @@ corner_radius_top_right = 75
 corner_radius_bottom_right = 75
 corner_radius_bottom_left = 75
 
-[node name="Objective" type="Control"]
+[node name="Objective" type="Control" unique_id=2003042313]
 layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5
@@ -37,7 +37,7 @@ size_flags_vertical = 6
 mouse_filter = 1
 script = ExtResource("1_05stc")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1916492424]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -54,14 +54,14 @@ grow_vertical = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ColorRect" type="Panel" parent="MarginContainer"]
+[node name="ColorRect" type="Panel" parent="MarginContainer" unique_id=284015889]
 custom_minimum_size = Vector2(260, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_4i2r7")
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer/ColorRect" unique_id=1171765986]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.045
@@ -78,18 +78,18 @@ text = "Bounce only 20
 times in the level"
 vertical_alignment = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer" unique_id=2047531828]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Panel" type="Panel" parent="MarginContainer/CenterContainer2"]
+[node name="Panel" type="Panel" parent="MarginContainer/CenterContainer2" unique_id=1209699391]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_i4dkg")
 
-[node name="RadialProgress" type="Control" parent="MarginContainer/CenterContainer2"]
+[node name="RadialProgress" type="Control" parent="MarginContainer/CenterContainer2" unique_id=1488538559]
 layout_mode = 2
 script = ExtResource("1_n0a23")
 radius = 70.27
@@ -99,7 +99,7 @@ bar_color = Color(0.17254902, 0.27450982, 1, 1)
 ring = true
 metadata/_custom_type_script = "uid://cbc6r3x84ejtj"
 
-[node name="BallBounceCount" type="Label" parent="MarginContainer/CenterContainer2"]
+[node name="BallBounceCount" type="Label" parent="MarginContainer/CenterContainer2" unique_id=1955210602]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
 theme_override_fonts/font = ExtResource("3_u2eeh")

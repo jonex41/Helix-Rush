@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsnrtge3ahn5h"]
+[gd_scene format=3 uid="uid://bsnrtge3ahn5h"]
 
 [ext_resource type="Script" uid="uid://ccyudfhnwukah" path="res://Script/basic_luncher.gd" id="1_227wv"]
 [ext_resource type="PackedScene" uid="uid://bhh0664b2q8v8" path="res://Assets/trampoline_blue.glb" id="2_qu14d"]
@@ -6,14 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_dlvfn"]
 size = Vector3(1, 0.49365234, 1)
 
-[node name="Launcher" type="Area3D"]
+[node name="Launcher" type="Area3D" unique_id=141737065]
 script = ExtResource("1_227wv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.486, 0, 0, 0, 0.15, 0, 0, 0, 0.486, 0, -0.038402878, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=527840853]
+transform = Transform3D(0.486, 0, 0, 0, 0.15, 0, 0, 0, 0.486, 0, -0.022354, 0)
 shape = SubResource("BoxShape3D_dlvfn")
 
-[node name="trampoline" parent="." instance=ExtResource("2_qu14d")]
+[node name="trampoline" parent="." unique_id=1517590747 instance=ExtResource("2_qu14d")]
 transform = Transform3D(0.34, 0, 0, 0, 0.34, 0, 0, 0, 0.34, 0, 0.01890774, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

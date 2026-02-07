@@ -1,7 +1,13 @@
 extends Control
 # Use Node3D if this is 3D (see note below)
+func _ready() -> void:
+	EventBus.send_has_spin.connect(has_spin_wheel)
 
-func _process(delta: float) -> void:
+func has_spin_wheel(has_spin):
+	$Button.text = "Spin Again" if has_spin else "Spinning"
+	pass
+
+func _process(_delta: float) -> void:
 	pass
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dx75pdjtlugd8"]
+[gd_scene format=3 uid="uid://dx75pdjtlugd8"]
 
 [ext_resource type="Shader" uid="uid://ckxbgoli0oer6" path="res://shader/coin_spark.tres" id="1_lvsl3"]
 [ext_resource type="Texture2D" uid="uid://duuy2nvu7xbgp" path="res://Assets/texture/T_flare81.png" id="2_r0arw"]
@@ -43,7 +43,7 @@ alpha_curve = SubResource("CurveTexture_ensst")
 
 [sub_resource type="QuadMesh" id="QuadMesh_emdbp"]
 
-[node name="Coinvfx" type="GPUParticles3D"]
+[node name="Coinvfx" type="GPUParticles3D" unique_id=1289310941]
 material_override = SubResource("ShaderMaterial_imvy1")
 emitting = false
 amount = 1

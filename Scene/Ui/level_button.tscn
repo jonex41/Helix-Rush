@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dabsoucyt4jkq"]
+[gd_scene format=3 uid="uid://dabsoucyt4jkq"]
 
 [ext_resource type="Texture2D" uid="uid://swurlcvtpyot" path="res://Assets/level/image1.png" id="1_17j3h"]
 [ext_resource type="Script" uid="uid://b0bdg22rwhp3c" path="res://Script/level_button.gd" id="1_deev0"]
@@ -127,7 +127,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="LevelButton" type="Button"]
+[node name="LevelButton" type="Button" unique_id=1955689955]
 custom_minimum_size = Vector2(600, 1000)
 anchors_preset = 5
 anchor_left = 0.5
@@ -143,7 +143,7 @@ disabled = true
 flat = true
 script = ExtResource("1_deev0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1425964940]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -153,45 +153,45 @@ offset_right = 461.0
 offset_bottom = 807.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1819292109]
 layout_mode = 2
 theme_override_font_sizes/font_size = 86
 text = "Level 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=989430604]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 texture = ExtResource("1_17j3h")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=400148366]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=384764158]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("3_gkil0")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=312882396]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("4_evwbb")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=2059837028]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("3_gkil0")
 expand_mode = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1164968876]
 visible = false
 position = Vector2(451, 462.99997)
 scale = Vector2(1.62, 1.62)
@@ -202,7 +202,7 @@ autoplay = "open"
 frame = 15
 frame_progress = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=314782688]
 visible = false
 layout_mode = 1
 anchors_preset = 15

@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power1.text = str(GameTimer.initial_power_antigravity)
 	$VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power2.text = str(GameTimer.initial_power_collision)
 	$VBoxContainer/MarginContainer2/HBoxContainer/HBoxContainer/LevelLabel.text = "Lv"+str(GameTimer.current_level)
@@ -64,4 +64,8 @@ func _on_power_1_add_pressed() -> void:
 	if GameTimer.initial_coin_balance > 1999:
 		GameTimer.add_power_antigravity()
 		GameTimer.initial_coin_balance-=2000
+	pass # Replace with function body.
+
+
+func _on_league_pressed() -> void:
 	pass # Replace with function body.

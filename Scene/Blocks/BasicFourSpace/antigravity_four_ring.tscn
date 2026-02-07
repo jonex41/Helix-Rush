@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd0noegp3lonx"]
+[gd_scene format=3 uid="uid://bd0noegp3lonx"]
 
 [ext_resource type="PackedScene" uid="uid://dthi2ysoc85ne" path="res://Scene/antigravity.tscn" id="1_lmc2n"]
 [ext_resource type="PackedScene" uid="uid://d104k4tibp4ng" path="res://Scene/Blocks/BasicFourSpace/basic_four_ring.tscn" id="2_a87lp"]
 
-[node name="AntigravityFourRing" type="StaticBody3D"]
+[node name="AntigravityFourRing" type="StaticBody3D" unique_id=1341298436]
 axis_lock_angular_z = true
 
-[node name="Antigravity" parent="." instance=ExtResource("1_lmc2n")]
+[node name="Antigravity" parent="." unique_id=1226133602 instance=ExtResource("1_lmc2n")]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0.48017228, 0.09487289, 0.52850354)
 
-[node name="BasicFourRing" parent="." instance=ExtResource("2_a87lp")]
+[node name="BasicFourRing" parent="." unique_id=391650370 instance=ExtResource("2_a87lp")]

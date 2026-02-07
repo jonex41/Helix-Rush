@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuuo30nrj0l4h"]
+[gd_scene format=3 uid="uid://cuuo30nrj0l4h"]
 
 [ext_resource type="Texture2D" uid="uid://cfdbevoxcl0hj" path="res://Assets/images/Circle.png" id="1_g6ile"]
 
-[node name="BottomBallDisplay" type="CanvasLayer"]
+[node name="BottomBallDisplay" type="CanvasLayer" unique_id=349941196]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=143772540]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,15 +12,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="Control"]
+[node name="Control" type="Control" parent="Control" unique_id=1250654549]
 layout_mode = 1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="Control/Control"]
+[node name="ColorRect" type="ColorRect" parent="Control/Control" unique_id=2087621799]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -30,7 +31,7 @@ offset_top = -500.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="GridContainer" type="GridContainer" parent="Control/Control"]
+[node name="GridContainer" type="GridContainer" parent="Control/Control" unique_id=934053796]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -41,10 +42,10 @@ grow_horizontal = 2
 grow_vertical = 0
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Control/GridContainer" unique_id=1978228138]
 layout_mode = 2
 texture = ExtResource("1_g6ile")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/Control/GridContainer"]
+[node name="TextureRect2" type="TextureRect" parent="Control/Control/GridContainer" unique_id=1039750346]
 layout_mode = 2
 texture = ExtResource("1_g6ile")

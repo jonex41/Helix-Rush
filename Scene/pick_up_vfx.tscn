@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://chsmvj25xgvbr"]
+[gd_scene format=3 uid="uid://chsmvj25xgvbr"]
 
 [ext_resource type="Shader" uid="uid://c7b35i5eylpih" path="res://shader/pick_up.tres" id="1_7i456"]
 [ext_resource type="Texture2D" uid="uid://yhhjt8l81dpv" path="res://Assets/texture/T_Aura7.png" id="2_hmn6k"]
@@ -56,14 +56,14 @@ color = Color(0.4, 0.8, 0.90588236, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_in8j6"]
 
-[node name="PickUpVfx" type="Node3D"]
+[node name="PickUpVfx" type="Node3D" unique_id=251877346]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=956880588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3493042, 0)
 material_override = SubResource("ShaderMaterial_2nfeh")
 mesh = SubResource("QuadMesh_weado")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=622465764]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04655838, 0.63531494, 0)
 material_override = SubResource("StandardMaterial3D_2nfeh")
 amount = 10

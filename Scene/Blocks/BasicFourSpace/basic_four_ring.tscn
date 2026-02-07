@@ -1,60 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d104k4tibp4ng"]
+[gd_scene format=3 uid="uid://d104k4tibp4ng"]
 
 [ext_resource type="PackedScene" uid="uid://dntug6ks333sx" path="res://Assets/CylinderFourSlice.glb" id="1_t6xuw"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
-size = Vector3(0.2088356, 0.14685059, 0.9030762)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kgptk"]
-size = Vector3(0.33989403, 0.15429688, 0.8930664)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wxuvo"]
-size = Vector3(0.27929688, 0.14116478, 0.99438477)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x8fwq"]
-size = Vector3(0.36132813, 0.1373291, 1)
-
-[node name="BasicFourRing" type="StaticBody3D"]
+[node name="BasicFourRing" type="StaticBody3D" unique_id=558321989]
 axis_lock_angular_z = true
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.69228154, 0, 0.7216278, 0, 1, 0, -0.7216278, 0, 0.69228154, 0.551363, 0.011169434, 0.60089666)
-shape = SubResource("BoxShape3D_an5r2")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.4534927, 0, 0.89126015, 0, 1, 0, -0.89126015, 0, 0.4534927, 0.5106392, 0.010864258, 0.3713444)
-shape = SubResource("BoxShape3D_an5r2")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.4650894, 0, -0.8852637, 0, 1, 0, 0.8852637, 0, 0.4650894, -0.6385884, 0, 0.5402103)
-shape = SubResource("BoxShape3D_kgptk")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.9125632, 0, -0.4089357, 0, 1, 0, 0.4089357, 0, 0.9125632, -0.3460488, 0, 0.45663112)
-shape = SubResource("BoxShape3D_kgptk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.9026454, 0, 0.43038514, 0, 1, 0, -0.43038514, 0, 0.9026454, 0.3234723, 0.0029296875, 0.43620422)
-shape = SubResource("BoxShape3D_an5r2")
-
-[node name="CylinderFourSlice" parent="." instance=ExtResource("1_t6xuw")]
-
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.7058566, -0.00865354, -0.7082806, 0, 0.9998967, -0.012216892, 0.70832485, 0.008623387, 0.70581263, 0.63729256, 0.018043764, -0.6019579)
-shape = SubResource("BoxShape3D_wxuvo")
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.35836425, 0.00977611, -0.9335251, 0, 0.9999306, 0.010471737, 0.9335707, -0.0037526975, 0.35834676, 0.53574675, 0.013954161, -0.36968043)
-shape = SubResource("BoxShape3D_wxuvo")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.92783624, 0.003905847, -0.37296736, 0, 0.9999451, 0.0104717845, 0.37298778, -0.009716099, 0.92778546, 0.33271715, 0.018537406, -0.41691288)
-shape = SubResource("BoxShape3D_wxuvo")
-
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8703903, 0, 0.49236292, 0, 1, 0, -0.49236292, 0, 0.8703903, -0.473919, 0.031071663, -0.59705377)
-shape = SubResource("BoxShape3D_x8fwq")
-
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.4114667, 0, 0.91142493, 0, 1, 0, -0.91142493, 0, 0.4114667, -0.54099715, 0.01095742, -0.3919493)
-shape = SubResource("BoxShape3D_x8fwq")
+[node name="CylinderFourSlice" parent="." unique_id=571326986 instance=ExtResource("1_t6xuw")]

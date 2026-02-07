@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://daj3eebqac0j3"]
+[gd_scene format=3 uid="uid://daj3eebqac0j3"]
 
 [ext_resource type="Script" uid="uid://cgabcics3fuep" path="res://Script/gravity_down_through.gd" id="1_vpc47"]
 [ext_resource type="PackedScene" uid="uid://dbouw33p0xu8d" path="res://Assets/trampoline_green.glb" id="2_arafg"]
@@ -6,14 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ueng6"]
 size = Vector3(1.2116699, 0.35107422, 1.3085938)
 
-[node name="GoUpThroughWall" type="Area3D"]
+[node name="GoUpThroughWall" type="Area3D" unique_id=358464266]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0, 0, 0)
 script = ExtResource("1_vpc47")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=202013580]
 transform = Transform3D(1.01, 0, 0, 0, 1.0099854, 0, 0, 0, 1.01, 0.008753666, -0.19678603, -0.0177539)
 shape = SubResource("BoxShape3D_ueng6")
 
-[node name="trampoline_green" parent="." instance=ExtResource("2_arafg")]
+[node name="trampoline_green" parent="." unique_id=933706022 instance=ExtResource("2_arafg")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

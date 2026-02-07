@@ -18,6 +18,7 @@ var last_touch_x := 0.0
 
 func _ready():
 	EventBus.pause_game.connect(disable_input)
+	pass
 
 
 

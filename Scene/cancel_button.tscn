@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://o2faoesl5kb4"]
+[gd_scene format=3 uid="uid://o2faoesl5kb4"]
 
 [ext_resource type="Texture2D" uid="uid://cjdjc0esaorcn" path="res://Assets/images/PremadeButtons_XRed.png" id="1_c2p1i"]
 
-[node name="TextureButton" type="TextureButton"]
+[node name="TextureButton" type="TextureButton" unique_id=969788489]
 clip_contents = true
 custom_minimum_size = Vector2(150, 150)
 size_flags_horizontal = 0

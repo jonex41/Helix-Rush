@@ -93,11 +93,11 @@ func reset():
 		
 func format_money(amount: float) -> String:
 	var abs_amount :float= abs(amount)
-	var sign := "-" if amount < 0 else ""
+	var sign_me := "-" if amount < 0 else ""
 
 	# Format small numbers with commas
 	if abs_amount < 50_000:
-		return sign + _format_with_commas(int(abs_amount))
+		return sign_me + _format_with_commas(int(abs_amount))
 
 	var value := 0.0
 	var suffix := ""

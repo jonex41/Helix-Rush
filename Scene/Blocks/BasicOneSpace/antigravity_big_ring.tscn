@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd810bms11lww"]
+[gd_scene format=3 uid="uid://dd810bms11lww"]
 
 [ext_resource type="PackedScene" uid="uid://dthi2ysoc85ne" path="res://Scene/antigravity.tscn" id="1_27wo5"]
 [ext_resource type="PackedScene" uid="uid://dv6oa3nav3vke" path="res://Assets/Cylinder.glb" id="2_r8y0x"]
@@ -9,18 +9,18 @@ size = Vector3(1.694624, 0.15429688, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_an5r2"]
 size = Vector3(1.8415833, 0.16601563, 1.0166016)
 
-[node name="AntigravityBigRing" type="StaticBody3D"]
+[node name="AntigravityBigRing" type="StaticBody3D" unique_id=673741452]
 axis_lock_angular_z = true
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=586781870]
 transform = Transform3D(0.5676714, 0, -0.82325524, 0, 1, 0, 0.82325524, 0, 0.5676714, -0.48664716, 0, 0.13878384)
 shape = SubResource("BoxShape3D_kgptk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=610346256]
 transform = Transform3D(0.7068599, 0, 0.7073536, 0, 1, 0, -0.7073536, 0, 0.7068599, 0.4088981, 0.0029296875, 0.30088282)
 shape = SubResource("BoxShape3D_an5r2")
 
-[node name="Antigravity" parent="." instance=ExtResource("1_27wo5")]
+[node name="Antigravity" parent="." unique_id=257348471 instance=ExtResource("1_27wo5")]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0, 0.09487289, 0.76676667)
 
-[node name="Cylinder3" parent="." instance=ExtResource("2_r8y0x")]
+[node name="Cylinder3" parent="." unique_id=1576135489 instance=ExtResource("2_r8y0x")]

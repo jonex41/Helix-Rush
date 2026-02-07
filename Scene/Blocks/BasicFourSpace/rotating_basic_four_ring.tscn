@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxsr2hoq8c6b7"]
+[gd_scene format=3 uid="uid://cxsr2hoq8c6b7"]
 
 [ext_resource type="Script" uid="uid://com0bcffch06l" path="res://Script/rotating_basic_ring.gd" id="1_o4jaa"]
 [ext_resource type="PackedScene" uid="uid://d104k4tibp4ng" path="res://Scene/Blocks/BasicFourSpace/basic_four_ring.tscn" id="2_hscq4"]
 
-[node name="RotatingFourRing" type="StaticBody3D"]
+[node name="RotatingFourRing" type="StaticBody3D" unique_id=1765857318]
 axis_lock_angular_z = true
 script = ExtResource("1_o4jaa")
 
-[node name="BasicFourRing" parent="." instance=ExtResource("2_hscq4")]
+[node name="BasicFourRing" parent="." unique_id=824384040 instance=ExtResource("2_hscq4")]

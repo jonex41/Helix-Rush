@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bdcwd0g7mnqit"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bdcwd0g7mnqit"]
 
 [ext_resource type="Shader" uid="uid://dl1glai0orjyp" path="res://Scene/jetpack/thruster.gdshader" id="1_tnkyo"]
 

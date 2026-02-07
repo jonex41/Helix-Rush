@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cocrwfjt80qo5"]
+
+[ext_resource type="Script" uid="uid://dgdgxf03duikk" path="res://Script/game_win_manager.gd" id="1_r62t5"]
+[ext_resource type="PackedScene" uid="uid://bqgop24ot0ffs" path="res://Scene/score_ui_game.tscn" id="2_bdbfn"]
+[ext_resource type="PackedScene" uid="uid://8drfi8rjl2pr" path="res://Scene/game_win.tscn" id="3_3t8xm"]
+
+[node name="GameWinManager" type="Node2D" unique_id=1552773972]
+script = ExtResource("1_r62t5")
+scene_a = ExtResource("2_bdbfn")
+scene_b = ExtResource("3_3t8xm")
+
+[node name="SceneHolder" type="Node" parent="." unique_id=446570749]

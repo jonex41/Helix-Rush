@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://deh5mgewlsku3"]
+[gd_scene format=3 uid="uid://deh5mgewlsku3"]
 
 [ext_resource type="Script" uid="uid://dqlnrfaxvypc" path="res://Script/game_over.gd" id="1_6748t"]
 [ext_resource type="Texture2D" uid="uid://dh6ixhb81tmnm" path="res://Assets/images/button_round_depth_gradient.png" id="2_pdaxk"]
@@ -44,10 +44,10 @@ bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q63yo"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 0)
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="GameOver" type="CanvasLayer" unique_id=573680136]
 script = ExtResource("1_6748t")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=600550882]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.07450981, 0.07450981, 0.07450981, 0.7607843)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=572763520]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -68,7 +68,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=933641858]
 layout_mode = 2
 theme_override_constants/outline_size = 135
 theme_override_fonts/font = ExtResource("2_qf1nx")
@@ -76,10 +76,10 @@ theme_override_font_sizes/font_size = 100
 text = "Keep Climbing?
 "
 
-[node name="MarginContainer" type="CenterContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1313378148]
 layout_mode = 2
 
-[node name="ProgressBar" type="TextureProgressBar" parent="VBoxContainer/MarginContainer"]
+[node name="ProgressBar" type="TextureProgressBar" parent="VBoxContainer/MarginContainer" unique_id=844346346]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 value = 85.0
@@ -89,12 +89,12 @@ texture_under = ExtResource("2_pdaxk")
 texture_progress = ExtResource("3_s46eg")
 tint_under = Color(0.012617188, 0.012617188, 0.012617188, 0)
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer" unique_id=170039359]
 visible = false
 layout_mode = 2
 texture = ExtResource("4_gkxye")
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=671852259]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.43868086, 0, 0.20283198, 1)
 theme_override_constants/outline_size = 70
@@ -105,7 +105,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="KeyPress" type="TextureButton" parent="VBoxContainer"]
+[node name="KeyPress" type="TextureButton" parent="VBoxContainer" unique_id=243060645]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -113,10 +113,10 @@ texture_normal = ExtResource("6_up0eu")
 ignore_texture_size = true
 stretch_mode = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=254888233]
 layout_mode = 2
 
-[node name="WordPress" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="WordPress" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=529040159]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.74575746, 0.5200123, 0.0992965, 1)
@@ -137,44 +137,44 @@ text = "Revive with your key"
 flat = true
 autowrap_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=705490941]
 layout_mode = 2
 theme_override_constants/margin_top = 130
 theme_override_constants/margin_bottom = 100
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2" unique_id=821129224]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer" unique_id=566005493]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer"]
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer" unique_id=657431224]
 layout_mode = 2
 texture_normal = ExtResource("5_vv2qi")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer" unique_id=1880389791]
 layout_mode = 2
 theme_override_constants/separation = 119
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/HBoxContainer" unique_id=91380400]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Add 10s"
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/HBoxContainer" unique_id=1464748553]
 custom_minimum_size = Vector2(-0.375, 0)
 layout_mode = 2
 texture = ExtResource("3_s46eg")
 expand_mode = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2"]
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer2" unique_id=579483697]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 flat = true
 
-[node name="NoThanks" type="Button" parent="VBoxContainer"]
+[node name="NoThanks" type="Button" parent="VBoxContainer" unique_id=7591448]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qf1nx")
 theme_override_font_sizes/font_size = 50

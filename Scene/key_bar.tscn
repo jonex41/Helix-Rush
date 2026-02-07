@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://btkdhnfxwmby7"]
+[gd_scene format=3 uid="uid://btkdhnfxwmby7"]
 
 [ext_resource type="Script" uid="uid://n6ks8opx8hi0" path="res://Script/key_bar.gd" id="1_opawk"]
 [ext_resource type="Texture2D" uid="uid://bd06aulcvmb1t" path="res://Assets/images/ButtonText_Small_GreyOutline_Round.png" id="2_bwcx8"]
 [ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="3_bwcx8"]
 
-[node name="KeyBar" type="Control"]
+[node name="KeyBar" type="Control" unique_id=698228342]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 20.0
@@ -13,7 +13,7 @@ offset_right = 20.0
 offset_bottom = 40.0
 script = ExtResource("1_opawk")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1115332691]
 custom_minimum_size = Vector2(0.54, 0.585)
 layout_mode = 0
 offset_left = 4.0
@@ -23,7 +23,7 @@ scale = Vector2(0.455, 0.369)
 texture = ExtResource("2_bwcx8")
 expand_mode = 5
 
-[node name="CoinValue" type="Label" parent="TextureRect"]
+[node name="CoinValue" type="Label" parent="TextureRect" unique_id=621238629]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -40,7 +40,7 @@ text = "100000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect" unique_id=1821014363]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -50,7 +50,7 @@ offset_top = -85.0
 offset_bottom = 85.0
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="TextureRect/CenterContainer"]
+[node name="TextureRect2" type="TextureRect" parent="TextureRect/CenterContainer" unique_id=1289149473]
 custom_minimum_size = Vector2(170, 170)
 layout_mode = 2
 size_flags_vertical = 4

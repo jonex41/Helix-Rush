@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxn5fhxesv66a"]
+[gd_scene format=3 uid="uid://bxn5fhxesv66a"]
 
 [ext_resource type="Texture2D" uid="uid://cx4lms0cyodkc" path="res://Assets/images/blankYellow004.png" id="1_f71i6"]
 
@@ -15,11 +15,11 @@ particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
 scale_curve = SubResource("CurveTexture_egfak")
 
-[node name="TestParticle" type="Node2D"]
+[node name="TestParticle" type="Node2D" unique_id=430342044]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=182524841]
 position = Vector2(377, 782)
 amount = 50
 texture = ExtResource("1_f71i6")
-lifetime = 3.8499999999999996
+lifetime = 3.85
 process_material = SubResource("ParticleProcessMaterial_1i0c6")

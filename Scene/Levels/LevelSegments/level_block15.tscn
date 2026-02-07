@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://df2gw1xfke8ub"]
+[gd_scene format=3 uid="uid://df2gw1xfke8ub"]
 
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="1_hsh7b"]
 [ext_resource type="Script" uid="uid://du4h6f1a3wfq" path="res://Script/level_block.gd" id="1_wittk"]
@@ -6,76 +6,76 @@
 [ext_resource type="PackedScene" uid="uid://btqywn11ker2i" path="res://Scene/coin.tscn" id="3_3rwf5"]
 [ext_resource type="PackedScene" uid="uid://bdalbkl2781jm" path="res://Scene/key.tscn" id="4_hsh7b"]
 
-[node name="LevelBlock1" type="Node3D"]
+[node name="LevelBlock1" type="Node3D" unique_id=1608892631]
 script = ExtResource("1_wittk")
 
-[node name="Rod" parent="." instance=ExtResource("1_hsh7b")]
+[node name="Rod" parent="." unique_id=1522676855 instance=ExtResource("1_hsh7b")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
 target = NodePath("../Node3D")
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="." unique_id=1203339467]
 
-[node name="Rings" type="Node3D" parent="Node3D"]
+[node name="Rings" type="Node3D" parent="Node3D" unique_id=1181799728]
 
-[node name="LuncherBigRing4" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing4" parent="Node3D/Rings" unique_id=1269203980 instance=ExtResource("2_wittk")]
 transform = Transform3D(-0.9170601, 0, 0.39874905, 0, 1, 0, -0.39874905, 0, -0.9170601, 0, 2.985577, 0)
 
-[node name="LuncherBigRing8" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing8" parent="Node3D/Rings" unique_id=1419623380 instance=ExtResource("2_wittk")]
 transform = Transform3D(0.90630776, 0, -0.42261827, 0, 1, 0, 0.42261827, 0, 0.90630776, 0, 3.9886618, 0)
 
-[node name="LuncherBigRing5" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing5" parent="Node3D/Rings" unique_id=1810207769 instance=ExtResource("2_wittk")]
 transform = Transform3D(-0.6730125, 0, 0.7396311, 0, 1, 0, -0.7396311, 0, -0.6730125, 0, 4.987854, 0)
 
-[node name="LuncherBigRing6" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing6" parent="Node3D/Rings" unique_id=1853653018 instance=ExtResource("2_wittk")]
 transform = Transform3D(0.31730467, 0, -0.9483236, 0, 1, 0, 0.9483236, 0, 0.31730467, 0, 5.9879713, 0)
 
-[node name="LuncherBigRing10" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing10" parent="Node3D/Rings" unique_id=744183060 instance=ExtResource("2_wittk")]
 transform = Transform3D(-0.40673667, 0, 0.91354537, 0, 1, 0, -0.91354537, 0, -0.40673667, 0, 6.9829745, 0)
 
-[node name="LuncherBigRing9" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing9" parent="Node3D/Rings" unique_id=1239715170 instance=ExtResource("2_wittk")]
 transform = Transform3D(0.16504756, 0, -0.98628557, 0, 1, 0, 0.98628557, 0, 0.16504756, 0, 7.9914722, 0)
 
-[node name="LuncherBigRing7" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing7" parent="Node3D/Rings" unique_id=1131130308 instance=ExtResource("2_wittk")]
 transform = Transform3D(-0.39073113, 0, 0.9205048, 0, 1, 0, -0.9205048, 0, -0.39073113, 0, 8.98731, 0)
 
-[node name="LuncherBigRing3" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing3" parent="Node3D/Rings" unique_id=848193667 instance=ExtResource("2_wittk")]
 transform = Transform3D(0.9723699, 0, -0.23344538, 0, 1, 0, 0.23344538, 0, 0.9723699, 0, 1.9803524, 0)
 
-[node name="LuncherBigRing2" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing2" parent="Node3D/Rings" unique_id=1924214757 instance=ExtResource("2_wittk")]
 transform = Transform3D(-0.9895258, 0, 0.14435613, 0, 1, 0, -0.14435613, 0, -0.9895258, 0, 0.9901762, 0)
 
-[node name="LuncherBigRing" parent="Node3D/Rings" instance=ExtResource("2_wittk")]
+[node name="LuncherBigRing" parent="Node3D/Rings" unique_id=510855090 instance=ExtResource("2_wittk")]
 
-[node name="Coins" type="Node3D" parent="Node3D"]
+[node name="Coins" type="Node3D" parent="Node3D" unique_id=1332664996]
 
-[node name="Coin" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin" parent="Node3D/Coins" unique_id=1267881135 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.15778351, 1.0903599, 0.75661355)
 
-[node name="Coin3" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin3" parent="Node3D/Coins" unique_id=830766777 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.28142488, 2.0493731, -0.78815526)
 
-[node name="Coin4" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin4" parent="Node3D/Coins" unique_id=1571653598 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.49260104, 4.0098977, -0.7044551)
 
-[node name="Coin5" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin5" parent="Node3D/Coins" unique_id=357612099 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.6673677, 6.158501, -0.4067651)
 
-[node name="Coin9" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin9" parent="Node3D/Coins" unique_id=1953871340 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, 0.8275057, 8.1138115, 0.13347107)
 
-[node name="Coin2" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin2" parent="Node3D/Coins" unique_id=2134986830 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.33488846, 2.9808342, 0.75661355)
 
-[node name="Coin6" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin6" parent="Node3D/Coins" unique_id=302584003 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.4998114, 5.0880003, 0.63342625)
 
-[node name="Coin7" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin7" parent="Node3D/Coins" unique_id=1537543955 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.8368807, 6.9887815, 0.07795435)
 
-[node name="Coin8" parent="Node3D/Coins" instance=ExtResource("3_3rwf5")]
+[node name="Coin8" parent="Node3D/Coins" unique_id=1733681581 instance=ExtResource("3_3rwf5")]
 transform = Transform3D(0.17085859, 0.0071797483, 0.056176413, 0.016570907, 0.16439559, -0.07141077, -0.05415481, 0.072955765, 0.1553857, -0.8368807, 9.034298, 0.009096324)
 
-[node name="Key" type="Node3D" parent="Node3D"]
+[node name="Key" type="Node3D" parent="Node3D" unique_id=621454721]
 
-[node name="Key" parent="Node3D/Key" instance=ExtResource("4_hsh7b")]
+[node name="Key" parent="Node3D/Key" unique_id=1102393338 instance=ExtResource("4_hsh7b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025062382, 9.303183, -0.7092453)

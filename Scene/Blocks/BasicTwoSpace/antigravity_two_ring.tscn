@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7i3uqxg1p6kk"]
+[gd_scene format=3 uid="uid://c7i3uqxg1p6kk"]
 
 [ext_resource type="PackedScene" uid="uid://dthi2ysoc85ne" path="res://Scene/antigravity.tscn" id="1_6c4c2"]
 [ext_resource type="PackedScene" uid="uid://btavrfv6o2g4i" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_ak6up"]
 
-[node name="AntigravityTwoRing" type="StaticBody3D"]
+[node name="AntigravityTwoRing" type="StaticBody3D" unique_id=911903720]
 axis_lock_angular_z = true
 
-[node name="Antigravity" parent="." instance=ExtResource("1_6c4c2")]
+[node name="Antigravity" parent="." unique_id=642020751 instance=ExtResource("1_6c4c2")]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0.70493996, 0.09487289, 0.0012997389)
 
-[node name="BasicTwoRing" parent="." instance=ExtResource("2_ak6up")]
+[node name="BasicTwoRing" parent="." unique_id=80173419 instance=ExtResource("2_ak6up")]

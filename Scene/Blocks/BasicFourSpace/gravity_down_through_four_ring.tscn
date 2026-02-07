@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw8yk36po0c42"]
+[gd_scene format=3 uid="uid://cw8yk36po0c42"]
 
 [ext_resource type="PackedScene" uid="uid://c3yjy63be3n01" path="res://Scene/go_down_through_wall.tscn" id="1_j87dk"]
 [ext_resource type="PackedScene" uid="uid://d104k4tibp4ng" path="res://Scene/Blocks/BasicFourSpace/basic_four_ring.tscn" id="2_xd0ah"]
 
-[node name="GoDownThroughFourRing" type="StaticBody3D"]
+[node name="GoDownThroughFourRing" type="StaticBody3D" unique_id=185453008]
 axis_lock_angular_z = true
 
-[node name="go_down_through_wall" parent="." instance=ExtResource("1_j87dk")]
+[node name="go_down_through_wall" parent="." unique_id=1698301103 instance=ExtResource("1_j87dk")]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0.5149998, 0.14423943, 0.531886)
 
-[node name="BasicTwoRing" parent="." instance=ExtResource("2_xd0ah")]
+[node name="BasicTwoRing" parent="." unique_id=867778911 instance=ExtResource("2_xd0ah")]

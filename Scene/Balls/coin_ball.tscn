@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx173tokx3sdr"]
+[gd_scene format=3 uid="uid://dx173tokx3sdr"]
 
 [ext_resource type="Script" uid="uid://cwqii5qlqd3xk" path="res://Script/football_ruggy.gd" id="1_7nxo2"]
 [ext_resource type="AudioStream" uid="uid://df1mco6cf2uif" path="res://Assets/Audio/coin.ogg" id="2_3eq7e"]
-[ext_resource type="PackedScene" uid="uid://bcohd6c4eqykv" path="res://Scene/jet_pack.tscn" id="5_0fy3i"]
+[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="5_0fy3i"]
 [ext_resource type="PackedScene" uid="uid://cx2kfvgfapbnq" path="res://Assets/coin.glb" id="5_ywop6"]
 [ext_resource type="Script" uid="uid://bv8elgttltidr" path="res://Assets/coin.gd" id="6_7nxo2"]
 [ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="6_qx6d6"]
@@ -13,7 +13,7 @@ bounce = 1.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0wd17"]
 
-[node name="CoinBall" type="RigidBody3D" groups=["Player"]]
+[node name="CoinBall" type="RigidBody3D" unique_id=1772659898 groups=["Player"]]
 transform = Transform3D(4.563, 0, 0, 0, 4.563, 0, 0, 0, 4.563, 0, 0, 0)
 axis_lock_linear_x = true
 axis_lock_linear_z = true
@@ -23,23 +23,23 @@ axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_c2f4g")
 script = ExtResource("1_7nxo2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1156336648]
 transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
 shape = SubResource("SphereShape3D_0wd17")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=937380992]
 stream = ExtResource("2_3eq7e")
 volume_db = 44.484
 
-[node name="JetPack" parent="." instance=ExtResource("5_0fy3i")]
+[node name="JetPack" parent="." unique_id=1159957347 instance=ExtResource("5_0fy3i")]
 transform = Transform3D(0.020837778, 0, -0.118176915, 0, 0.12, 0, 0.118176915, 0, 0.020837778, 0, -0.050181255, -0.20067236)
 visible = false
 
-[node name="coin" parent="." instance=ExtResource("5_ywop6")]
+[node name="coin" parent="." unique_id=2033534790 instance=ExtResource("5_ywop6")]
 transform = Transform3D(0.12831305, 0.013246486, 0.03981578, 0.004546372, 0.12295399, -0.05555757, -0.041714445, 0.054146487, 0.116417594, 0, 0, 0)
 script = ExtResource("6_7nxo2")
 
-[node name="GPUTrail3D" parent="." instance=ExtResource("6_qx6d6")]
+[node name="GPUTrail3D" parent="." unique_id=60484719 instance=ExtResource("6_qx6d6")]
 transform = Transform3D(-2.2729922e-09, -0.075, 0, 0.052, -3.2783543e-09, 0, 0, 0, 0.075, 0, -0.056637704, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

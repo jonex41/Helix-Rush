@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5ht7lo2hxt0c"]
+[gd_scene format=3 uid="uid://c5ht7lo2hxt0c"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_khkvn"]
 
-[node name="Cyclinder" type="StaticBody3D"]
+[node name="Cyclinder" type="StaticBody3D" unique_id=622803306]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=571707158]
 transform = Transform3D(1, 0, 0, 0, 2.4704149, 0, 0, 0, 1, 0, 2.4203658, 0)
 mesh = SubResource("CylinderMesh_khkvn")

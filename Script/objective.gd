@@ -14,5 +14,5 @@ func _ready():
 	)\
 	.set_trans(Tween.TRANS_CUBIC)\
 	.set_ease(Tween.EASE_OUT)
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$MarginContainer/CenterContainer2/BallBounceCount.text= str(GameTimer.bounce_count)

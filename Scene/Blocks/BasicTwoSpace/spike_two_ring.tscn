@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ybaiw7h112d0"]
+[gd_scene format=3 uid="uid://ybaiw7h112d0"]
 
 [ext_resource type="PackedScene" uid="uid://vcb03u1togrf" path="res://Assets/cylindertwospacespike.glb" id="1_w3xmh"]
 [ext_resource type="Script" uid="uid://ci58tmqqhfq40" path="res://Script/spike_ball.gd" id="2_hhh2q"]
@@ -13,40 +13,40 @@ size = Vector3(1.016983, 0.16601563, 1.0166016)
 [sub_resource type="BoxShape3D" id="BoxShape3D_j66qo"]
 size = Vector3(0.20351796, 0.10771485, 0.8326745)
 
-[node name="SpikeTwoRing" type="StaticBody3D"]
+[node name="SpikeTwoRing" type="StaticBody3D" unique_id=1886282502]
 axis_lock_angular_z = true
 
-[node name="cylindertwospacespike" parent="." instance=ExtResource("1_w3xmh")]
+[node name="cylindertwospacespike" parent="." unique_id=494713652 instance=ExtResource("1_w3xmh")]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=982671204]
 transform = Transform3D(0.7200427, 0, -0.69392973, 0, 1, 0, 0.69392973, 0, 0.7200427, -0.77488345, 0, -0.031239793)
 shape = SubResource("BoxShape3D_e6hv3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1044439539]
 transform = Transform3D(0.7068599, 0, 0.7073536, 0, 1, 0, -0.7073536, 0, 0.7068599, 0.70033646, 0.0029296875, 0.009240866)
 shape = SubResource("BoxShape3D_1ycke")
 
-[node name="Area3D" type="Area3D" parent="." groups=["CameraRig"]]
+[node name="Area3D" type="Area3D" parent="." unique_id=912563105 groups=["CameraRig"]]
 transform = Transform3D(-0.7194609, 0, -0.69453293, 0, 1, 0, 0.69453293, 0, -0.7194609, -0.3916527, 0.0029491186, -0.21550821)
 script = ExtResource("2_hhh2q")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=357112851]
 transform = Transform3D(0.99946576, 0, 0.032666296, 0, 1, 0, -0.032666296, 0, 0.99946576, -0.022690922, 0.043464884, 0.28119904)
 shape = SubResource("BoxShape3D_j66qo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=798196601]
 transform = Transform3D(0.9365804, 0, 0.35045227, 0, 1, 0, -0.35045227, 0, 0.9365804, 0.057787657, 0.053292252, 0.23081815)
 shape = SubResource("BoxShape3D_j66qo")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" unique_id=947522485]
 transform = Transform3D(-0.25455195, 0, -0.9670583, 0, 1, 0, 0.9670583, 0, -0.25455195, -0.70262194, 0.04210967, -0.608946)
 shape = SubResource("BoxShape3D_j66qo")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D" unique_id=2069566483]
 transform = Transform3D(0.067945, 0, -0.9976889, 0, 1, 0, 0.9976889, 0, 0.067945, -0.72102106, 0.038111225, -0.521456)
 shape = SubResource("BoxShape3D_j66qo")
 
-[node name="Launcher" parent="." instance=ExtResource("3_kwsb1")]
+[node name="Launcher" parent="." unique_id=1039458637 instance=ExtResource("3_kwsb1")]
 transform = Transform3D(-0.2126211, 0, -0.9771348, 0, 1, 0, 0.9771348, 0, -0.2126211, 0.87464297, 0.14594442, 0.10041407)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

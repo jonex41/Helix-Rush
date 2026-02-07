@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://betqvx5awdpsi"]
+[gd_scene format=3 uid="uid://betqvx5awdpsi"]
 
 [ext_resource type="PackedScene" uid="uid://cjsnv76t3iejh" path="res://Scene/special_luncher.tscn" id="1_4ql7b"]
 [ext_resource type="PackedScene" uid="uid://btavrfv6o2g4i" path="res://Scene/Blocks/BasicTwoSpace/basic_two_ring.tscn" id="2_w7gp1"]
 
-[node name="SpecialLuncherTwoRing" type="StaticBody3D"]
+[node name="SpecialLuncherTwoRing" type="StaticBody3D" unique_id=727246006]
 axis_lock_angular_z = true
 
-[node name="SpecialLauncher" parent="." instance=ExtResource("1_4ql7b")]
+[node name="SpecialLauncher" parent="." unique_id=1787215154 instance=ExtResource("1_4ql7b")]
 transform = Transform3D(0.99985015, 0, 0.017312795, 0, 0.7201656, 0, -0.017312795, 0, 0.99985015, 0.63546604, 0.07832885, 0.032869875)
 
-[node name="BasicTwoRing" parent="." instance=ExtResource("2_w7gp1")]
+[node name="BasicTwoRing" parent="." unique_id=1323088510 instance=ExtResource("2_w7gp1")]

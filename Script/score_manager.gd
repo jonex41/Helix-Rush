@@ -4,6 +4,9 @@ signal score_changed(new_score)
 signal key_changed(key_count)
 var score : int= 0
 var key : int= 0
+var green : int= 0
+var green_yellow : int= 0
+var red : int= 0
 
 
 func add(points: int):

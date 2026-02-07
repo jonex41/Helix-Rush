@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqj1sqywb3hr7"]
+[gd_scene format=3 uid="uid://cqj1sqywb3hr7"]
 
 [ext_resource type="Script" uid="uid://c6ytgjujfgx21" path="res://Script/square.gd" id="1_pxxrn"]
-[ext_resource type="PackedScene" uid="uid://bcohd6c4eqykv" path="res://Scene/jet_pack.tscn" id="2_pxlhb"]
+[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="2_pxlhb"]
 [ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="3_vv3uq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
@@ -20,7 +20,7 @@ emission_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0wd17"]
 
-[node name="Square" type="RigidBody3D" groups=["Player"]]
+[node name="Square" type="RigidBody3D" unique_id=1920554658 groups=["Player"]]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
 axis_lock_linear_x = true
 axis_lock_linear_z = true
@@ -30,20 +30,20 @@ axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_c2f4g")
 script = ExtResource("1_pxxrn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1175072165]
 transform = Transform3D(0.265, 0, 0, 0, 0.265, 0, 0, 0, 0.265, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_0auh2")
 mesh = SubResource("BoxMesh_pxlhb")
 surface_material_override/0 = SubResource("StandardMaterial3D_0wd17")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=283269209]
 transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
 shape = SubResource("SphereShape3D_0wd17")
 
-[node name="JetPack" parent="." instance=ExtResource("2_pxlhb")]
+[node name="JetPack" parent="." unique_id=742175032 instance=ExtResource("2_pxlhb")]
 transform = Transform3D(0.003141239, 0, -0.11995887, 0, 0.12, 0, 0.11995887, 0, 0.003141239, 0, -0.07844024, -0.285881)
 visible = false
 
-[node name="GPUTrail3D" parent="." instance=ExtResource("3_vv3uq")]
+[node name="GPUTrail3D" parent="." unique_id=621842027 instance=ExtResource("3_vv3uq")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

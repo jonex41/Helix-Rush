@@ -76,7 +76,7 @@ func populate_grid():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -116,20 +116,20 @@ func _on_cell_selected(data: Dictionary):
 			
 		else:
 			return
-	var name = data.name
-	if name == 'Square Ball':
+	var nameBall = data.name
+	if nameBall == 'Square Ball':
 		
 		GameTimer.selectedBallScene ="res://Scene/Balls/square.tscn"
-	elif name == 'Rugby Ball':
+	elif nameBall == 'Rugby Ball':
 		
 		GameTimer.selectedBallScene ="res://Scene/Balls/football_ruggy.tscn"
 		
-	elif name == 'Ball' :
+	elif nameBall == 'Ball' :
 		GameTimer.selectedBallScene = "res://Scene/Balls/ball.tscn"
-	elif name == 'Coin Ball' :
+	elif nameBall == 'Coin Ball' :
 		GameTimer.selectedBallScene = "res://Scene/Balls/coin_ball.tscn"
 		
-	elif name == 'Monkey Ball' :
+	elif nameBall == 'Monkey Ball' :
 		GameTimer.selectedBallScene = "res://Scene/Balls/monkey_ball.tscn"
 		
 		

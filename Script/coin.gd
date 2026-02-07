@@ -24,7 +24,7 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D:
-		var rb := body as RigidBody3D
+		#var rb := body as RigidBody3D
 		ScoreManager.add(2)
 		
 		var coinvfx = coinvfx_scene.instantiate()
@@ -45,6 +45,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 
 
-func _on_area_meat_body_body_entered(body: Node3D) -> void:
+func _on_area_meat_body_body_entered(_body: Node3D) -> void:
 	
 	pass # Replace with function body.

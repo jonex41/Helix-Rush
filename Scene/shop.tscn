@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://crpdurv035l65"]
+[gd_scene format=3 uid="uid://crpdurv035l65"]
 
 [ext_resource type="Texture2D" uid="uid://b0c7in23vbisi" path="res://Assets/Atlas/COIN6.PNG" id="1_4qr4x"]
 [ext_resource type="Script" uid="uid://dn1pd0ahm1u5h" path="res://Scene/shop.gd" id="1_vvu0h"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://7028rar3moxe" path="res://Assets/images/jetpackninja-removebg-preview.png" id="6_d6i1l"]
 [ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="6_fpr2n"]
 [ext_resource type="Texture2D" uid="uid://c8ijr5kxyw5rx" path="res://Assets/Atlas/ADS.PNG" id="7_fpr2n"]
+[ext_resource type="Script" uid="uid://dyfo2tjnxrid7" path="res://addons/AdmobPlugin/Admob.gd" id="14_d6i1l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpr2n"]
 bg_color = Color(0.98039216, 0.98039216, 0.98039216, 0.3372549)
@@ -122,11 +123,11 @@ colors = PackedColorArray(0.85390145, 0.4424887, 0.04267963, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_7rex1"]
 gradient = SubResource("Gradient_vvu0h")
 
-[node name="Shop" type="CanvasLayer"]
+[node name="Shop" type="CanvasLayer" unique_id=169074424]
 layer = 3
 script = ExtResource("1_vvu0h")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=615219734]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -134,7 +135,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.22670749, 0.22670749, 0.22670746, 1)
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1974008765]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,7 +145,7 @@ grow_vertical = 2
 size_flags_horizontal = 10
 size_flags_vertical = 6
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=2068722069]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,17 +155,17 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=725254251]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=679344526]
 layout_mode = 2
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_top = 150
 
-[node name="TextureButton" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/MarginContainer"]
+[node name="TextureButton" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/MarginContainer" unique_id=239751731]
 clip_contents = true
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
@@ -174,13 +175,13 @@ texture_normal = ExtResource("1_yymmd")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer" unique_id=2131403810]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_4qr4x")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=450183022]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.93080276, 0.59303755, 0.12986764, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -191,46 +192,46 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="MarginContainer6" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer6" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1582054692]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer6"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer6" unique_id=1541924199]
 custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpr2n")
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=2031673312]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=745659014]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme_override_constants/separation = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=642466910]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1954529558]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 30
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer" unique_id=1183765282]
 custom_minimum_size = Vector2(400, 130)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m74ck")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel" unique_id=1919014790]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -238,18 +239,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=1273040477]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=1809325929]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_27pye")
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Panel" unique_id=1703872884]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 8
@@ -266,21 +267,21 @@ grow_vertical = 2
 texture = ExtResource("4_lmmku")
 expand_mode = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=1331436602]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=530851998]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=966569211]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6i1l")
 
-[node name="Power1" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel"]
+[node name="Power1" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel" unique_id=385585480]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
@@ -295,7 +296,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=150263892]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
@@ -303,7 +304,7 @@ theme_override_font_sizes/font_size = 40
 text = "Jetpack"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=228840823]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
@@ -311,14 +312,14 @@ theme_override_font_sizes/font_size = 40
 text = "1,000"
 vertical_alignment = 1
 
-[node name="Power1Add" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer"]
+[node name="Power1Add" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=856235082]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add" unique_id=339331488]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -332,13 +333,13 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer" unique_id=1003795605]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_lmmku")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add/CenterContainer" unique_id=829505375]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -347,24 +348,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1853032368]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=1604052715]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 30
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer" unique_id=2098019750]
 custom_minimum_size = Vector2(400, 130)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m74ck")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel" unique_id=496427883]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -372,11 +373,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=1827318711]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=818387395]
 clip_contents = true
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
@@ -384,7 +385,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_fi8yd")
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Panel" unique_id=1323806850]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 8
@@ -401,21 +402,21 @@ grow_vertical = 2
 texture = ExtResource("6_d6i1l")
 expand_mode = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=1236299482]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=1564938511]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=1800260355]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6i1l")
 
-[node name="Power2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel"]
+[node name="Power2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel" unique_id=1926589566]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
@@ -431,7 +432,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=485869068]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
@@ -439,7 +440,7 @@ theme_override_font_sizes/font_size = 40
 text = "Ninja JetPack"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=1207255569]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
@@ -447,14 +448,14 @@ theme_override_font_sizes/font_size = 40
 text = "2,000"
 vertical_alignment = 1
 
-[node name="Power2Add" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer"]
+[node name="Power2Add" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=208859139]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add" unique_id=2035741640]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -468,13 +469,13 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer" unique_id=1783931477]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_lmmku")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add/CenterContainer" unique_id=205891011]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -483,29 +484,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MarginContainer4" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=651379886]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer4"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer4" unique_id=304807514]
 custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpr2n")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1878552427]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 30
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=894954732]
 custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7rex1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel" unique_id=1033564796]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -513,24 +514,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer" unique_id=692558126]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer" unique_id=26888893]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=418399150]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kc4sh")
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Panel" unique_id=1521606144]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 8
@@ -547,7 +548,7 @@ grow_vertical = 2
 texture = ExtResource("4_lmmku")
 expand_mode = 1
 
-[node name="Power1" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power1" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1612204848]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_fpr2n")
 theme_override_font_sizes/font_size = 36
@@ -555,34 +556,34 @@ text = "JETPACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Power2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1838314598]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Booster"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=778244196]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9843137, 0.4627451, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "3,000"
 horizontal_alignment = 1
 
-[node name="Power1LebelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power1LebelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1157647519]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "LEVEL 1 (3s)"
 horizontal_alignment = 1
 
-[node name="Power1AddTIme" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power1AddTIme" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=5911417]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme" unique_id=556337484]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -592,13 +593,13 @@ offset_right = 60.0
 offset_bottom = 144.0
 grow_horizontal = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme/CenterContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme/CenterContainer" unique_id=1115514736]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_lmmku")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme/CenterContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme/CenterContainer" unique_id=824243901]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -607,12 +608,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Panel2" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Panel2" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1714598004]
 custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7rex1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2" unique_id=1864092132]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -620,24 +621,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer" unique_id=1862307990]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer" unique_id=580419627]
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1418250231]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yjhdb")
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Panel" unique_id=920675423]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 8
@@ -654,7 +655,7 @@ grow_vertical = 2
 texture = ExtResource("6_d6i1l")
 expand_mode = 1
 
-[node name="Power1" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power1" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1943064254]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_fpr2n")
 theme_override_font_sizes/font_size = 36
@@ -662,34 +663,34 @@ text = "NINJA JETPACK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Power2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1794069922]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Booster"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1209981877]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9843137, 0.4627451, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "3,000"
 horizontal_alignment = 1
 
-[node name="Power2LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power2LabelTime" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1921461503]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "LEVEL 1 (3s)"
 horizontal_alignment = 1
 
-[node name="Power2AddTime" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Power2AddTime" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=133304037]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime" unique_id=614627918]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -699,13 +700,13 @@ offset_right = 60.0
 offset_bottom = 144.0
 grow_horizontal = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime/CenterContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime/CenterContainer" unique_id=1643761935]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_lmmku")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime/CenterContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime/CenterContainer" unique_id=1026706880]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -714,36 +715,36 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MarginContainer7" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer7" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1218509098]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer7"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer7" unique_id=709274301]
 custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpr2n")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=20881708]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=919596979]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 30
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer" unique_id=1516251326]
 custom_minimum_size = Vector2(400, 130)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_m74ck")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel" unique_id=493309796]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -751,18 +752,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer" unique_id=1226033912]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer" unique_id=285290190]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_aj1qv")
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/Panel" unique_id=1116275505]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 8
@@ -780,21 +781,21 @@ texture = ExtResource("6_fpr2n")
 expand_mode = 1
 flip_h = true
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer" unique_id=983183238]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer" unique_id=779240570]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=1977066144]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6i1l")
 
-[node name="key" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel"]
+[node name="key" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel" unique_id=329097999]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 4.0
@@ -809,7 +810,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=1842487027]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
@@ -817,7 +818,7 @@ theme_override_font_sizes/font_size = 40
 text = "Key"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer" unique_id=1525101525]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
@@ -825,14 +826,14 @@ theme_override_font_sizes/font_size = 40
 text = "5,000"
 vertical_alignment = 1
 
-[node name="KeyAdd" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer"]
+[node name="KeyAdd" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer" unique_id=1284725415]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 flat = true
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd" unique_id=955458121]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -846,13 +847,13 @@ offset_bottom = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd/CenterContainer"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd/CenterContainer" unique_id=1842236363]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_lmmku")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd/CenterContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd/CenterContainer" unique_id=858967062]
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 105
@@ -861,49 +862,49 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="MarginContainer5" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer5" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=816339051]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 50
 
-[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer5"]
+[node name="Panel" type="Panel" parent="Control/ScrollContainer/VBoxContainer/MarginContainer5" unique_id=1315570130]
 custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpr2n")
 
-[node name="ad" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="ad" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1580003756]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad" unique_id=1908356209]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer" unique_id=73597929]
 layout_mode = 2
 texture = ExtResource("2_1grnk")
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer" unique_id=105892007]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/MarginContainer" unique_id=376087305]
 layout_mode = 2
 size_flags_stretch_ratio = 4.9
 theme_override_font_sizes/font_size = 70
 text = "200"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer" unique_id=1441823438]
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer"]
+[node name="ShowRewardedAd" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer" unique_id=838871317]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -911,42 +912,42 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer" unique_id=1168903793]
 layout_mode = 2
 
-[node name="ad2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="ad2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=2063668047]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad2" unique_id=1910337585]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer" unique_id=1259779919]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("3_yymmd")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer" unique_id=69654412]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/MarginContainer" unique_id=1602752651]
 layout_mode = 2
 size_flags_stretch_ratio = 4.9
 theme_override_font_sizes/font_size = 70
 text = "5000"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer" unique_id=1827805552]
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer"]
+[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer" unique_id=1824156045]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -954,7 +955,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer/TextureRect2"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer/TextureRect2" unique_id=696363928]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -972,39 +973,39 @@ text = "$0.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ad3" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="ad3" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=909214012]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad3" unique_id=1153879475]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer" unique_id=1276990889]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("4_vvu0h")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer" unique_id=162612721]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/MarginContainer" unique_id=1847910042]
 layout_mode = 2
 size_flags_stretch_ratio = 4.9
 theme_override_font_sizes/font_size = 70
 text = "20,000"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer" unique_id=1809596888]
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer"]
+[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer" unique_id=1564588346]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1012,7 +1013,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer/TextureRect2"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer/TextureRect2" unique_id=687692526]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1030,39 +1031,39 @@ text = "$1.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ad4" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="ad4" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=244000658]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad4" unique_id=771067460]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer" unique_id=957069586]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("5_7rex1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer" unique_id=1679350003]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/MarginContainer" unique_id=1511574058]
 layout_mode = 2
 size_flags_stretch_ratio = 4.9
 theme_override_font_sizes/font_size = 70
 text = "40,000"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer" unique_id=564596439]
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer"]
+[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer" unique_id=1785158029]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1070,7 +1071,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer/TextureRect2"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer/TextureRect2" unique_id=1361960231]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1088,39 +1089,39 @@ text = "$4.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ad5" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="ad5" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=362965903]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad5"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad5" unique_id=877814688]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer" unique_id=492490796]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("2_u7vg8")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer" unique_id=1071822346]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/MarginContainer" unique_id=1869082936]
 layout_mode = 2
 size_flags_stretch_ratio = 4.9
 theme_override_font_sizes/font_size = 70
 text = "100,000"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer" unique_id=75481543]
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer"]
+[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer" unique_id=1223407818]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1128,7 +1129,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer/TextureRect2"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer/TextureRect2" unique_id=458075699]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1146,38 +1147,38 @@ text = "$9.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ad6" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer"]
+[node name="ad6" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1312508820]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 60
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad6"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad6" unique_id=500269416]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer" unique_id=356179625]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("7_fpr2n")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer" unique_id=364798839]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/MarginContainer" unique_id=1763603362]
 layout_mode = 2
 size_flags_stretch_ratio = 4.9
 theme_override_font_sizes/font_size = 70
 text = "Remove ads"
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer" unique_id=666757585]
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer"]
+[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer" unique_id=1862729746]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1185,7 +1186,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer/TextureRect2"]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer/TextureRect2" unique_id=1114458640]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1203,9 +1204,17 @@ text = "$1.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ShopAdmob" type="Node" parent="." unique_id=2042179933]
+script = ExtResource("14_d6i1l")
+android_debug_application_id = "ca-app-pub-3940256099942544/5354046379"
+metadata/_custom_type_script = "uid://dyfo2tjnxrid7"
+
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add" to="." method="_on_power_1_add_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add" to="." method="_on_power_2_add_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1AddTIme" to="." method="_on_power_1_add_t_ime_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime" to="." method="_on_power_2_add_time_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd" to="." method="_on_key_add_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer/ShowRewardedAd" to="." method="_on_show_rewarded_ad_pressed"]
+[connection signal="initialization_completed" from="ShopAdmob" to="." method="_on_shop_admob_initialization_completed"]
+[connection signal="rewarded_ad_loaded" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_loaded"]

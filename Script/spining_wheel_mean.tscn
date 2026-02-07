@@ -2,24 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cnefl05bd3n22" path="res://Script/spining_wheel.gd" id="1_qu1pa"]
 [ext_resource type="Script" uid="uid://b08h1lfth3hlq" path="res://Script/selection_wheel.gd" id="2_8lbm4"]
-[ext_resource type="Texture2D" uid="uid://bhyca6b8uajef" path="res://Assets/Atlas/COIN2.PNG" id="3_wry1u"]
-[ext_resource type="Texture2D" uid="uid://bwb7wa7qcr3xr" path="res://Assets/Atlas/COIN5.PNG" id="4_ctllv"]
-[ext_resource type="Texture2D" uid="uid://sxg4njtfmb6m" path="res://Assets/Atlas/COIN3.PNG" id="6_a5j6k"]
-[ext_resource type="Texture2D" uid="uid://chr3r4hatdctw" path="res://Assets/Atlas/COIN4.PNG" id="7_a5dr6"]
-[ext_resource type="Texture2D" uid="uid://nyvrxf6usl22" path="res://Assets/Atlas/COIN.PNG" id="8_32pip"]
+[ext_resource type="Texture2D" uid="uid://cbjt5yrq8wp3c" path="res://Assets/images/COIN_100.png" id="4_1vjc3"]
+[ext_resource type="Texture2D" uid="uid://dva2a7svldhqv" path="res://Assets/images/COIN5_text.PNG" id="4_ctllv"]
+[ext_resource type="Texture2D" uid="uid://cwdhcqecekm6f" path="res://Assets/images/COIN3_200.png" id="5_a5j6k"]
+[ext_resource type="Texture2D" uid="uid://dwfwapvhs5il" path="res://Assets/images/key_2.png" id="6_a5dr6"]
+[ext_resource type="Texture2D" uid="uid://cigmsrm74ilr6" path="res://Assets/images/COIN2_500.png" id="7_32pip"]
 [ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="8_ctllv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vjc3"]
-atlas = ExtResource("7_a5dr6")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5j6k"]
-atlas = SubResource("AtlasTexture_1vjc3")
-script = ExtResource("2_8lbm4")
-name = "fgfgfg"
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+[ext_resource type="Texture2D" uid="uid://0awe0bjyicmm" path="res://Assets/images/COIN4_300.png" id="8_ew0uf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5dr6"]
 atlas = ExtResource("4_ctllv")
+region = Rect2(56, 64, 400, 392)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wry1u"]
 atlas = SubResource("AtlasTexture_a5dr6")
@@ -27,7 +20,7 @@ script = ExtResource("2_8lbm4")
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_32pip"]
-atlas = ExtResource("8_32pip")
+atlas = ExtResource("4_1vjc3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnycj"]
 atlas = SubResource("AtlasTexture_32pip")
@@ -35,7 +28,7 @@ script = ExtResource("2_8lbm4")
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew0uf"]
-atlas = ExtResource("6_a5j6k")
+atlas = ExtResource("5_a5j6k")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ww70"]
 atlas = SubResource("AtlasTexture_ew0uf")
@@ -46,8 +39,17 @@ script = ExtResource("2_8lbm4")
 name = "tttt"
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lggbe"]
+atlas = ExtResource("6_a5dr6")
+region = Rect2(-208, -8, 3048, 2968)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjdm7"]
+atlas = SubResource("AtlasTexture_lggbe")
+script = ExtResource("2_8lbm4")
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8yc6"]
-atlas = ExtResource("3_wry1u")
+atlas = ExtResource("7_32pip")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbwa8"]
 atlas = SubResource("AtlasTexture_e8yc6")
@@ -55,7 +57,7 @@ script = ExtResource("2_8lbm4")
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rntpp"]
-atlas = ExtResource("7_a5dr6")
+atlas = ExtResource("8_ew0uf")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bs14"]
 atlas = SubResource("AtlasTexture_rntpp")
@@ -69,6 +71,18 @@ atlas = ExtResource("8_ctllv")
 atlas = SubResource("AtlasTexture_qyl4v")
 script = ExtResource("2_8lbm4")
 name = "key"
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl117"]
+atlas = ExtResource("4_ctllv")
+region = Rect2(0, 32, 464, 432)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuueg"]
+atlas = SubResource("AtlasTexture_dl117")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nq3r"]
+atlas = SubResource("AtlasTexture_fuueg")
+script = ExtResource("2_8lbm4")
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [node name="SpiningWheel" type="Control" unique_id=1288895353]
@@ -85,5 +99,5 @@ bkg_color = Color(0.88235295, 0.23921569, 0.09019608, 1)
 line_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
 outer_radius = 350
 inner_radius = 100
-options = Array[ExtResource("2_8lbm4")]([SubResource("AtlasTexture_a5j6k"), SubResource("AtlasTexture_wry1u"), SubResource("AtlasTexture_pnycj"), SubResource("AtlasTexture_ctllv"), SubResource("AtlasTexture_dbwa8"), SubResource("AtlasTexture_1bs14"), SubResource("AtlasTexture_jbpx6")])
-segments = 4
+options = Array[ExtResource("2_8lbm4")]([SubResource("AtlasTexture_wry1u"), SubResource("AtlasTexture_pnycj"), SubResource("AtlasTexture_ctllv"), SubResource("AtlasTexture_fjdm7"), SubResource("AtlasTexture_dbwa8"), SubResource("AtlasTexture_1bs14"), SubResource("AtlasTexture_jbpx6"), SubResource("AtlasTexture_8nq3r")])
+segments = 7

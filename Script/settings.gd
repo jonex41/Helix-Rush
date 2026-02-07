@@ -12,13 +12,13 @@ var last_selected_id := -1
 
 func _ready():
 	popup = get_popup()
-	var theme = Theme.new()
+	var themes = Theme.new()
 
 	# Set icon size for popup menu items
-	theme.set_constant("icon_max_width", "PopupMenu", icon_size.x)
-	theme.set_constant("icon_max_height", "PopupMenu", icon_size.y)
+	themes.set_constant("icon_max_width", "PopupMenu", icon_size.x)
+	themes.set_constant("icon_max_height", "PopupMenu", icon_size.y)
 
-	popup.theme = theme
+	popup.theme = themes
 	popup.id_pressed.connect(_on_item_pressed)
 
 	# Example items (optional if already added in editor)

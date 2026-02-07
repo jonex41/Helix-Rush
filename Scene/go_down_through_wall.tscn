@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3yjy63be3n01"]
+[gd_scene format=3 uid="uid://c3yjy63be3n01"]
 
 [ext_resource type="Script" uid="uid://ctkuvr3g8eh7k" path="res://Script/antigravity_go_through.gd" id="1_6u21d"]
 [ext_resource type="PackedScene" uid="uid://ba4jcgskkjrn8" path="res://Assets/trampoline_red.glb" id="2_syryi"]
@@ -6,14 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ueng6"]
 size = Vector3(1.2992554, 0.3618164, 1.2762451)
 
-[node name="go_down_through_wall" type="Area3D"]
+[node name="go_down_through_wall" type="Area3D" unique_id=1806924632]
 transform = Transform3D(0.36, 0, 0, 0, 0.2313825, 0, 0, 0, 0.36, 0, 0, 0)
 script = ExtResource("1_6u21d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=430365663]
 transform = Transform3D(1.01, 0, 0, 0, 1.0099826, 0, 0, 0, 1.01, -0.010202328, 0.2060766, -0.008445434)
 shape = SubResource("BoxShape3D_ueng6")
 
-[node name="trampoline_red" parent="." instance=ExtResource("2_syryi")]
+[node name="trampoline_red" parent="." unique_id=1802662450 instance=ExtResource("2_syryi")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

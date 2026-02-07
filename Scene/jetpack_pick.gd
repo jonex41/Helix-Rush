@@ -26,7 +26,7 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D:
-		var rb := body as RigidBody3D
+		#var rb := body as RigidBody3D
 		GameTimer.add_power_antigravity()
 		
 		print('i am here')
