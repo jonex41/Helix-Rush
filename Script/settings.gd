@@ -51,14 +51,14 @@ func _on_item_pressed(id: int):
 	# Set new selected icon
 	var index := popup.get_item_index(id)
 	if index == 0:
-		GameTimer.can_play_sound= !GameTimer.can_play_sound
+		GameTimer.set_can_play_sound(!GameTimer.can_play_sound)
 		if GameTimer.can_play_sound :
 			popup.set_item_icon(index, audio_icon)
 		else :
 			popup.set_item_icon(index, audio_icon_off)
 			
 	if index == 1:
-		GameTimer.can_vibrate= !GameTimer.can_vibrate
+		GameTimer.set_can_vibrate(!GameTimer.can_vibrate)
 		if GameTimer.can_vibrate :
 			popup.set_item_icon(index, vibrate_icon)
 		else :

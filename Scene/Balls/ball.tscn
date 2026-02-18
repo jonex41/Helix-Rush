@@ -36,7 +36,7 @@ visible = false
 
 [node name="GPUTrail3D" parent="." unique_id=157134242 instance=ExtResource("4_kq75t")]
 transform = Transform3D(-3.496911e-09, -0.08, 0, 0.08, -3.496911e-09, 0, 0, 0, 0.08, 0, -0.056637704, 0)
-amount = 16
+amount = 21
 amount_ratio = 0.995
 lifetime = 21.0
 length = 21

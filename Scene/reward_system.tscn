@@ -3,82 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://c1kefqcinplw4" path="res://Script/spining_wheel_mean.tscn" id="1_ko6hv"]
 [ext_resource type="Script" uid="uid://vvqp030w7ghc" path="res://Script/reward_system.gd" id="1_u1yxu"]
 [ext_resource type="Texture2D" uid="uid://rq5gm6shv01" path="res://Assets/level/spin_wheel_arrow.png" id="2_tvlqe"]
-[ext_resource type="Script" uid="uid://b08h1lfth3hlq" path="res://Script/selection_wheel.gd" id="3_1r1np"]
 [ext_resource type="PackedScene" uid="uid://o2faoesl5kb4" path="res://Scene/cancel_button.tscn" id="4_6ttjh"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="4_gh30k"]
-[ext_resource type="Texture2D" uid="uid://dva2a7svldhqv" path="res://Assets/images/COIN5_text.PNG" id="4_w3p4j"]
-[ext_resource type="Texture2D" uid="uid://cbjt5yrq8wp3c" path="res://Assets/images/COIN_100.png" id="5_cg1hc"]
-[ext_resource type="Texture2D" uid="uid://cwdhcqecekm6f" path="res://Assets/images/COIN3_200.png" id="6_tuilr"]
-[ext_resource type="Texture2D" uid="uid://dwfwapvhs5il" path="res://Assets/images/key_2.png" id="7_wc625"]
-[ext_resource type="Texture2D" uid="uid://cigmsrm74ilr6" path="res://Assets/images/COIN2_500.png" id="8_xsljg"]
-[ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="9_th4xi"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5dr6"]
-atlas = ExtResource("4_w3p4j")
-region = Rect2(56, 64, 400, 392)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wry1u"]
-atlas = SubResource("AtlasTexture_a5dr6")
-script = ExtResource("3_1r1np")
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_32pip"]
-atlas = ExtResource("5_cg1hc")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnycj"]
-atlas = SubResource("AtlasTexture_32pip")
-script = ExtResource("3_1r1np")
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ew0uf"]
-atlas = ExtResource("6_tuilr")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ww70"]
-atlas = SubResource("AtlasTexture_ew0uf")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ctllv"]
-atlas = SubResource("AtlasTexture_4ww70")
-script = ExtResource("3_1r1np")
-name = "tttt"
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lggbe"]
-atlas = ExtResource("7_wc625")
-region = Rect2(-208, -8, 3048, 2968)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjdm7"]
-atlas = SubResource("AtlasTexture_lggbe")
-script = ExtResource("3_1r1np")
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8yc6"]
-atlas = ExtResource("8_xsljg")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbwa8"]
-atlas = SubResource("AtlasTexture_e8yc6")
-script = ExtResource("3_1r1np")
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qyl4v"]
-atlas = ExtResource("9_th4xi")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jbpx6"]
-atlas = SubResource("AtlasTexture_qyl4v")
-script = ExtResource("3_1r1np")
-name = "key"
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dl117"]
-atlas = ExtResource("4_w3p4j")
-region = Rect2(0, 32, 464, 432)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fuueg"]
-atlas = SubResource("AtlasTexture_dl117")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nq3r"]
-atlas = SubResource("AtlasTexture_fuueg")
-script = ExtResource("3_1r1np")
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+[ext_resource type="Shader" path="res://shader/white_border_display.gdshader" id="5_jrc62"]
+[ext_resource type="Texture2D" uid="uid://bepua85x3456" path="res://Assets/images/ad.png" id="5_qn1p5"]
+[ext_resource type="AudioStream" uid="uid://khxwcuk2mn8c" path="res://Assets/Audio/roulette.mp3" id="6_rma5b"]
+[ext_resource type="Script" uid="uid://ctr4wc8onnroy" path="res://addons/AdmobPlugin/Admob.gd" id="9_jrc62"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rma5b"]
 bg_color = Color(0, 0, 0, 0.53000003)
@@ -90,6 +20,9 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1htr"]
+shader = ExtResource("5_jrc62")
 
 [node name="Reward" type="Control" unique_id=234166329]
 layout_mode = 3
@@ -117,12 +50,9 @@ offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SpiningWheel" parent="CenterContainer" unique_id=878136814 instance=ExtResource("1_ko6hv")]
+[node name="SpiningWheel" parent="CenterContainer" unique_id=1288895353 instance=ExtResource("1_ko6hv")]
 layout_mode = 1
-outer_radius = 320
-inner_radius = 80
-options = Array[ExtResource("3_1r1np")]([SubResource("AtlasTexture_wry1u"), SubResource("AtlasTexture_pnycj"), SubResource("AtlasTexture_ctllv"), SubResource("AtlasTexture_fjdm7"), SubResource("AtlasTexture_dbwa8"), SubResource("AtlasTexture_jbpx6"), SubResource("AtlasTexture_8nq3r")])
-segments = 6
+segments = 8
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1846064144]
 custom_minimum_size = Vector2(100, 100)
@@ -172,7 +102,37 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rma5b")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_rma5b")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_rma5b")
 theme_override_styles/focus = SubResource("StyleBoxFlat_rma5b")
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button" unique_id=1627541745]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -57.5
+offset_right = 87.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 40
+
+[node name="TextureRect" type="TextureRect" parent="Button/HBoxContainer" unique_id=625061271]
+visible = false
+material = SubResource("ShaderMaterial_i1htr")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("5_qn1p5")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Button/HBoxContainer" unique_id=71543193]
+layout_mode = 2
+theme_override_font_sizes/font_size = 84
 text = "Spin"
+horizontal_alignment = 1
 
 [node name="TextureButton" parent="." unique_id=738153549 instance=ExtResource("4_6ttjh")]
 visible = false
@@ -181,5 +141,19 @@ anchors_preset = -1
 offset_left = 85.0
 offset_top = 95.0
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=44554318]
+stream = ExtResource("6_rma5b")
+
+[node name="ShopAdmob" type="Node" parent="." unique_id=436199369]
+script = ExtResource("9_jrc62")
+android_debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+metadata/_custom_type_script = "uid://ctr4wc8onnroy"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="consent_form_loaded" from="ShopAdmob" to="." method="_on_shop_admob_consent_form_loaded"]
+[connection signal="consent_info_updated" from="ShopAdmob" to="." method="_on_shop_admob_consent_info_updated"]
+[connection signal="initialization_completed" from="ShopAdmob" to="." method="_on_shop_admob_initialization_completed"]
+[connection signal="rewarded_ad_loaded" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_loaded"]
+[connection signal="rewarded_ad_showed_full_screen_content" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_showed_full_screen_content"]
+[connection signal="rewarded_ad_user_earned_reward" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_user_earned_reward"]

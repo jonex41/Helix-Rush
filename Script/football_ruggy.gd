@@ -43,7 +43,12 @@ func _integrate_forces(state):
 			break
 
 
-
+func play_audio():
+	if GameTimer.can_play_sound && GameTimer.is_playing :
+		print("palying : ",GameTimer.is_playing )
+		$AudioStreamPlayer3D.play()
+	else :
+		$AudioStreamPlayer3D.stop()
 
 
 func free_palayer():

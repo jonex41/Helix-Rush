@@ -33,6 +33,7 @@ var grid: Array = [
 
 ]
 var colorGrid = [
+
 	["#2E3192",	"#1BFFFF"],
 	[	"#D4145A"	,"#FBB03B"],
 	[	"#009245",	"#FCEE21" ],
@@ -119,7 +120,10 @@ func _on_area_3d_body_entered(_body: Node3D) -> void:
 	GameTimer.set_is_playing(false) 
 	var scene = preload("res://Scene/game_win_manager.tscn")
 	var instance = scene.instantiate()
+	GameTimer.initial_coin_balance += ScoreManager.score
+	GameTimer.initial_key_balance += ScoreManager.key
 	GameTimer.increase_level()
+	GameTimer.set_is_playing(false) 
 
 	
 	$GameFinish/Area3D.set_deferred("monitoring", false)

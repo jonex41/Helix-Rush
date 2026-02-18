@@ -90,6 +90,7 @@ GameTimer="*res://Script/game_timer.gd"
 SceneManager="*res://Script/scene_manager.gd"
 FlatMaterials="*uid://c8h4fpot4tqwp"
 MobileAds="*uid://bogf0g0tf7rc8"
+AdManager="*uid://bne67gm7eglh2"
 
 [display]
 

@@ -166,12 +166,12 @@ layout_mode = 2
 texture = ExtResource("1_17j3h")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=400148366]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=384764158]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("3_gkil0")
@@ -179,6 +179,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=312882396]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("4_evwbb")
@@ -186,6 +187,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=2059837028]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("3_gkil0")
@@ -212,3 +214,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0.42352942)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

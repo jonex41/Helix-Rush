@@ -3,6 +3,7 @@
 #
 
 @tool
+@icon("icon.png")
 class_name Admob extends Node
 
 signal initialization_completed(status_data: InitializationStatus)
@@ -45,6 +46,14 @@ signal app_open_ad_clicked(ad_info: AdInfo)
 signal app_open_ad_showed_full_screen_content(ad_info: AdInfo)
 signal app_open_ad_failed_to_show_full_screen_content(ad_info: AdInfo, error_data: AdError)
 signal app_open_ad_dismissed_full_screen_content(ad_info: AdInfo)
+signal native_ad_loaded(ad_data, response)
+signal native_ad_failed_to_load(ad_data, error)
+signal native_ad_impression(ad_data)
+signal native_ad_size_measured(ad_data)
+signal native_ad_clicked(ad_data)
+signal native_ad_swipe_gesture_clicked(ad_data)
+signal native_ad_opened(ad_data)
+signal native_ad_closed(ad_data)
 signal consent_form_loaded
 signal consent_form_dismissed(error_data: FormError)
 signal consent_form_failed_to_load(error_data: FormError)
@@ -60,12 +69,14 @@ const ANDROID_INTERSTITIAL_DEMO_AD_UNIT_ID: String = "ca-app-pub-394025609994254
 const ANDROID_REWARDED_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/5224354917"
 const ANDROID_REWARDED_INTERSTITIAL_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/5354046379"
 const ANDROID_APP_OPEN_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/9257395921"
+const ANDROID_NATIVE_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/2247696110"
 
 const IOS_BANNER_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/8388050270"
 const IOS_INTERSTITIAL_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/4411468910"
 const IOS_REWARDED_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/1712485313"
 const IOS_REWARDED_INTERSTITIAL_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/6978759866"
 const IOS_APP_OPEN_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/5575463023"
+const IOS_NATIVE_DEMO_AD_UNIT_ID: String = "ca-app-pub-3940256099942544/3986624511"
 
 const MINIMUM_CACHE_SIZE: int = 1
 const MAXIMUM_CACHE_SIZE: int = 1000
@@ -95,6 +106,17 @@ const MAXIMUM_CACHE_SIZE: int = 1000
 
 ## Whether the plugin should automatically apply the configuration after initialization has been completed.
 @export var auto_configure_on_initialize: bool = true
+
+@export_group("Global Settings", "global_")
+
+## Sets the ads' audio volume. Minimum value is 0.0 and maximum value is 1.0.
+@export_range(0.0, 1.0, 0.01) var global_ad_volume: float = 1.0
+
+## Whether or not the ads' audio will be muted.
+@export var global_ads_muted: bool = false
+
+## Whether or not the global settings will be reapplied at app restart.
+@export var global_apply_at_startup: bool = false
 
 
 @export_category("Ad Type-specific")
@@ -144,6 +166,8 @@ const MAXIMUM_CACHE_SIZE: int = 1000
 ## Specifies the AdMob app open ad ID used when testing the app on Android.
 @export var android_debug_app_open_id: String = ANDROID_APP_OPEN_DEMO_AD_UNIT_ID
 
+## Specifies the AdMob native ad ID used when testing the app on Android.
+@export var android_debug_native_id: String = ANDROID_NATIVE_DEMO_AD_UNIT_ID
 
 @export_group("Android Real Ad Unit IDs", "android_real_")
 ## Specifies the AdMob banner ad ID used after releasing the Android app to production.
@@ -160,6 +184,9 @@ const MAXIMUM_CACHE_SIZE: int = 1000
 
 ## Specifies the AdMob app open ad ID used after releasing the Android app to production.
 @export var android_real_app_open_id: String = ""
+
+## Specifies the AdMob native ad ID used after releasing the Android app to production.
+@export var android_real_native_id: String = ""
 
 
 @export_category("iOS-specific")
@@ -187,6 +214,9 @@ const MAXIMUM_CACHE_SIZE: int = 1000
 ## Specifies the AdMob app open ad ID used when testing the app on iOS.
 @export var ios_debug_app_open_id: String = IOS_APP_OPEN_DEMO_AD_UNIT_ID
 
+## Specifies the AdMob native ad ID used when testing the app on ios.
+@export var ios_debug_native_id: String = IOS_NATIVE_DEMO_AD_UNIT_ID
+
 
 @export_group("iOS Real Ad Unit IDs", "ios_real_")
 ## Specifies the AdMob banner ad ID used after releasing the iOS app to production.
@@ -203,6 +233,9 @@ const MAXIMUM_CACHE_SIZE: int = 1000
 
 ## Specifies the AdMob app open ad ID used after releasing the iOS app to production.
 @export var ios_real_app_open_id: String = ""
+
+## Specifies the AdMob native ad ID used after releasing the iOS app to production.
+@export var ios_real_native_id: String = ""
 
 
 @export_group("App Tracking Transparency")
@@ -242,6 +275,8 @@ const MAXIMUM_CACHE_SIZE: int = 1000
 ## Maximum number of rewarded-interstitial ads to keep in the cache before removing old ads.
 @export_range(MINIMUM_CACHE_SIZE,MAXIMUM_CACHE_SIZE) var max_rewarded_interstitial_ad_cache: int = 3: set = set_max_rewarded_interstitial_ad_cache
 
+## Maximum number of native ads to keep in the cache before removing old ads.
+@export_range(MINIMUM_CACHE_SIZE,MAXIMUM_CACHE_SIZE) var max_native_ad_cache: int = 10: set = set_max_native_ad_cache
 
 @export_group("Cleanup After Ad Displayed") # For single-use ad types. Banner ads are multi-use.
 ## Cleanup cached interstitial ads after they are displayed. Interstitial ads are single-use.
@@ -283,6 +318,7 @@ var _interstitial_id: String
 var _rewarded_id: String
 var _rewarded_interstitial_id: String
 var _app_open_id: String
+var _native_id: String
 
 var _plugin_singleton: Object
 
@@ -290,6 +326,9 @@ var _active_banner_ads: AdCache
 var _active_interstitial_ads: AdCache
 var _active_rewarded_ads: AdCache
 var _active_rewarded_interstitial_ads: AdCache
+var _active_native_ads: AdCache
+
+var _native_control_bindings: Dictionary = {}
 
 
 func _init() -> void:
@@ -301,6 +340,7 @@ func _init() -> void:
 	_active_rewarded_ads = AdCache.new(max_rewarded_ad_cache, "rewarded_ad", remove_rewarded_ad)
 	_active_rewarded_interstitial_ads = AdCache.new(max_rewarded_interstitial_ad_cache,
 			"rewarded_interstitial_ad", remove_rewarded_interstitial_ad)
+	_active_native_ads = AdCache.new(max_native_ad_cache, "native_ad", remove_native_ad)
 
 
 func _validate_property(property: Dictionary) -> void:
@@ -316,12 +356,14 @@ func _ready() -> void:
 			_rewarded_id = ios_real_rewarded_id
 			_rewarded_interstitial_id = ios_real_rewarded_interstitial_id
 			_app_open_id = ios_real_app_open_id
+			_native_id = ios_real_native_id
 		else:
 			_banner_id = ios_debug_banner_id
 			_interstitial_id = ios_debug_interstitial_id
 			_rewarded_id = ios_debug_rewarded_id
 			_rewarded_interstitial_id = ios_debug_rewarded_interstitial_id
 			_app_open_id = ios_debug_app_open_id
+			_native_id = ios_debug_native_id
 	else:
 		if is_real:
 			_banner_id = android_real_banner_id
@@ -329,12 +371,14 @@ func _ready() -> void:
 			_rewarded_id = android_real_rewarded_id
 			_rewarded_interstitial_id = android_real_rewarded_interstitial_id
 			_app_open_id = android_real_app_open_id
+			_native_id = android_real_native_id
 		else:
 			_banner_id = android_debug_banner_id
 			_interstitial_id = android_debug_interstitial_id
 			_rewarded_id = android_debug_rewarded_id
 			_rewarded_interstitial_id = android_debug_rewarded_interstitial_id
 			_app_open_id = android_debug_app_open_id
+			_native_id = android_debug_native_id
 
 	_update_plugin()
 
@@ -368,7 +412,7 @@ func _update_plugin() -> void:
 		if Engine.has_singleton(PLUGIN_SINGLETON_NAME):
 			_plugin_singleton = Engine.get_singleton(PLUGIN_SINGLETON_NAME)
 			_connect_signals()
-		elif not OS.has_feature("editor_hint"):
+		elif not Engine.is_editor_hint():
 			Admob.log_error("%s singleton not found!" % PLUGIN_SINGLETON_NAME)
 
 
@@ -413,6 +457,14 @@ func _connect_signals() -> void:
 	_plugin_singleton.connect("app_open_ad_showed_full_screen_content", _on_app_open_ad_showed_full_screen_content)
 	_plugin_singleton.connect("app_open_ad_failed_to_show_full_screen_content", _on_app_open_ad_failed_to_show_full_screen_content)
 	_plugin_singleton.connect("app_open_ad_dismissed_full_screen_content", _on_app_open_ad_dismissed_full_screen_content)
+	_plugin_singleton.connect("native_ad_loaded", _on_native_ad_loaded)
+	_plugin_singleton.connect("native_ad_failed_to_load", _on_native_ad_failed_to_load)
+	_plugin_singleton.connect("native_ad_impression", _on_native_ad_impression)
+	_plugin_singleton.connect("native_ad_size_measured", _on_native_ad_size_measured)
+	_plugin_singleton.connect("native_ad_clicked", _on_native_ad_clicked)
+	_plugin_singleton.connect("native_ad_swipe_gesture_clicked", _native_ad_swipe_gesture_clicked)
+	_plugin_singleton.connect("native_ad_opened", _on_native_ad_opened)
+	_plugin_singleton.connect("native_ad_closed", _on_native_ad_closed)
 	_plugin_singleton.connect("consent_form_loaded", _on_consent_form_loaded)
 	_plugin_singleton.connect("consent_form_dismissed", _on_consent_form_dismissed)
 	_plugin_singleton.connect("consent_form_failed_to_load", _on_consent_form_failed_to_load)
@@ -505,6 +557,8 @@ func set_max_rewarded_ad_cache(a_value: int) -> void:
 func set_max_rewarded_interstitial_ad_cache(a_value: int) -> void:
 	max_rewarded_interstitial_ad_cache = clampi(a_value, MINIMUM_CACHE_SIZE, MAXIMUM_CACHE_SIZE)
 
+func set_max_native_ad_cache(a_value: int) -> void:
+	max_native_ad_cache = clampi(a_value, MINIMUM_CACHE_SIZE, MAXIMUM_CACHE_SIZE)
 
 func set_debug_geography(a_value: ConsentRequestParameters.DebugGeography) -> void:
 	debug_geography = a_value
@@ -543,6 +597,29 @@ func set_request_configuration(a_config: AdmobConfig = null) -> void:
 func set_app_pause_on_background(a_pause: bool) -> void:
 	if _plugin_singleton != null:
 		_plugin_singleton.set_app_pause_on_background(a_pause)
+	else:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+
+
+func get_global_settings() -> AdmobSettings:
+	var __settings: AdmobSettings
+
+	if _plugin_singleton != null:
+		__settings = AdmobSettings.new(_plugin_singleton.get_global_settings())
+	else:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+
+	return __settings
+
+
+func set_global_settings(a_settings: AdmobSettings = null) -> void:
+	if _plugin_singleton != null:
+		if a_settings == null:
+			a_settings = (AdmobSettings.new()
+					.set_ad_volume(global_ad_volume)
+					.set_ads_muted(global_ads_muted)
+					.set_apply_at_startup(global_apply_at_startup))
+		_plugin_singleton.set_global_settings(a_settings.get_raw_data())
 	else:
 		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
 
@@ -892,6 +969,127 @@ func is_app_open_ad_available() -> bool:
 		return _plugin_singleton.is_app_open_ad_available()
 
 
+func create_native_ad_request() -> LoadAdRequest:
+	return (create_basic_ad_request().set_ad_unit_id(_native_id))
+
+
+func load_native_ad(a_request: LoadAdRequest = null) -> void:
+	if _plugin_singleton != null:
+		if a_request == null:
+			a_request = create_native_ad_request()
+		_plugin_singleton.load_native_ad(a_request.get_raw_data())
+	else:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+
+
+func is_native_ad_loaded() -> bool:
+	if _plugin_singleton != null:
+		return _active_native_ads.is_empty() == false
+	else:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+
+	return false
+
+
+func show_native_ad(a_ad_id: String = "") -> void:
+	if _plugin_singleton == null:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+	else:
+		if a_ad_id.is_empty():
+			if _active_native_ads.is_empty():
+				Admob.log_error("Cannot show native ad. No native ads loaded.")
+			else:
+				_plugin_singleton.show_native_ad(_active_native_ads.last_key())
+		else:
+			if _active_native_ads.has_key(a_ad_id):
+				_plugin_singleton.show_native_ad(a_ad_id)
+			else:
+				Admob.log_error("Cannot show native ad. Ad with ID '%s' not found." % a_ad_id)
+
+
+func hide_native_ad(a_ad_id: String = "") -> void:
+	if _plugin_singleton == null:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+	else:
+		if a_ad_id.is_empty():
+			if _active_native_ads.is_empty():
+				Admob.log_error("Cannot hide native ad. No native ads loaded.")
+			else:
+				_plugin_singleton.hide_native_ad(_active_native_ads.last_key())
+		else:
+			if _active_native_ads.has_key(a_ad_id):
+				_plugin_singleton.hide_native_ad(a_ad_id)
+			else:
+				Admob.log_error("Cannot hide native ad. Ad with ID '%s' not found." % a_ad_id)
+
+
+func remove_native_ad(a_ad_id: String = "") -> void:
+	if _plugin_singleton == null:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+	else:
+		if a_ad_id.is_empty():
+			if _active_native_ads.is_empty():
+				Admob.log_error("Cannot remove native ad. No native ads loaded.")
+			else:
+				var _ad_id = _active_native_ads.erase_last()
+				detach_native_ad(_ad_id)
+				_plugin_singleton.remove_native_ad(_ad_id)
+		else:
+			if _active_native_ads.has_key(a_ad_id):
+				_active_native_ads.erase(a_ad_id)
+				detach_native_ad(a_ad_id)
+				_plugin_singleton.remove_native_ad(a_ad_id)
+			else:
+				Admob.log_error("Cannot remove native ad. Ad with ID '%s' not found." % a_ad_id)
+
+
+## Attaches a native ad to a Control node. The native ad will follow the Control's position, size and visibility.
+func attach_native_ad_to_control(ad_id: String, control: Control) -> void:
+	if _plugin_singleton == null:
+		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+	else:
+		if ad_id.is_empty() or control == null:
+			Admob.log_error("Cannot attach native ad to control. Either Ad with ID '%s' not found, or control is null" % ad_id)
+		else:
+			if _native_control_bindings.has(ad_id):
+				Admob.log_info("Native ad %s re-attached to new control" % ad_id)
+			_native_control_bindings[ad_id] = control
+			_sync_native_ad_with_control(ad_id, control) # Initial sync
+
+
+func detach_native_ad(ad_id: String) -> void:
+	if _native_control_bindings.has(ad_id):
+		_native_control_bindings.erase(ad_id)
+
+
+func _sync_native_ad_with_control(ad_id: String, control: Control) -> void:
+	if not is_instance_valid(control):
+		detach_native_ad(ad_id)
+		return
+
+	var viewport := control.get_viewport()
+	var vp_rect := viewport.get_visible_rect()
+	var window_size := DisplayServer.window_get_size()
+
+	var scale_x := window_size.x / vp_rect.size.x
+	var scale_y := window_size.y / vp_rect.size.y
+
+	var canvas_pos := control.get_global_transform_with_canvas().origin
+	var canvas_size := control.get_rect().size
+
+	var win_x := (canvas_pos.x - vp_rect.position.x) * scale_x
+	var win_y := (canvas_pos.y - vp_rect.position.y) * scale_y
+	var win_w := canvas_size.x * scale_x
+	var win_h := canvas_size.y * scale_y
+	_plugin_singleton.update_native_ad_layout(ad_id, int(win_x), int(win_y), int(win_w), int(win_h), control.is_visible_in_tree())
+
+
+func _process(_delta):
+	for ad_id in _native_control_bindings.keys():
+		var control = _native_control_bindings[ad_id]
+		_sync_native_ad_with_control(ad_id, control)
+
+
 func load_consent_form() -> void:
 	if _plugin_singleton == null:
 		Admob.log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
@@ -998,7 +1196,7 @@ func _on_banner_ad_loaded(a_ad_data: Dictionary, a_response_info: Dictionary) ->
 	banner_ad_loaded.emit(__ad_info, __response_info)
 
 
-func _on_banner_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary)  -> void:
+func _on_banner_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary) -> void:
 	banner_ad_failed_to_load.emit(AdInfo.new(a_ad_data), LoadAdError.new(error_data))
 
 
@@ -1033,7 +1231,7 @@ func _on_interstitial_ad_loaded(a_ad_data: Dictionary, a_response_info: Dictiona
 	interstitial_ad_loaded.emit(__ad_info, __response_info)
 
 
-func _on_interstitial_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary)  -> void:
+func _on_interstitial_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary) -> void:
 	interstitial_ad_failed_to_load.emit(AdInfo.new(a_ad_data), LoadAdError.new(error_data))
 
 
@@ -1050,10 +1248,7 @@ func _on_interstitial_ad_clicked(a_ad_data: Dictionary) -> void:
 
 
 func _on_interstitial_ad_showed_full_screen_content(a_ad_data: Dictionary) -> void:
-	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
-	if remove_interstitial_ads_after_displayed:
-		remove_interstitial_ad(__ad_info.get_ad_id())
-	interstitial_ad_showed_full_screen_content.emit(__ad_info)
+	interstitial_ad_showed_full_screen_content.emit(AdInfo.new(a_ad_data))
 
 
 func _on_interstitial_ad_failed_to_show_full_screen_content(a_ad_data: Dictionary, error_data: Dictionary) -> void:
@@ -1061,7 +1256,10 @@ func _on_interstitial_ad_failed_to_show_full_screen_content(a_ad_data: Dictionar
 
 
 func _on_interstitial_ad_dismissed_full_screen_content(a_ad_data: Dictionary) -> void:
-	interstitial_ad_dismissed_full_screen_content.emit(AdInfo.new(a_ad_data))
+	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
+	if remove_interstitial_ads_after_displayed:
+		remove_interstitial_ad(__ad_info.get_ad_id())
+	interstitial_ad_dismissed_full_screen_content.emit(__ad_info)
 
 
 func _on_rewarded_ad_loaded(a_ad_data: Dictionary, a_response_info: Dictionary) -> void:
@@ -1071,7 +1269,7 @@ func _on_rewarded_ad_loaded(a_ad_data: Dictionary, a_response_info: Dictionary) 
 	rewarded_ad_loaded.emit(__ad_info, __response_info)
 
 
-func _on_rewarded_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary)  -> void:
+func _on_rewarded_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary) -> void:
 	rewarded_ad_failed_to_load.emit(AdInfo.new(a_ad_data), LoadAdError.new(error_data))
 
 
@@ -1084,10 +1282,7 @@ func _on_rewarded_ad_clicked(a_ad_data: Dictionary) -> void:
 
 
 func _on_rewarded_ad_showed_full_screen_content(a_ad_data: Dictionary) -> void:
-	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
-	if remove_rewarded_ads_after_displayed:
-		remove_rewarded_ad(__ad_info.get_ad_id())
-	rewarded_ad_showed_full_screen_content.emit(__ad_info)
+	rewarded_ad_showed_full_screen_content.emit(AdInfo.new(a_ad_data))
 
 
 func _on_rewarded_ad_failed_to_show_full_screen_content(a_ad_data: Dictionary, error_data: Dictionary) -> void:
@@ -1095,7 +1290,10 @@ func _on_rewarded_ad_failed_to_show_full_screen_content(a_ad_data: Dictionary, e
 
 
 func _on_rewarded_ad_dismissed_full_screen_content(a_ad_data: Dictionary) -> void:
-	rewarded_ad_dismissed_full_screen_content.emit(AdInfo.new(a_ad_data))
+	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
+	if remove_rewarded_ads_after_displayed:
+		remove_rewarded_ad(__ad_info.get_ad_id())
+	rewarded_ad_dismissed_full_screen_content.emit(__ad_info)
 
 
 func _on_rewarded_ad_user_earned_reward(a_ad_data: Dictionary, reward_data: Dictionary) -> void:
@@ -1109,7 +1307,7 @@ func _on_rewarded_interstitial_ad_loaded(a_ad_data: Dictionary, a_response_info:
 	rewarded_interstitial_ad_loaded.emit(__ad_info, __response_info)
 
 
-func _on_rewarded_interstitial_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary)  -> void:
+func _on_rewarded_interstitial_ad_failed_to_load(a_ad_data: Dictionary, error_data: Dictionary) -> void:
 	rewarded_interstitial_ad_failed_to_load.emit(AdInfo.new(a_ad_data), LoadAdError.new(error_data))
 
 
@@ -1122,10 +1320,7 @@ func _on_rewarded_interstitial_ad_clicked(a_ad_data: Dictionary) -> void:
 
 
 func _on_rewarded_interstitial_ad_showed_full_screen_content(a_ad_data: Dictionary) -> void:
-	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
-	if remove_rewarded_interstitial_ads_after_displayed:
-		remove_rewarded_interstitial_ad(__ad_info.get_ad_id())
-	rewarded_interstitial_ad_showed_full_screen_content.emit(__ad_info)
+	rewarded_interstitial_ad_showed_full_screen_content.emit(AdInfo.new(a_ad_data))
 
 
 func _on_rewarded_interstitial_ad_failed_to_show_full_screen_content(a_ad_data: Dictionary, error_data: Dictionary) -> void:
@@ -1133,7 +1328,10 @@ func _on_rewarded_interstitial_ad_failed_to_show_full_screen_content(a_ad_data: 
 
 
 func _on_rewarded_interstitial_ad_dismissed_full_screen_content(a_ad_data: Dictionary) -> void:
-	rewarded_interstitial_ad_dismissed_full_screen_content.emit(AdInfo.new(a_ad_data))
+	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
+	if remove_rewarded_interstitial_ads_after_displayed:
+		remove_rewarded_interstitial_ad(__ad_info.get_ad_id())
+	rewarded_interstitial_ad_dismissed_full_screen_content.emit(__ad_info)
 
 
 func _on_rewarded_interstitial_ad_user_earned_reward(a_ad_data: Dictionary, reward_data: Dictionary) -> void:
@@ -1166,6 +1364,40 @@ func _on_app_open_ad_failed_to_show_full_screen_content(a_ad_data: Dictionary, e
 
 func _on_app_open_ad_dismissed_full_screen_content(a_ad_data: Dictionary) -> void:
 	app_open_ad_dismissed_full_screen_content.emit(AdInfo.new(a_ad_data))
+
+func _on_native_ad_loaded(a_ad_data: Dictionary, a_response_info: Dictionary) -> void:
+	var __ad_info: AdInfo = AdInfo.new(a_ad_data)
+	var __response_info: ResponseInfo = ResponseInfo.new(a_response_info)
+	_active_native_ads.cache(__ad_info.get_ad_id(), __response_info)
+	native_ad_loaded.emit(__ad_info, __response_info)
+
+
+func _on_native_ad_failed_to_load(ad_data: Dictionary, error: Dictionary) -> void:
+	emit_signal("native_ad_failed_to_load", ad_data, error)
+
+
+func _on_native_ad_size_measured(ad_data: Dictionary) -> void:
+	emit_signal("native_ad_size_measured", ad_data)
+
+
+func _on_native_ad_impression(ad_data: Dictionary) -> void:
+	emit_signal("native_ad_impression", ad_data)
+
+
+func _on_native_ad_clicked(ad_data: Dictionary) -> void:
+	emit_signal("native_ad_clicked", ad_data)
+
+
+func _native_ad_swipe_gesture_clicked(ad_data: Dictionary) -> void:
+	emit_signal("native_ad_swipe_gesture_clicked", ad_data)
+
+
+func _on_native_ad_opened(ad_data: Dictionary) -> void:
+	emit_signal("native_ad_opened", ad_data)
+
+
+func _on_native_ad_closed(ad_data: Dictionary) -> void:
+	emit_signal("native_ad_closed", ad_data)
 
 
 func _on_consent_form_loaded() -> void:

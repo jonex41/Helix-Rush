@@ -17,6 +17,8 @@ region = Rect2(56, 64, 400, 392)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wry1u"]
 atlas = SubResource("AtlasTexture_a5dr6")
 script = ExtResource("2_8lbm4")
+name = "700"
+to = 45
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_32pip"]
@@ -25,6 +27,9 @@ atlas = ExtResource("4_1vjc3")
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnycj"]
 atlas = SubResource("AtlasTexture_32pip")
 script = ExtResource("2_8lbm4")
+name = "100"
+from = 45
+to = 90
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ew0uf"]
@@ -36,7 +41,9 @@ atlas = SubResource("AtlasTexture_ew0uf")
 [sub_resource type="AtlasTexture" id="AtlasTexture_ctllv"]
 atlas = SubResource("AtlasTexture_4ww70")
 script = ExtResource("2_8lbm4")
-name = "tttt"
+name = "200"
+from = 90
+to = 135
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lggbe"]
@@ -46,6 +53,20 @@ region = Rect2(-208, -8, 3048, 2968)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjdm7"]
 atlas = SubResource("AtlasTexture_lggbe")
 script = ExtResource("2_8lbm4")
+name = "2 key"
+from = 135
+to = 180
+metadata/_custom_type_script = "uid://b08h1lfth3hlq"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fuueg"]
+atlas = ExtResource("4_1vjc3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nq3r"]
+atlas = SubResource("AtlasTexture_fuueg")
+script = ExtResource("2_8lbm4")
+name = "100"
+from = 180
+to = 225
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e8yc6"]
@@ -54,6 +75,9 @@ atlas = ExtResource("7_32pip")
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbwa8"]
 atlas = SubResource("AtlasTexture_e8yc6")
 script = ExtResource("2_8lbm4")
+name = "500"
+from = 225
+to = 270
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rntpp"]
@@ -62,6 +86,9 @@ atlas = ExtResource("8_ew0uf")
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bs14"]
 atlas = SubResource("AtlasTexture_rntpp")
 script = ExtResource("2_8lbm4")
+name = "300"
+from = 270
+to = 315
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyl4v"]
@@ -70,19 +97,9 @@ atlas = ExtResource("8_ctllv")
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbpx6"]
 atlas = SubResource("AtlasTexture_qyl4v")
 script = ExtResource("2_8lbm4")
-name = "key"
-metadata/_custom_type_script = "uid://b08h1lfth3hlq"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dl117"]
-atlas = ExtResource("4_ctllv")
-region = Rect2(0, 32, 464, 432)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fuueg"]
-atlas = SubResource("AtlasTexture_dl117")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nq3r"]
-atlas = SubResource("AtlasTexture_fuueg")
-script = ExtResource("2_8lbm4")
+name = "1 key"
+from = 315
+to = 360
 metadata/_custom_type_script = "uid://b08h1lfth3hlq"
 
 [node name="SpiningWheel" type="Control" unique_id=1288895353]
@@ -99,5 +116,5 @@ bkg_color = Color(0.88235295, 0.23921569, 0.09019608, 1)
 line_color = Color(0.7162962, 0.71629626, 0.7162961, 1)
 outer_radius = 350
 inner_radius = 100
-options = Array[ExtResource("2_8lbm4")]([SubResource("AtlasTexture_wry1u"), SubResource("AtlasTexture_pnycj"), SubResource("AtlasTexture_ctllv"), SubResource("AtlasTexture_fjdm7"), SubResource("AtlasTexture_dbwa8"), SubResource("AtlasTexture_1bs14"), SubResource("AtlasTexture_jbpx6"), SubResource("AtlasTexture_8nq3r")])
+options = Array[ExtResource("2_8lbm4")]([SubResource("AtlasTexture_wry1u"), SubResource("AtlasTexture_pnycj"), SubResource("AtlasTexture_ctllv"), SubResource("AtlasTexture_fjdm7"), SubResource("AtlasTexture_8nq3r"), SubResource("AtlasTexture_dbwa8"), SubResource("AtlasTexture_1bs14"), SubResource("AtlasTexture_jbpx6")])
 segments = 7

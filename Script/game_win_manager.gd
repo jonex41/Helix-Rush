@@ -9,6 +9,7 @@ var current_scene: Node = null
 var showing_a := true
 
 func _ready():
+	GameTimer.set_is_playing(false) 
 	swap_to(scene_a)
 
 func swap():

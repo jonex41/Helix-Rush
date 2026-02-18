@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ccx05npxomqc5"]
+
+[node name="spin_wheel" type="Control" unique_id=1381429904]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(440, 622)
+
+[node name="background" type="TextureRect" parent="." unique_id=1768626872]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="front" type="TextureRect" parent="background" unique_id=1038121441]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 900.0
+offset_bottom = 900.0
+scale = Vector2(0.92, 0.92)
+pivot_offset = Vector2(450, 450)
+
+[node name="background_button" type="TextureRect" parent="background" unique_id=1967047035]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btn_spin" type="TextureButton" parent="background" unique_id=466892343]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.800002, 0.800002)
+pivot_offset = Vector2(100, 100)
+stretch_mode = 3
+
+[node name="arrow" type="TextureRect" parent="background" unique_id=1629164065]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 181.0
+grow_horizontal = 2
+scale = Vector2(0.479999, 0.479999)
+pivot_offset = Vector2(100, 0)
+
+[connection signal="pressed" from="background/btn_spin" to="." method="_on_btn_spin_pressed"]

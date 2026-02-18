@@ -26,6 +26,11 @@ func setup(data: Dictionary):
 	$VBoxContainer/Label.text =  data.name
 	$VBoxContainer/TextureRect.texture = data.icon
 	$VBoxContainer/Cost.text = value
+	
+	if data.is_selected:
+		$ColorRect2.visible = true
+	else :
+		$ColorRect2.visible = false
 	if data.is_open :
 		#$ColorRect.visible = false
 		$TextureRect.visible = false

@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 		if body is RigidBody3D && mesh != null:
+			body.play_audio()
 			var base_mat = mesh.get_active_material(0)
 
 			if base_mat == null:
@@ -44,6 +45,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_area_3d_platform_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D && mesh != null:
+		body.play_audio()
 		var base_mat = mesh.get_active_material(0)
 
 		if base_mat == null:

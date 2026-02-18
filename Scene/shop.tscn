@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://7028rar3moxe" path="res://Assets/images/jetpackninja-removebg-preview.png" id="6_d6i1l"]
 [ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="6_fpr2n"]
 [ext_resource type="Texture2D" uid="uid://c8ijr5kxyw5rx" path="res://Assets/Atlas/ADS.PNG" id="7_fpr2n"]
-[ext_resource type="Script" uid="uid://dyfo2tjnxrid7" path="res://addons/AdmobPlugin/Admob.gd" id="14_d6i1l"]
+[ext_resource type="Texture2D" uid="uid://bepua85x3456" path="res://Assets/images/ad.png" id="9_27pye"]
+[ext_resource type="Shader" path="res://shader/white_border_display.gdshader" id="9_fi8yd"]
+[ext_resource type="Script" uid="uid://ctr4wc8onnroy" path="res://addons/AdmobPlugin/Admob.gd" id="16_fi8yd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpr2n"]
 bg_color = Color(0.98039216, 0.98039216, 0.98039216, 0.3372549)
@@ -122,6 +124,9 @@ colors = PackedColorArray(0.85390145, 0.4424887, 0.04267963, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_7rex1"]
 gradient = SubResource("Gradient_vvu0h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kc4sh"]
+shader = ExtResource("9_fi8yd")
 
 [node name="Shop" type="CanvasLayer" unique_id=169074424]
 layer = 3
@@ -915,6 +920,24 @@ flip_h = true
 [node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer" unique_id=1168903793]
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer" unique_id=326954094]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer/HBoxContainer" unique_id=308467309]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 47
+text = "ad  "
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer/HBoxContainer" unique_id=2145782538]
+material = SubResource("ShaderMaterial_kc4sh")
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("9_27pye")
+expand_mode = 1
+
 [node name="ad2" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=2063668047]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1204,10 +1227,10 @@ text = "$1.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShopAdmob" type="Node" parent="." unique_id=2042179933]
-script = ExtResource("14_d6i1l")
-android_debug_application_id = "ca-app-pub-3940256099942544/5354046379"
-metadata/_custom_type_script = "uid://dyfo2tjnxrid7"
+[node name="ShopAdmob" type="Node" parent="." unique_id=1156681291]
+script = ExtResource("16_fi8yd")
+android_debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+metadata/_custom_type_script = "uid://ctr4wc8onnroy"
 
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add" to="." method="_on_power_1_add_pressed"]
@@ -1216,5 +1239,8 @@ metadata/_custom_type_script = "uid://dyfo2tjnxrid7"
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime" to="." method="_on_power_2_add_time_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd" to="." method="_on_key_add_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer/ShowRewardedAd" to="." method="_on_show_rewarded_ad_pressed"]
+[connection signal="consent_form_loaded" from="ShopAdmob" to="." method="_on_shop_admob_consent_form_loaded"]
+[connection signal="consent_info_updated" from="ShopAdmob" to="." method="_on_shop_admob_consent_info_updated"]
 [connection signal="initialization_completed" from="ShopAdmob" to="." method="_on_shop_admob_initialization_completed"]
 [connection signal="rewarded_ad_loaded" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_loaded"]
+[connection signal="rewarded_ad_user_earned_reward" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_user_earned_reward"]

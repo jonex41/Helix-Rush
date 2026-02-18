@@ -12,6 +12,7 @@ func _ready() -> void:
 	animate_score(0,ScoreManager.red,red_score )
 	total = ScoreManager.green+ScoreManager.green_yellow+ScoreManager.red
 	animate_score(0,total,total_score )
+	GameTimer.add_unlocked_level(str(total))
 	pass # Replace with function body.
 
 

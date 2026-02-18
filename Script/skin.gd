@@ -12,7 +12,8 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/ball image/round_ball.png"),
 		"cost": "",
-		"is_open":true
+		"is_open":true,
+		"is_selected":true if   "res://Scene/Balls/ball.tscn" == GameTimer.selectedBallScene else false
 	},
 	
 		{
@@ -21,7 +22,8 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/ball image/square_ball.png"),
 		"cost": "Level 3",
-		"is_open":true if GameTimer.current_level >= 3 else false
+		"is_open":true if GameTimer.current_level >= 3 else false,
+		"is_selected":true if  "res://Scene/Balls/square.tscn" == GameTimer.selectedBallScene else false
 
 	},
 	
@@ -31,7 +33,8 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/ball image/rubgy.png"),
 		"cost": 20000,
-		"is_open":true
+		"is_open":true,
+		"is_selected":true if  "res://Scene/Balls/football_ruggy.tscn" == GameTimer.selectedBallScene else false
 	},
 	
 	{
@@ -40,7 +43,8 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/Atlas/COIN.PNG"),
 		"cost": 30000,
-		"is_open":true
+		"is_open":true,
+		"is_selected":true if "res://Scene/Balls/coin_ball.tscn" == GameTimer.selectedBallScene else false
 	},
 	
 		
@@ -50,7 +54,8 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/ball image/monkey.png"),
 		"cost": 30000,
-		"is_open":true
+		"is_open":true,
+		"is_selected":true if  "res://Scene/Balls/monkey_ball.tscn" == GameTimer.selectedBallScene else false
 	},
 
 
@@ -138,6 +143,18 @@ func _on_cell_selected(data: Dictionary):
 	get_tree().call_group("Player", "free_palayer")
 	get_tree().call_group("SpawnPoint", "set_scene",GameTimer.selectedBallScene)
 	get_tree().call_group("SpawnPoint", "spawn")
+	var index = find_index_by_id(data.id)
+	for i in cells.size():
+		if index == i:
+			scenes[index].is_selected = true
+			var my_data =data
+			my_data.is_selected = true
+			cells[index].setup(my_data)
+		else :
+			scenes[i].is_selected = false
+			
+			cells[i].setup(scenes[i])
+			
 func find_index_by_id(id: int) -> int:
 	for i in cells.size():
 		if scenes[i].id == id:

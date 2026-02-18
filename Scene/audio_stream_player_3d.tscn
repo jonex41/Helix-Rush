@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cvhhrs0kinunc"]
+
+[ext_resource type="AudioStream" uid="uid://bvk6ilde3ee0e" path="res://Assets/Audio/CS_Safe Haven - Short Loop.mp3" id="1_k5gtp"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" unique_id=178347441]
+stream = ExtResource("1_k5gtp")
