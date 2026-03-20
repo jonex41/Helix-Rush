@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://du4h6f1a3wfq" path="res://Script/level_block.gd" id="1_p4363"]
 [ext_resource type="PackedScene" uid="uid://bsfr0825hamv5" path="res://Scene/Blocks/BasicThreeSpace/luncher_three_ring.tscn" id="2_crtyg"]
 [ext_resource type="PackedScene" uid="uid://btqywn11ker2i" path="res://Scene/coin.tscn" id="3_6r7je"]
+[ext_resource type="PackedScene" uid="uid://jbtbh6fcjb6x" path="res://Scene/Blocks/BasicThreeSpace/special_luncher_three_ring.tscn" id="3_hcspq"]
 [ext_resource type="PackedScene" uid="uid://d4bjdxskuibcm" path="res://Scene/jetpack_pick.tscn" id="4_w1ko6"]
 
 [node name="LevelBlock1" type="Node3D" unique_id=291381342]
@@ -16,6 +17,9 @@ target = NodePath("../Node3D")
 
 [node name="Rings" type="Node3D" parent="Node3D" unique_id=1413566717]
 
+[node name="SpecialLuncherThreeRing11" parent="Node3D/Rings" unique_id=1896230694 instance=ExtResource("3_hcspq")]
+transform = Transform3D(-0.98838276, 0, 0.1519853, 0, 1, 0, -0.1519853, 0, -0.98838276, 0, 4.995891, 0)
+
 [node name="SpecialLuncherThreeRing2" parent="Node3D/Rings" unique_id=1800334359 instance=ExtResource("2_crtyg")]
 transform = Transform3D(0.14240439, 0, 0.9898086, 0, 1, 0, -0.9898086, 0, 0.14240439, 0, 0.9860846, 0)
 
@@ -27,9 +31,6 @@ transform = Transform3D(0.14568579, 0, 0.989331, 0, 1, 0, -0.989331, 0, 0.145685
 
 [node name="SpecialLuncherThreeRing5" parent="Node3D/Rings" unique_id=1849824841 instance=ExtResource("2_crtyg")]
 transform = Transform3D(0.9789992, 0, -0.20386389, 0, 1, 0, 0.20386389, 0, 0.9789992, 0, 3.9837904, 0)
-
-[node name="SpecialLuncherThreeRing6" parent="Node3D/Rings" unique_id=247366746 instance=ExtResource("2_crtyg")]
-transform = Transform3D(0.20447901, 0, 0.978871, 0, 1, 0, -0.978871, 0, 0.20447901, 0, 4.9848275, 0)
 
 [node name="SpecialLuncherThreeRing7" parent="Node3D/Rings" unique_id=155723386 instance=ExtResource("2_crtyg")]
 transform = Transform3D(0.9882764, 0, -0.15267538, 0, 1, 0, 0.15267538, 0, 0.9882764, 0, 5.9855947, 0)

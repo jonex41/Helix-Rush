@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b5atgwwtgpn5t"]
+
+[ext_resource type="Script" uid="uid://cu645qex7rgh8" path="res://Script/not_available.gd" id="1_o7tnh"]
+[ext_resource type="Texture2D" uid="uid://dsrmqu2obubxu" path="res://Assets/background/blankBlue002.png" id="2_xcyjy"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="3_rf80d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2o2l"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[node name="FeatureCanvas" type="CanvasLayer" unique_id=629013641]
+layer = 3
+script = ExtResource("1_o7tnh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=993496559]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65882355)
+
+[node name="Pause" type="Control" parent="." unique_id=435214188]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause" unique_id=170398364]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -475.0
+offset_bottom = 475.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="TextureRect" type="TextureRect" parent="Pause/MarginContainer" unique_id=1550731064]
+layout_mode = 2
+texture = ExtResource("2_xcyjy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer" unique_id=1887495274]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause/MarginContainer/VBoxContainer" unique_id=1424153319]
+layout_mode = 2
+theme_override_constants/margin_top = 210
+
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer" unique_id=251225065]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rf80d")
+theme_override_font_sizes/font_size = 80
+text = "Insufficient balance. 
+Please purchase 
+more coins."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer" unique_id=2076566259]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 94
+
+[node name="Ok" type="Button" parent="Pause/MarginContainer/VBoxContainer" unique_id=541106459]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_rf80d")
+theme_override_font_sizes/font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_u2o2l")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u2o2l")
+text = "ok"
+
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Ok" to="." method="_on_ok_pressed"]

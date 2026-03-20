@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="2_7eref"]
 [ext_resource type="PackedScene" uid="uid://c84dl2c4morfh" path="res://Scene/Levels/LevelSegments/world_environment.tscn" id="2_j8rdk"]
 [ext_resource type="Script" uid="uid://cqdu0t74wpddi" path="res://Script/level_block_1.gd" id="3_j8rdk"]
-[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="10_fe3wc"]
 [ext_resource type="PackedScene" uid="uid://bywp8rinwm0sp" path="res://Scene/camera_rig.tscn" id="14_yuq13"]
 [ext_resource type="PackedScene" uid="uid://ci01jxyccmjtu" path="res://Scene/base.tscn" id="16_vwm6b"]
 [ext_resource type="PackedScene" uid="uid://cjjl1y3eyfvk0" path="res://Scene/mean_menu.tscn" id="17_an35y"]
@@ -102,8 +101,5 @@ light_bake_mode = 1
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 1.0
 sky_mode = 1
-
-[node name="JetPack" parent="." unique_id=2098919339 instance=ExtResource("10_fe3wc")]
-transform = Transform3D(0.009550646, 0, -0.05416443, 0, 0.055, 0, 0.05416443, 0, 0.009550646, -0.14356542, 0, 1.0354435)
 
 [connection signal="body_entered" from="GameFinish/Area3D" to="." method="_on_area_3d_body_entered"]

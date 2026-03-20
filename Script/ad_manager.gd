@@ -58,7 +58,7 @@ func _on_shop_admob_rewarded_ad_loaded(ad_info: AdInfo, response_info: ResponseI
 
 
 func _on_shop_admob_rewarded_ad_user_earned_reward(ad_info: AdInfo, reward_data: RewardItem) -> void:
-	GameTimer.initial_coin_balance=str(int(GameTimer.initial_coin_balance)+200)
+	GameTimer.initial_coin_balance=int(GameTimer.initial_coin_balance)+200
 	pass # Replace with function body.
 
 

@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$TextureRect/CoinValue.text = GameTimer.format_money(int(GameTimer.initial_coin_balance))
+	$TextureRect/CoinValue.text = GameTimer.format_money(float(GameTimer.initial_coin_balance))
 	pass
 
 func score_changed(_score:int):

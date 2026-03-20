@@ -22,12 +22,43 @@ func _process(_delta: float) -> void:
 	$Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/key.text=str(GameTimer.initial_key_balance)
 	
 	
-	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1LebelTime.text='Level '+str(GameTimer.initial_power_antigravity_timer/2)+'('+str(GameTimer.initial_power_antigravity_timer)+')'
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1LebelTime.text='Level '+str(get_the_level(GameTimer.initial_power_antigravity_timer))+'('+str(GameTimer.initial_power_antigravity_timer)+')'
 	
 	
-	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2LabelTime.text = 'Level '+str(GameTimer.initial_power_collision_timer/2)+'('+str(GameTimer.initial_power_collision_timer)+')'
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2LabelTime.text = 'Level '+str(get_the_level(GameTimer.initial_power_collision_timer))+'('+str(GameTimer.initial_power_collision_timer)+')'
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1Label.text = str(GameTimer.format_money( get_the_cost(GameTimer.initial_power_antigravity_timer)))
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2Label.text = str(GameTimer.format_money(get_the_cost(GameTimer.initial_power_collision_timer)))
 	pass
 
+func get_the_cost(time:int)->int:
+	if time == 3:
+		return 3000
+	elif time == 5:
+		return 7000
+	elif time == 7:
+		return 14000	
+	else:
+		return 100000000000
+		
+func get_the_level(time:int)->int:
+	if time == 3:
+		return 1
+	elif time == 5:
+		return 2
+	elif time == 7:
+		return 3	
+	else:
+		return 3	
+
+func increase_the_time(time:int)->int:
+	if time == 3:
+		return 5
+	elif time == 5:
+		return 7
+	elif time == 7:
+		return 9	
+	else:
+		return 9
 
 func _on_texture_button_pressed() -> void:
 	queue_free()
@@ -37,17 +68,21 @@ func _on_texture_button_pressed() -> void:
 
 	
 func _on_power_2_add_pressed() -> void:
-	if int( GameTimer.initial_coin_balance) > 999:
+	if int( GameTimer.initial_coin_balance) > 1999:
 		GameTimer.add_power_collision()
-		GameTimer.update_initial_coin_balance(1000, true)
+		GameTimer.update_initial_coin_balance(2000, true)
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
 
 func _on_power_1_add_pressed() -> void:
 	
-	if int(GameTimer.initial_coin_balance) > 1999:
+	if int(GameTimer.initial_coin_balance) > 2999:
 		GameTimer.add_power_antigravity()
-		GameTimer.update_initial_coin_balance(2000, true)
+		GameTimer.update_initial_coin_balance(3000, true)
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
 
@@ -56,24 +91,39 @@ func _on_key_add_pressed() -> void:
 		GameTimer.add_power_antigravity()
 		GameTimer.update_initial_coin_balance(5000, true)
 		GameTimer.add_power_key()
-	
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
 
 func _on_power_2_add_time_pressed() -> void:
-	if int(GameTimer.initial_coin_balance) > 4999:
-		GameTimer.add_power_antigravity()
-		GameTimer.update_initial_coin_balance(5000, true)
+	if GameTimer.initial_power_collision_timer == 9:
+		return
+	if int(GameTimer.initial_coin_balance) > (get_the_cost(GameTimer.initial_power_collision_timer)-1):
+		#GameTimer.add_power_antigravity()
+		GameTimer.update_initial_coin_balance(get_the_cost(GameTimer.initial_power_collision_timer), true)
+		GameTimer.increase_initial_power_collision_timer ( increase_the_time(GameTimer.initial_power_collision_timer))
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
 
 func _on_power_1_add_t_ime_pressed() -> void:
-	if int(GameTimer.initial_coin_balance) > 4999:
-		GameTimer.add_power_antigravity()
-		
-		GameTimer.update_initial_coin_balance(5000, true)
+	if GameTimer.initial_power_antigravity_timer == 9:
+		return
+	if int(GameTimer.initial_coin_balance) > (get_the_cost(GameTimer.initial_power_antigravity_timer)-1):
+		#GameTimer.add_power_antigravity()
+		GameTimer.update_initial_coin_balance(get_the_cost(GameTimer.initial_power_antigravity_timer), true)
+		GameTimer.increase_initial_power_antigravity_timer(increase_the_time(GameTimer.initial_power_antigravity_timer))
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
+
+func show_insufficency():
+	var scene = preload("res://Scene/Ui/insufficient_bal.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)
 
 
 

@@ -186,17 +186,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_4qr4x")
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=450183022]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.93080276, 0.59303755, 0.12986764, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 71
-text = "Purchase Coins"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
 [node name="MarginContainer6" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=1582054692]
 layout_mode = 2
 theme_override_constants/margin_left = 4
@@ -314,7 +303,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
 theme_override_font_sizes/font_size = 40
-text = "1,000"
+text = "2,000"
 vertical_alignment = 1
 
 [node name="Power1Add" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer" unique_id=856235082]
@@ -450,7 +439,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("5_fpr2n")
 theme_override_font_sizes/font_size = 40
-text = "2,000"
+text = "3,000"
 vertical_alignment = 1
 
 [node name="Power2Add" type="Button" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer" unique_id=208859139]
@@ -568,7 +557,7 @@ text = "Booster"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=778244196]
+[node name="Power1Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer" unique_id=778244196]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9843137, 0.4627451, 0, 1)
 theme_override_font_sizes/font_size = 28
@@ -675,7 +664,7 @@ text = "Booster"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1209981877]
+[node name="Power2Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1209981877]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9843137, 0.4627451, 0, 1)
 theme_override_font_sizes/font_size = 28
@@ -1226,6 +1215,17 @@ theme_override_font_sizes/font_size = 50
 text = "$1.99"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer" unique_id=450183022]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93080276, 0.59303755, 0.12986764, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 71
+text = "Purchase Coins"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
 [node name="ShopAdmob" type="Node" parent="." unique_id=1156681291]
 script = ExtResource("16_fi8yd")

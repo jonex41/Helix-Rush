@@ -57,6 +57,8 @@ func _on_power_2_add_pressed() -> void:
 	if int(GameTimer.initial_coin_balance) > 999:
 		GameTimer.add_power_collision()
 		GameTimer.update_initial_coin_balance(1000, true)
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
 
@@ -64,9 +66,14 @@ func _on_power_1_add_pressed() -> void:
 	if int(GameTimer.initial_coin_balance) > 1999:
 		GameTimer.add_power_antigravity()
 		GameTimer.update_initial_coin_balance(2000, true)
-		
+	else :
+		show_insufficency()
 	pass # Replace with function body.
 
+func show_insufficency():
+	var scene = preload("res://Scene/Ui/insufficient_bal.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)
 
 func _on_league_pressed() -> void:
 	pass # Replace with function body.

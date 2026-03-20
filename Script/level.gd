@@ -100,8 +100,8 @@ func _ready() -> void:
 	cycle_sky_gradient_new()
 	
 	spawn_level_block()
-	await get_tree().process_frame
-	$JetPack.queue_free()
+	#await get_tree().process_frame
+	#$JetPack.queue_free()
 	
 	
 	pass # Replace with function body.
