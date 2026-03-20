@@ -4,11 +4,11 @@ extends Node
 const SAVE_PATH := "user://savegame.json"
 var disable_rotation_input:= false
 var selectedBallScene:= "res://Scene/Balls/ball.tscn"
-var initial_power_collision:int = 2
+var initial_power_collision:int = 0
 var initial_power_collision_timer:int = 3
 var initial_power_antigravity: int = 2
 var initial_power_antigravity_timer:int = 3
-var initial_coin_balance: int = 20000
+var initial_coin_balance: int = 0
 var initial_key_balance:int = 1
 var power_is_active :=false
 var pause_loosing_for_seconds:= false
