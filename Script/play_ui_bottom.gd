@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	if remaining_time <= total_time - ((100 - current_value) / step_percent) * step_time:
 		current_value -= step_percent
 		current_value = max(current_value, 0)
-		print(current_value)
+		#print(current_value)
 		xp_bar.set_bar_value(current_value)
 	pass
 		

@@ -98,7 +98,10 @@ var colorGrid = [
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cycle_sky_gradient_new()
+	
 	spawn_level_block()
+	await get_tree().process_frame
+	$JetPack.queue_free()
 	
 	
 	pass # Replace with function body.
@@ -120,8 +123,11 @@ func _on_area_3d_body_entered(_body: Node3D) -> void:
 	GameTimer.set_is_playing(false) 
 	var scene = preload("res://Scene/game_win_manager.tscn")
 	var instance = scene.instantiate()
-	GameTimer.initial_coin_balance += ScoreManager.score
-	GameTimer.initial_key_balance += ScoreManager.key
+	
+	GameTimer.update_initial_coin_balance(ScoreManager.score, false) 
+	#GameTimer.initial_key_balance += ScoreManager.key
+	ScoreManager.score=0
+	ScoreManager.key= 0
 	GameTimer.increase_level()
 	GameTimer.set_is_playing(false) 
 

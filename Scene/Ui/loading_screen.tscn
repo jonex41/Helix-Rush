@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cenjec34mjift"]
+
+[ext_resource type="Script" uid="uid://6irjvg7dh7o8" path="res://Script/loading_screen.gd" id="1_1t487"]
+[ext_resource type="Shader" path="res://shader/progress_bar.gdshader" id="2_0etqp"]
+[ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_24hqc"]
+[ext_resource type="Script" uid="uid://cei1c1dpf2ki2" path="res://Script/health_bar_zero.gd" id="3_24hqc"]
+[ext_resource type="Shader" uid="uid://ihcaq5drhggn" path="res://shader/round_corner.gdshader" id="3_fp2s3"]
+[ext_resource type="Texture2D" uid="uid://cx3uiclooqtnb" path="res://Assets/Icon/icon.png" id="4_24hqc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpvsj"]
+shader = ExtResource("2_0etqp")
+shader_parameter/bar_mode = 2
+shader_parameter/fill_mode = 0
+shader_parameter/segment_count = 10
+shader_parameter/discrete_fill_amount = 10
+shader_parameter/fade_fill_amount = 1.0
+shader_parameter/pour_fill_amount = 1.0
+shader_parameter/animation_speed = 1.0
+shader_parameter/flash_type = 0
+shader_parameter/flash_segment = 0
+shader_parameter/flash_intensity = 0.0
+shader_parameter/single_segment_previous_fill = 1.0
+shader_parameter/single_segment_current_fill = 1.0
+shader_parameter/single_segment_flash_intensity = 0.8
+shader_parameter/flash_from_segment = 0
+shader_parameter/flash_to_segment = 0
+shader_parameter/single_segment_fade_from = 1.0
+shader_parameter/single_segment_fade_to = 1.0
+shader_parameter/single_segment_fade_progress = 0.0
+shader_parameter/drain_previous_fill = 1.0
+shader_parameter/drain_current_fill = 1.0
+shader_parameter/drain_time_progress = 0.0
+shader_parameter/background_color = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/filled_color = Color(1, 0.85, 0, 1)
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/drain_flash_color = Color(1, 1, 1, 1)
+shader_parameter/custom_frame = false
+shader_parameter/frame_trim = 0.0
+shader_parameter/alpha_threshold = 0.69
+shader_parameter/scan_steps = 15
+shader_parameter/edge_smoothness = 0.02
+shader_parameter/mask_expansion = 0.0
+shader_parameter/frame_edge_opacity = 0.9
+shader_parameter/fluid_base_color = Color(0.2, 0.6, 1, 1)
+shader_parameter/fluid_highlight_color = Color(0.8, 0.9, 1, 1)
+shader_parameter/fluid_shadow_color = Color(0.1, 0.3, 0.6, 1)
+shader_parameter/fluid_flow_speed = 1.5
+shader_parameter/fluid_turbulence = 1.0
+shader_parameter/fluid_noise_scale = 6.0
+shader_parameter/gas_mode = false
+shader_parameter/gas_intensity = 0.8
+shader_parameter/effect_mode = 0
+shader_parameter/effect_strength = 0.3
+shader_parameter/effect_speed = 1.5
+shader_parameter/wave_thickness = 0.1
+shader_parameter/bubbles_aspect_ratio = 1.0
+shader_parameter/vertical_gradient = true
+shader_parameter/V_gradient_strength = 0.6
+shader_parameter/horizontal_gradient = false
+shader_parameter/H_gradient_strength = 0.75
+shader_parameter/segment_gap = 0.0
+shader_parameter/universal_border_size = 0.1
+shader_parameter/horizontal_border_size = 0.5
+shader_parameter/inner_border_thickness_multiplier = 1.0
+shader_parameter/outer_border_size = 2.0
+shader_parameter/slant_amount = 0.0
+shader_parameter/scale = 0.0
+shader_parameter/x_offset = 0.0
+shader_parameter/slant_clip_margin = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1r401"]
+shader = ExtResource("3_fp2s3")
+shader_parameter/radius = 0.298000014155
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1338382025]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=826056887]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9843137, 0.6901961, 0.23137255, 1)
+
+[node name="LoadingScreen" type="Control" parent="." unique_id=645285789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1t487")
+
+[node name="MarginContainer" type="MarginContainer" parent="LoadingScreen" unique_id=1557142826]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 19
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 164
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoadingScreen/MarginContainer" unique_id=1439355497]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LoadingScreen/MarginContainer/VBoxContainer" unique_id=396949969]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_24hqc")
+theme_override_font_sizes/font_size = 52
+
+[node name="Health_bar" type="ColorRect" parent="LoadingScreen/MarginContainer/VBoxContainer" unique_id=1653899815]
+material = SubResource("ShaderMaterial_tpvsj")
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.31
+script = ExtResource("3_24hqc")
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadingScreen/MarginContainer/VBoxContainer" unique_id=507511078]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LoadingScreen" unique_id=122005711]
+material = SubResource("ShaderMaterial_1r401")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -147.5
+offset_right = 192.0
+offset_bottom = 147.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_24hqc")

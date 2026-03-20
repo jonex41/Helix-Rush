@@ -474,13 +474,13 @@ texture_normal = ExtResource("1_4r8hx")
 
 [node name="Label" type="Label" parent="MeanMenu/VBoxContainer2/MarginContainer/TextureButton" unique_id=2138068751]
 layout_mode = 0
-offset_left = 267.0
+offset_left = -11.0
 offset_top = 56.0
-offset_right = 268.0
-offset_bottom = 193.0
+offset_right = 549.0
+offset_bottom = 199.0
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 100
-text = "Play"
+theme_override_font_sizes/font_size = 83
+text = "Play Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -509,6 +509,7 @@ texture_normal = ExtResource("11_vvd8s")
 
 [connection signal="pressed" from="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add" to="MeanMenu" method="_on_power_1_add_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add" to="MeanMenu" method="_on_power_2_add_pressed"]
+[connection signal="pressed" from="MeanMenu/VBoxContainer/MarginContainer/TextureButton" to="MeanMenu/VBoxContainer/MarginContainer/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/MarginContainer/TextureButton" to="MeanMenu" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/HBoxContainer/Map" to="MeanMenu" method="_on_map_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer2/HBoxContainer/Skins" to="MeanMenu" method="_on_skins_pressed"]

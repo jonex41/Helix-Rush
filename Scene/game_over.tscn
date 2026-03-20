@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ddq03hdlmhi45" path="res://Assets/images/ButtonText_OnOffButton.png" id="4_gkxye"]
 [ext_resource type="Texture2D" uid="uid://bd06aulcvmb1t" path="res://Assets/images/ButtonText_Small_GreyOutline_Round.png" id="5_vv2qi"]
 [ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="6_up0eu"]
+[ext_resource type="Texture2D" uid="uid://bepua85x3456" path="res://Assets/images/ad.png" id="8_6ly0m"]
+[ext_resource type="Script" uid="uid://ctr4wc8onnroy" path="res://addons/AdmobPlugin/Admob.gd" id="9_vw1tr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh4nc"]
 bg_color = Color(0.75626236, 0.5620364, 0.1389505, 1)
@@ -115,6 +117,7 @@ stretch_mode = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=254888233]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="WordPress" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=529040159]
 layout_mode = 2
@@ -134,6 +137,30 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_qh4nc")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_qh4nc")
 theme_override_styles/focus = SubResource("StyleBoxFlat_qh4nc")
 text = "Revive with your key"
+flat = true
+alignment = 0
+autowrap_mode = 2
+
+[node name="WordPress2" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1694723547]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0.5199774, 0.09985284, 1)
+theme_override_fonts/font = ExtResource("2_qf1nx")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_qh4nc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qh4nc")
+text = "(0)"
 flat = true
 autowrap_mode = 2
 
@@ -161,12 +188,12 @@ theme_override_constants/separation = 119
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/HBoxContainer" unique_id=91380400]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
-text = "Add 10s"
+text = "Revive"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/HBoxContainer/CenterContainer/HBoxContainer" unique_id=1464748553]
 custom_minimum_size = Vector2(-0.375, 0)
 layout_mode = 2
-texture = ExtResource("3_s46eg")
+texture = ExtResource("8_6ly0m")
 expand_mode = 3
 
 [node name="Button" type="Button" parent="VBoxContainer/MarginContainer2" unique_id=579483697]
@@ -193,7 +220,19 @@ text = "NO THANKS"
 flat = true
 autowrap_mode = 2
 
+[node name="ShopAdmob" type="Node" parent="." unique_id=139432369]
+script = ExtResource("9_vw1tr")
+android_debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+metadata/_custom_type_script = "uid://ctr4wc8onnroy"
+
 [connection signal="pressed" from="VBoxContainer/KeyPress" to="." method="_on_key_press_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/WordPress" to="." method="_on_word_press_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WordPress2" to="." method="_on_word_press_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/NoThanks" to="." method="_on_no_thanks_pressed"]
+[connection signal="consent_info_updated" from="ShopAdmob" to="." method="_on_shop_admob_consent_info_updated"]
+[connection signal="initialization_completed" from="ShopAdmob" to="." method="_on_shop_admob_initialization_completed"]
+[connection signal="rewarded_ad_dismissed_full_screen_content" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_dismissed_full_screen_content"]
+[connection signal="rewarded_ad_loaded" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_loaded"]
+[connection signal="rewarded_ad_user_earned_reward" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_ad_user_earned_reward"]
+[connection signal="rewarded_interstitial_ad_dismissed_full_screen_content" from="ShopAdmob" to="." method="_on_shop_admob_rewarded_interstitial_ad_dismissed_full_screen_content"]

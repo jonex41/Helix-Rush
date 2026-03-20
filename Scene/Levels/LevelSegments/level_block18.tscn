@@ -13,8 +13,7 @@
 [node name="LevelBlock1" type="Node3D" unique_id=1300623100]
 script = ExtResource("1_iukoq")
 
-[node name="Rod" parent="." unique_id=1597961350 instance=ExtResource("1_y5853")]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
+[node name="Rod" parent="." unique_id=1021339008 instance=ExtResource("1_y5853")]
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1318850183]

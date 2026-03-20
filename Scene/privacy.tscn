@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cenvmq1fnoyt7"]
 
-[ext_resource type="Texture2D" uid="uid://blxisouw46k3i" path="res://icon.svg" id="1_2xnu8"]
 [ext_resource type="Script" uid="uid://br3y5c57e1gt0" path="res://Script/privacy.gd" id="1_tws2h"]
+[ext_resource type="Shader" uid="uid://ihcaq5drhggn" path="res://shader/round_corner.gdshader" id="2_o1qui"]
+[ext_resource type="Texture2D" uid="uid://b82h5e4u73myj" path="res://Assets/Icon/icon1.png" id="3_ha2ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tws2h"]
 bg_color = Color(1, 1, 1, 1)
@@ -9,6 +10,10 @@ corner_radius_top_left = 45
 corner_radius_top_right = 45
 corner_radius_bottom_right = 45
 corner_radius_bottom_left = 45
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hl8gd"]
+shader = ExtResource("2_o1qui")
+shader_parameter/radius = 0.1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1qui"]
 bg_color = Color(0.95234615, 0.32086813, 0.13335153, 1)
@@ -57,10 +62,11 @@ layout_mode = 2
 theme_override_constants/margin_top = 50
 
 [node name="TextureRect" type="TextureRect" parent="Privacy/VBoxContainer" unique_id=1268131000]
+material = SubResource("ShaderMaterial_hl8gd")
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("1_2xnu8")
+texture = ExtResource("3_ha2ai")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Privacy/VBoxContainer" unique_id=1208111334]
@@ -115,6 +121,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.9529412, 0.32156864, 0.13333334, 1)
 theme_override_font_sizes/font_size = 30
 text = "Terms of use"
+uri = "https://www.termsfeed.com/live/a00ddcd1-4fb6-441f-a694-9f1ab996c600"
 
 [node name="MarginContainer4" type="MarginContainer" parent="Privacy/VBoxContainer2" unique_id=1917062109]
 layout_mode = 2
@@ -127,6 +134,7 @@ size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.9529412, 0.32156864, 0.13333334, 1)
 theme_override_font_sizes/font_size = 30
 text = "Privacy Policy"
+uri = "https://www.termsfeed.com/live/a00ddcd1-4fb6-441f-a694-9f1ab996c600"
 
 [node name="MarginContainer3" type="MarginContainer" parent="Privacy/VBoxContainer2" unique_id=1617127198]
 layout_mode = 2

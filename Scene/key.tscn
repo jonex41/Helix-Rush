@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://chsmvj25xgvbr" path="res://Scene/pick_up_vfx.tscn" id="3_se02u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_56wr5"]
-size = Vector3(1, 1.3671875, 1.4562988)
+size = Vector3(1, 0.7919922, 0.9256592)
 
 [node name="Key" type="StaticBody3D" unique_id=1076746388]
 script = ExtResource("1_eg3k7")
@@ -13,13 +13,13 @@ script = ExtResource("1_eg3k7")
 [node name="Area3d" type="Area3D" parent="." unique_id=1998077092]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3d" unique_id=1872899704]
-transform = Transform3D(0.685, 0, 0, 0, 0.685, 0, 0, 0, 0.685, 0, 0.45306984, 0.013295293)
+transform = Transform3D(0.685, 0, 0, 0, 0.685, 0, 0, 0, 0.685, 0, 0.13206439, 0.017434388)
 shape = SubResource("BoxShape3D_56wr5")
 
 [node name="key2" parent="Area3d" unique_id=1036206601 instance=ExtResource("1_56wr5")]
 transform = Transform3D(0.014338099, -0.037743334, 0, 0.037743334, 0.014338099, 0, 0, 0, 0.040375, 0, 0.1261856, 0)
 
 [node name="PickUpVfx" parent="." unique_id=863550597 instance=ExtResource("3_se02u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9643797, 0)
+transform = Transform3D(1, 0, 0, 0, 0.2743493, 0, 0, 0, 1, 0, -0.20524162, 0)
 
 [connection signal="body_entered" from="Area3d" to="." method="_on_area_3d_body_entered"]

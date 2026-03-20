@@ -11,8 +11,7 @@
 [node name="LevelBlock1" type="Node3D" unique_id=1118936276]
 script = ExtResource("1_hvs2l")
 
-[node name="Rod" parent="." unique_id=396970692 instance=ExtResource("1_322oj")]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 8.526904, 0, -1.509958e-07, 0, -1, 0, 7.8620214, 0)
+[node name="Rod" parent="." unique_id=1021339008 instance=ExtResource("1_322oj")]
 target = NodePath("../Node3D")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=131103094]

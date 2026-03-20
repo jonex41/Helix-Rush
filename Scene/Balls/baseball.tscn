@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b4ubknme0g7bg"]
+
+[ext_resource type="Script" uid="uid://cwqii5qlqd3xk" path="res://Script/football_ruggy.gd" id="1_2ng61"]
+[ext_resource type="AudioStream" uid="uid://df1mco6cf2uif" path="res://Assets/Audio/coin.ogg" id="2_dxsll"]
+[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="3_yt22v"]
+[ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="4_3vha8"]
+[ext_resource type="PackedScene" uid="uid://dw77ba1rn2h2d" path="res://Assets/glbFiles/baseball.glb" id="5_moxm5"]
+[ext_resource type="Script" uid="uid://632w6thf8tlh" path="res://Script/foot_ball_ruggy.gd" id="7_mrn3j"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
+friction = 0.0
+bounce = 1.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0wd17"]
+
+[node name="BaseBall" type="RigidBody3D" unique_id=1117598942 groups=["Player"]]
+transform = Transform3D(4.563, 0, 0, 0, 4.563, 0, 0, 0, 4.563, 0, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_c2f4g")
+script = ExtResource("1_2ng61")
+min_impact_speed = null
+cooldown = null
+min_bounce_velocity = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813607997]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
+shape = SubResource("SphereShape3D_0wd17")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1843045290]
+stream = ExtResource("2_dxsll")
+volume_db = 44.484
+
+[node name="JetPack" parent="." unique_id=1835005919 instance=ExtResource("3_yt22v")]
+transform = Transform3D(0.020837778, 0, -0.118176915, 0, 0.12, 0, 0.118176915, 0, 0.020837778, 0, -0.050181255, -0.20067236)
+visible = false
+
+[node name="GPUTrail3D" parent="." unique_id=157134242 instance=ExtResource("4_3vha8")]
+transform = Transform3D(-3.496911e-09, -0.08, 0, 0.08, -3.496911e-09, 0, 0, 0, 0.08, 0, -0.056637704, 0)
+amount = 21
+amount_ratio = 0.995
+lifetime = 21.0
+length = 21
+length_seconds = 0.35
+
+[node name="baseball" parent="." unique_id=286949787 instance=ExtResource("5_moxm5")]
+transform = Transform3D(3.485, 0, 0, 0, 3.485, 0, 0, 0, 3.485, 0, 0, 0)
+script = ExtResource("7_mrn3j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

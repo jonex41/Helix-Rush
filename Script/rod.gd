@@ -23,6 +23,7 @@ func _ready():
 
 
 func _unhandled_input(event):
+	print('i am here')
 	if GameTimer.disable_rotation_input:
 		return
 		

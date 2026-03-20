@@ -54,14 +54,14 @@ func _on_map_pressed() -> void:
 
 
 func _on_power_2_add_pressed() -> void:
-	if GameTimer.initial_coin_balance > 999:
+	if int(GameTimer.initial_coin_balance) > 999:
 		GameTimer.add_power_collision()
 		GameTimer.update_initial_coin_balance(1000, true)
 	pass # Replace with function body.
 
 
 func _on_power_1_add_pressed() -> void:
-	if GameTimer.initial_coin_balance > 1999:
+	if int(GameTimer.initial_coin_balance) > 1999:
 		GameTimer.add_power_antigravity()
 		GameTimer.update_initial_coin_balance(2000, true)
 		

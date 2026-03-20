@@ -163,12 +163,14 @@ func spin_wheel():
 		var my_value = options[slice_index].name
 		if my_value == "100":
 		#print('700 coins')
-			GameTimer.initial_coin_balance+=100
+			#GameTimer.initial_coin_balance+=100
+			GameTimer.update_initial_coin_balance(100, false)
 		#is_key = false
 		#pass
 		elif my_value == "200":
 		#print('100 coins')
-			GameTimer.initial_coin_balance+=200
+			#GameTimer.initial_coin_balance+=200
+			GameTimer.update_initial_coin_balance(200, false)
 		#is_key = false
 		#pass
 		elif  my_value == "2 key":
@@ -180,13 +182,15 @@ func spin_wheel():
 		elif my_value == "500":
 		#print('2 keys')
 		#
-			GameTimer.initial_coin_balance+=500
+			#GameTimer.initial_coin_balance+=500
+			GameTimer.update_initial_coin_balance(500, false)
 		#is_key = false
 		#pass
 		elif  my_value == "300":
 		#print('500 coins')
 		#
-			GameTimer.initial_coin_balance+=300
+			#GameTimer.initial_coin_balance+=300
+			GameTimer.update_initial_coin_balance(300, false)
 		#is_key = false
 		#pass
 		elif  my_value == "1 key":
@@ -198,7 +202,8 @@ func spin_wheel():
 		elif  my_value == "700":
 		#
 		#print('700 coins')
-			GameTimer.initial_coin_balance+=700
+			GameTimer.update_initial_coin_balance(700, false) 
+			#GameTimer.initial_coin_balance+=700
 		#is_key = false
 		#pass
 			

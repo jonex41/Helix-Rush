@@ -4,12 +4,12 @@ extends Node
 const SAVE_PATH := "user://savegame.json"
 var disable_rotation_input:= false
 var selectedBallScene:= "res://Scene/Balls/ball.tscn"
-var initial_power_collision:int = 5
+var initial_power_collision:int = 2
 var initial_power_collision_timer:int = 3
-var initial_power_antigravity: int = 5
+var initial_power_antigravity: int = 2
 var initial_power_antigravity_timer:int = 3
-var initial_coin_balance: int = 10000
-var initial_key_balance:int = 3
+var initial_coin_balance: String = "20000"
+var initial_key_balance:int = 1
 var power_is_active :=false
 var pause_loosing_for_seconds:= false
 var current_level :int = 1
@@ -20,15 +20,19 @@ var can_play_sound = true
 var can_vibrate = true
 var current_color_background: float = 0
 var unlocked_levels: Array = []
+var is_bought_rugby_ball = false
+var is_bought_coin_ball = false
+var is_bought_monkey_ball = false
 
 func _ready() -> void:
 	load_data()
 
 func update_initial_coin_balance(value : int , is_remove: bool)-> void:
 	if is_remove:
-		initial_coin_balance-=value
+		initial_coin_balance= 	str(int(initial_coin_balance)-value)
 	else :
-		initial_coin_balance+=value
+		initial_coin_balance= 	str(int(initial_coin_balance)+value)
+		
 	save()
 func reduce_power_antigravity()-> void:
 	initial_power_antigravity-=1
@@ -100,6 +104,26 @@ func increase_current_color_background()-> void:
 
 func decrease_current_color_background()-> void:
 	current_color_background-=1
+
+
+
+func bought_rugby_ball():
+	is_bought_rugby_ball = true
+	save()
+
+func bought_coin_ball():
+	is_bought_coin_ball = true
+	save()
+func bought_monkey_ball():
+	is_bought_monkey_ball  = true
+	save()
+	
+func selected_ball(ball_link:String):
+	selectedBallScene  = ball_link
+	save()
+	
+	
+
 func reset():
 
 	bounce_count = 0
@@ -178,7 +202,11 @@ func save():
 		"initial_power_antigravity_timer" :initial_power_antigravity_timer ,
 		"initial_coin_balance" :initial_coin_balance ,
 		"initial_key_balance" :initial_key_balance ,
-		"unlocked_levels" : unlocked_levels
+		"unlocked_levels" : unlocked_levels,
+		"is_bought_rugby_ball" : is_bought_rugby_ball,
+ 		"is_bought_coin_ball" : is_bought_coin_ball,
+ 		"is_bought_monkey_ball" : is_bought_monkey_ball,
+ 		"selectedBallScene" : selectedBallScene,
 	}))
 	file.close()
 
@@ -198,10 +226,13 @@ func load_data():
 		initial_power_collision_timer = data.get("initial_power_collision_timer", 3)
 		initial_power_antigravity = data.get("initial_power_antigravity", 5)
 		initial_power_antigravity_timer = data.get("initial_power_antigravity_timer", 3)
-		initial_coin_balance = data.get("initial_coin_balance", 10000)
+		initial_coin_balance = data.get("initial_coin_balance", "0")
 		initial_key_balance = data.get("initial_key_balance", 3)
 		unlocked_levels = data.get("unlocked_levels", [])
-
+		is_bought_rugby_ball = data.get("is_bought_rugby_ball",false )
+		is_bought_coin_ball = data.get("is_bought_coin_ball",false )
+		is_bought_monkey_ball = data.get("is_bought_monkey_ball",false )
+		selectedBallScene= data.get("selectedBallScene","res://Scene/Balls/ball.tscn" )
 
 
 

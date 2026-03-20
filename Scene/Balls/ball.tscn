@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="3_kmbr2"]
 [ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="4_kq75t"]
 [ext_resource type="PackedScene" uid="uid://bejixuru0b0h7" path="res://Assets/ball.glb" id="5_eg6sw"]
+[ext_resource type="PackedScene" uid="uid://cdui8f35rs3r4" path="res://Assets/glbFiles/beachball.glb" id="6_jyxn8"]
+[ext_resource type="Script" uid="uid://632w6thf8tlh" path="res://Script/foot_ball_ruggy.gd" id="7_ptenq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
 friction = 0.0
@@ -21,6 +23,9 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_c2f4g")
 script = ExtResource("1_jyxn8")
+min_impact_speed = null
+cooldown = null
+min_bounce_velocity = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813607997]
 transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0, 0)
@@ -44,5 +49,10 @@ length_seconds = 0.35
 
 [node name="ball" parent="." unique_id=897850433 instance=ExtResource("5_eg6sw")]
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
+visible = false
+
+[node name="beachball" parent="." unique_id=1979025350 instance=ExtResource("6_jyxn8")]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, -0.014572453, 0)
+script = ExtResource("7_ptenq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,3 +1,33 @@
 [gd_scene format=3 uid="uid://b7vbxylas8qmp"]
 
-[node name="DecalCompatibilityMode" type="Node3D" unique_id=85547276]
+[ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="1_xsagp"]
+[ext_resource type="Texture2D" uid="uid://btv5imtctjg6o" path="res://Assets/ball image/bullethole.png" id="2_xsagp"]
+[ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="3_0bb1w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8ovd"]
+render_priority = 0
+shader = ExtResource("1_xsagp")
+shader_parameter/albedo = ExtResource("2_xsagp")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(2, 5, 2)
+shader_parameter/cube_half_size = Vector3(0.25, 0.1, 0.25)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xsagp"]
+material = SubResource("ShaderMaterial_x8ovd")
+size = Vector3(0.5, 0.2, 0.5)
+
+[node name="DecalCompatibility" type="MeshInstance3D" unique_id=1596746754]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_xsagp")
+Skeleton = null
+script = ExtResource("3_0bb1w")
+size = Vector3(0.5, 0.2, 0.5)
+texture = ExtResource("2_xsagp")
+metadata/_custom_type_script = "uid://feckn7f3pmud"

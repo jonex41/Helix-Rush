@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cogfmgb3j66r4"]
 
-[ext_resource type="Texture2D" uid="uid://b5f3etomrxqd3" path="res://Assets/background/blankBrown002.png" id="1_68dbg"]
 [ext_resource type="Script" uid="uid://cei0fj8cxrvbv" path="res://Script/pause_canvas.gd" id="1_721l6"]
+[ext_resource type="Texture2D" uid="uid://dsrmqu2obubxu" path="res://Assets/background/blankBlue002.png" id="2_721l6"]
 [ext_resource type="Texture2D" uid="uid://bk2c6toaosrwe" path="res://Assets/images/Icon_Large_Audio_Blank.png" id="2_762l3"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="2_nn7uw"]
 [ext_resource type="Texture2D" uid="uid://cke2sr4u0qlcw" path="res://Assets/images/Icon_Large_AudioOff_Grey.png" id="3_i0n1k"]
@@ -50,7 +50,7 @@ theme_override_constants/margin_right = 50
 
 [node name="TextureRect" type="TextureRect" parent="Pause/MarginContainer" unique_id=1550731064]
 layout_mode = 2
-texture = ExtResource("1_68dbg")
+texture = ExtResource("2_721l6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer" unique_id=1887495274]
 layout_mode = 2
@@ -72,11 +72,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 94
 
-[node name="TextureButton" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1312046033]
+[node name="SoundButton" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1312046033]
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 texture_normal = ExtResource("2_762l3")
 
-[node name="TextureButton2" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer" unique_id=919192465]
+[node name="VibrateButton" type="TextureButton" parent="Pause/MarginContainer/VBoxContainer/HBoxContainer" unique_id=919192465]
+custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 texture_normal = ExtResource("3_i0n1k")
 
@@ -116,6 +118,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qvcnh")
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qvcnh")
 text = "Try Again"
 
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/HBoxContainer/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/HBoxContainer/VibrateButton" to="." method="_on_vibrate_button_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Continue" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]

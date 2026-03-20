@@ -48,6 +48,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				ScoreManager.green_yellow-=2
 				ScoreManager.red+=1
 				mat.albedo_color = Color.RED
+			elif bounce_count== 5:
+				#drop_and_destroy()
+				pass
+				
 			bounce_count+= 1
 			
 		pass # Replace with function body.
@@ -69,5 +73,14 @@ func _on_area_3d_platform_body_entered(body: Node3D) -> void:
 		mat.albedo_color = Color.GREEN
 		ScoreManager.green+=5
 		bounce_count = 1
-		print('change color here')
+		#print('change color here')
 	pass # Replace with function body.
+
+
+func drop_and_destroy():
+	var tween = create_tween()
+	tween.tween_property(self, "position:y", position.y - 5.0, 3.0)
+	tween.finished.connect(func():
+		queue_free())
+
+	

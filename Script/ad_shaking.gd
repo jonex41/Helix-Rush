@@ -73,3 +73,11 @@ func start_rotation():
 
 	tween.tween_property(self, "rotation", deg_to_rad(-angle), duration)
 	tween.tween_property(self, "rotation", deg_to_rad(angle), duration)
+
+
+func _on_pressed() -> void:
+	var scene = preload("res://Scene/Ui/not_available.tscn")
+	var instance = scene.instantiate()
+	
+	add_child(instance)
+	pass # Replace with function body.

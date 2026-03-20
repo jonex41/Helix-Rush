@@ -74,7 +74,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Ball Bounce 3d"
-run/main_scene="uid://c2newc706u68c"
+run/main_scene="uid://cenjec34mjift"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
@@ -91,6 +91,7 @@ SceneManager="*res://Script/scene_manager.gd"
 FlatMaterials="*uid://c8h4fpot4tqwp"
 MobileAds="*uid://bogf0g0tf7rc8"
 AdManager="*uid://bne67gm7eglh2"
+IAP="*uid://bbmkc4ofvxo7x"
 
 [display]
 
@@ -102,7 +103,7 @@ window/handheld/orientation=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/GPUTrail-main/plugin.cfg", "res://addons/radial_progress/plugin.cfg")
+enabled=PackedStringArray("res://addons/AdmobPlugin/plugin.cfg", "res://addons/GPUTrail-main/plugin.cfg", "res://addons/decal_compatibility/plugin.cfg", "res://addons/godotx_revenue_cat/plugin.cfg", "res://addons/radial_progress/plugin.cfg")
 
 [filesystem]
 

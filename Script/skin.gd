@@ -10,7 +10,7 @@ var scenes := [
 		"id": 0,
 		"name": "Ball",
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
-		"icon": preload("res://Assets/ball image/round_ball.png"),
+		"icon": preload("res://Assets/ball image/beach_ball.png"),
 		"cost": "",
 		"is_open":true,
 		"is_selected":true if   "res://Scene/Balls/ball.tscn" == GameTimer.selectedBallScene else false
@@ -33,7 +33,7 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/ball image/rubgy.png"),
 		"cost": 20000,
-		"is_open":true,
+		"is_open":GameTimer.is_bought_rugby_ball,
 		"is_selected":true if  "res://Scene/Balls/football_ruggy.tscn" == GameTimer.selectedBallScene else false
 	},
 	
@@ -43,7 +43,7 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/Atlas/COIN.PNG"),
 		"cost": 30000,
-		"is_open":true,
+		"is_open":GameTimer.is_bought_coin_ball,
 		"is_selected":true if "res://Scene/Balls/coin_ball.tscn" == GameTimer.selectedBallScene else false
 	},
 	
@@ -54,7 +54,7 @@ var scenes := [
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
 		"icon": preload("res://Assets/ball image/monkey.png"),
 		"cost": 30000,
-		"is_open":true,
+		"is_open":GameTimer.is_bought_monkey_ball,
 		"is_selected":true if  "res://Scene/Balls/monkey_ball.tscn" == GameTimer.selectedBallScene else false
 	},
 
@@ -107,6 +107,15 @@ func _on_cell_selected(data: Dictionary):
 		if data.cost is int or  data.cost is float:
 			if GameTimer.initial_coin_balance >= data.cost:
 				GameTimer.initial_coin_balance= GameTimer.initial_coin_balance - data.cost 
+				if data.name == "Coin Ball":
+					GameTimer.bought_coin_ball()
+					pass
+				elif data.name == "Rugby Ball":
+					GameTimer.bought_rugby_ball()
+					pass
+				elif data.name == "Monkey Ball":
+					GameTimer.bought_monkey_ball()
+					pass
 				var index = find_index_by_id(data.id)
 				scenes[index].is_open = true
 				var my_data =data
@@ -124,18 +133,18 @@ func _on_cell_selected(data: Dictionary):
 	var nameBall = data.name
 	if nameBall == 'Square Ball':
 		
-		GameTimer.selectedBallScene ="res://Scene/Balls/square.tscn"
+		GameTimer.selected_ball("res://Scene/Balls/square.tscn")
 	elif nameBall == 'Rugby Ball':
 		
-		GameTimer.selectedBallScene ="res://Scene/Balls/football_ruggy.tscn"
+		GameTimer.selected_ball("res://Scene/Balls/football_ruggy.tscn")
 		
 	elif nameBall == 'Ball' :
-		GameTimer.selectedBallScene = "res://Scene/Balls/ball.tscn"
+		GameTimer.selected_ball( "res://Scene/Balls/ball.tscn")
 	elif nameBall == 'Coin Ball' :
-		GameTimer.selectedBallScene = "res://Scene/Balls/coin_ball.tscn"
+		GameTimer.selected_ball( "res://Scene/Balls/coin_ball.tscn")
 		
 	elif nameBall == 'Monkey Ball' :
-		GameTimer.selectedBallScene = "res://Scene/Balls/monkey_ball.tscn"
+		GameTimer.selected_ball("res://Scene/Balls/monkey_ball.tscn")
 		
 		
 		#target.set_scene(GameTimer.selectedBallScene)

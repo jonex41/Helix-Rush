@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c84dl2c4morfh"]
+
+[ext_resource type="Shader" uid="uid://d1q1fiku5x8ku" path="res://shader/sky_shader.gdshader" id="1_7gyd8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe3wc"]
+shader = ExtResource("1_7gyd8")
+shader_parameter/skyColor = Color(1, 0.31764707, 0.18431373, 1)
+shader_parameter/horizonColor = Color(0.5349078, 0.39815497, 0.819144, 1)
+
+[sub_resource type="Sky" id="Sky_l2irs"]
+sky_material = SubResource("ShaderMaterial_fe3wc")
+
+[sub_resource type="Environment" id="Environment_lsgyi"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.7
+sky = SubResource("Sky_l2irs")
+sky_rotation = Vector3(-0.83775806, 0, 0)
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+tonemap_mode = 2
+tonemap_exposure = 0.35
+
+[node name="WorldEnvironment" type="WorldEnvironment" unique_id=327063570]
+environment = SubResource("Environment_lsgyi")

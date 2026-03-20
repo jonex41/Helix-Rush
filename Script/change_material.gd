@@ -2,6 +2,7 @@ extends StaticBody3D
 @onready var mesh: MeshInstance3D = find_child("Cylinder", true, false)
 var mat : StandardMaterial3D
 var bounce_count : int = 0
+@onready var decal_scene = preload("res://Scene/decal_compatibility_mode.tscn")
 
 func _ready():
 	bounce_count = 0
@@ -16,7 +17,18 @@ func _ready():
 func _process(delta: float) -> void:
 	pass
 
-
+#
+#func _integrate_forces(state: PhysicsDirectBodyState3D):
+	#for i in range(state.get_contact_count()):
+		#
+		#var collider = state.get_contact_collider_object(i)
+		#
+		#if collider and collider is StaticBody3D:
+			#
+			#var hit_position = state.get_contact_collider_position(i)
+			#var hit_normal = state.get_contact_collider_normal(i)
+			#
+			#spawn_decal(hit_position, hit_normal, collider)
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
@@ -38,6 +50,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				ScoreManager.green_yellow-=2
 				ScoreManager.red+=1
 				mat.albedo_color = Color.RED
+			elif bounce_count== 5:
+				#drop_and_destroy()
+				pass
+				
 			bounce_count+= 1
 			
 		pass # Replace with function body.
@@ -45,7 +61,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_area_3d_platform_body_entered(body: Node3D) -> void:
 	if body is RigidBody3D && mesh != null:
-		body.play_audio()
+		if body.has_method("play_audio"):
+			body.play_audio()
 		var base_mat = mesh.get_active_material(0)
 
 		if base_mat == null:
@@ -59,5 +76,13 @@ func _on_area_3d_platform_body_entered(body: Node3D) -> void:
 		mat.albedo_color = Color.GREEN
 		ScoreManager.green+=5
 		bounce_count = 1
-		print('change color here')
+		#print('change color here')
 	pass # Replace with function body.
+	
+	
+
+func drop_and_destroy():
+	var tween = create_tween()
+	tween.tween_property(self, "position:y", position.y - 5.0, 3.0)
+	tween.finished.connect(func():
+		queue_free())

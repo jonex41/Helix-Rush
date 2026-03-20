@@ -970,7 +970,7 @@ text = "5000"
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer" unique_id=1824156045]
+[node name="TextureRect5000" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer" unique_id=1824156045]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -978,7 +978,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer/TextureRect2" unique_id=696363928]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer/TextureRect5000" unique_id=696363928]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1028,7 +1028,7 @@ text = "20,000"
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer" unique_id=1564588346]
+[node name="TextureRect20000" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer" unique_id=1564588346]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1036,7 +1036,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer/TextureRect2" unique_id=687692526]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer/TextureRect20000" unique_id=687692526]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1086,7 +1086,7 @@ text = "40,000"
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer" unique_id=1785158029]
+[node name="TextureRect40000" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer" unique_id=1785158029]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1094,7 +1094,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer/TextureRect2" unique_id=1361960231]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer/TextureRect40000" unique_id=1361960231]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1144,7 +1144,7 @@ text = "100,000"
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer" unique_id=1223407818]
+[node name="TextureRect2100000000" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer" unique_id=1223407818]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1152,7 +1152,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer/TextureRect2" unique_id=458075699]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer/TextureRect2100000000" unique_id=458075699]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1201,7 +1201,7 @@ text = "Remove ads"
 layout_mode = 2
 size_flags_stretch_ratio = 1.35
 
-[node name="TextureRect2" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer" unique_id=1862729746]
+[node name="TextureRectRemoveAd" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer" unique_id=1862729746]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
@@ -1209,7 +1209,7 @@ texture_normal = SubResource("GradientTexture1D_7rex1")
 stretch_mode = 1
 flip_h = true
 
-[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer/TextureRect2" unique_id=1114458640]
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer/TextureRectRemoveAd" unique_id=1114458640]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1239,6 +1239,11 @@ metadata/_custom_type_script = "uid://ctr4wc8onnroy"
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel2/VBoxContainer/MarginContainer/VBoxContainer/Power2AddTime" to="." method="_on_power_2_add_time_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/KeyAdd" to="." method="_on_key_add_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad/HBoxContainer/CenterContainer/ShowRewardedAd" to="." method="_on_show_rewarded_ad_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad2/HBoxContainer/CenterContainer/TextureRect5000" to="." method="_on_texture_rect_5000_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad3/HBoxContainer/CenterContainer/TextureRect20000" to="." method="_on_texture_rect_20000_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer/TextureRect40000" to="." method="_on_texture_rect_40000_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer/TextureRect2100000000" to="." method="_on_texture_rect_2100000000_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer/TextureRectRemoveAd" to="." method="_on_texture_rect_remove_ad_pressed"]
 [connection signal="consent_form_loaded" from="ShopAdmob" to="." method="_on_shop_admob_consent_form_loaded"]
 [connection signal="consent_info_updated" from="ShopAdmob" to="." method="_on_shop_admob_consent_info_updated"]
 [connection signal="initialization_completed" from="ShopAdmob" to="." method="_on_shop_admob_initialization_completed"]

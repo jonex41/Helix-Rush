@@ -17,9 +17,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power2.text = GameTimer.format_money(GameTimer.initial_power_collision)
-	$Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power1.text = GameTimer.format_money(GameTimer.initial_power_antigravity)
-	$Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/key.text=GameTimer.format_money(GameTimer.initial_key_balance)
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power2.text = str(GameTimer.initial_power_collision)
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/Power1.text =str( GameTimer.initial_power_antigravity)
+	$Control/ScrollContainer/VBoxContainer/HBoxContainer3/MarginContainer/Panel/HBoxContainer/VBoxContainer/Panel/key.text=str(GameTimer.initial_key_balance)
 	
 	
 	$Control/ScrollContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/MarginContainer/VBoxContainer/Power1LebelTime.text='Level '+str(GameTimer.initial_power_antigravity_timer/2)+'('+str(GameTimer.initial_power_antigravity_timer)+')'
@@ -37,7 +37,7 @@ func _on_texture_button_pressed() -> void:
 
 	
 func _on_power_2_add_pressed() -> void:
-	if GameTimer.initial_coin_balance > 999:
+	if int( GameTimer.initial_coin_balance) > 999:
 		GameTimer.add_power_collision()
 		GameTimer.update_initial_coin_balance(1000, true)
 	pass # Replace with function body.
@@ -45,29 +45,30 @@ func _on_power_2_add_pressed() -> void:
 
 func _on_power_1_add_pressed() -> void:
 	
-	if GameTimer.initial_coin_balance > 1999:
+	if int(GameTimer.initial_coin_balance) > 1999:
 		GameTimer.add_power_antigravity()
 		GameTimer.update_initial_coin_balance(2000, true)
 	pass # Replace with function body.
 
 
 func _on_key_add_pressed() -> void:
-	if GameTimer.initial_coin_balance > 4999:
+	if int(GameTimer.initial_coin_balance) > 4999:
 		GameTimer.add_power_antigravity()
 		GameTimer.update_initial_coin_balance(5000, true)
+		GameTimer.add_power_key()
 	
 	pass # Replace with function body.
 
 
 func _on_power_2_add_time_pressed() -> void:
-	if GameTimer.initial_coin_balance > 4999:
+	if int(GameTimer.initial_coin_balance) > 4999:
 		GameTimer.add_power_antigravity()
 		GameTimer.update_initial_coin_balance(5000, true)
 	pass # Replace with function body.
 
 
 func _on_power_1_add_t_ime_pressed() -> void:
-	if GameTimer.initial_coin_balance > 4999:
+	if int(GameTimer.initial_coin_balance) > 4999:
 		GameTimer.add_power_antigravity()
 		
 		GameTimer.update_initial_coin_balance(5000, true)
@@ -146,3 +147,33 @@ func _process_consent_status() -> void:
 			
 			admob.initialize()
 	
+
+
+func _on_texture_rect_remove_ad_pressed() -> void:
+	goto_not_avialable()
+	pass # Replace with function body.
+
+
+func _on_texture_rect_2100000000_pressed() -> void:
+	goto_not_avialable()
+	pass # Replace with function body.
+
+
+func _on_texture_rect_40000_pressed() -> void:
+	goto_not_avialable()
+	pass # Replace with function body.
+
+
+func _on_texture_rect_20000_pressed() -> void:
+	goto_not_avialable()
+	pass # Replace with function body.
+
+
+func _on_texture_rect_5000_pressed() -> void:
+	goto_not_avialable()
+	pass # Replace with function body.
+func goto_not_avialable():
+	var scene = preload("res://Scene/Ui/not_available.tscn")
+	var instance = scene.instantiate()
+	
+	add_child(instance)

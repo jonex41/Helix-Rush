@@ -2,34 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dk06f37dawspa" path="res://Script/level.gd" id="1_iijdn"]
 [ext_resource type="PackedScene" uid="uid://fwr0466n1y1m" path="res://Scene/rod.tscn" id="2_7eref"]
-[ext_resource type="Shader" uid="uid://d1q1fiku5x8ku" path="res://shader/sky_shader.gdshader" id="2_j8rdk"]
+[ext_resource type="PackedScene" uid="uid://c84dl2c4morfh" path="res://Scene/Levels/LevelSegments/world_environment.tscn" id="2_j8rdk"]
 [ext_resource type="Script" uid="uid://cqdu0t74wpddi" path="res://Script/level_block_1.gd" id="3_j8rdk"]
+[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="10_fe3wc"]
 [ext_resource type="PackedScene" uid="uid://bywp8rinwm0sp" path="res://Scene/camera_rig.tscn" id="14_yuq13"]
 [ext_resource type="PackedScene" uid="uid://ci01jxyccmjtu" path="res://Scene/base.tscn" id="16_vwm6b"]
 [ext_resource type="PackedScene" uid="uid://cjjl1y3eyfvk0" path="res://Scene/mean_menu.tscn" id="17_an35y"]
 [ext_resource type="PackedScene" uid="uid://b7flm5edrnc3r" path="res://Scene/spawn_point.tscn" id="18_c0tx2"]
 [ext_resource type="PackedScene" uid="uid://7lcwgay4rs3n" path="res://Scene/blink_layer.tscn" id="19_o3r7s"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe3wc"]
-shader = ExtResource("2_j8rdk")
-shader_parameter/skyColor = Color(1, 0.31764707, 0.18431373, 1)
-shader_parameter/horizonColor = Color(0.5349078, 0.39815497, 0.819144, 1)
-
-[sub_resource type="Sky" id="Sky_l2irs"]
-sky_material = SubResource("ShaderMaterial_fe3wc")
-
-[sub_resource type="Environment" id="Environment_lsgyi"]
-background_mode = 2
-background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 0.7
-sky = SubResource("Sky_l2irs")
-sky_rotation = Vector3(-0.83775806, 0, 0)
-ambient_light_source = 1
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.0
-reflected_light_source = 1
-tonemap_mode = 2
-tonemap_exposure = 0.35
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_btxmf"]
 emission_shape = 3
@@ -47,8 +27,7 @@ height = 0.01
 [node name="LevelBase" type="Node3D" unique_id=949538127]
 script = ExtResource("1_iijdn")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2036549846]
-environment = SubResource("Environment_lsgyi")
+[node name="WorldEnvironment" parent="." unique_id=327063570 instance=ExtResource("2_j8rdk")]
 
 [node name="Rod" parent="." unique_id=9971236 instance=ExtResource("2_7eref")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 10.116836, 0, -1.509958e-07, 0, -1, 0, 9.456473, 0)
@@ -123,5 +102,8 @@ light_bake_mode = 1
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 1.0
 sky_mode = 1
+
+[node name="JetPack" parent="." unique_id=2098919339 instance=ExtResource("10_fe3wc")]
+transform = Transform3D(0.009550646, 0, -0.05416443, 0, 0.055, 0, 0.05416443, 0, 0.009550646, -0.14356542, 0, 1.0354435)
 
 [connection signal="body_entered" from="GameFinish/Area3D" to="." method="_on_area_3d_body_entered"]
