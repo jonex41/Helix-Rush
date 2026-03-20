@@ -57,6 +57,17 @@ var scenes := [
 		"is_open":GameTimer.is_bought_monkey_ball,
 		"is_selected":true if  "res://Scene/Balls/monkey_ball.tscn" == GameTimer.selectedBallScene else false
 	},
+	
+	{
+		"id": 5,
+		"name": "Base Ball",
+		"scene": preload( "res://Scene/skin_single_display.tscn"),
+		"icon": preload("res://Assets/ball image/baseball.png"),
+		"cost": 30000,
+		"is_open":GameTimer.is_bought_base_ball,
+		"is_selected":true if  "res://Scene/Balls/baseball.tscn" == GameTimer.selectedBallScene else false
+	},
+
 
 
 
@@ -116,6 +127,9 @@ func _on_cell_selected(data: Dictionary):
 				elif data.name == "Monkey Ball":
 					GameTimer.bought_monkey_ball()
 					pass
+				elif data.name == "Base Ball":
+					GameTimer.bought_base_ball()
+					pass
 				var index = find_index_by_id(data.id)
 				scenes[index].is_open = true
 				var my_data =data
@@ -145,7 +159,9 @@ func _on_cell_selected(data: Dictionary):
 		
 	elif nameBall == 'Monkey Ball' :
 		GameTimer.selected_ball("res://Scene/Balls/monkey_ball.tscn")
-		
+	elif nameBall == 'Base Ball' :
+		GameTimer.selected_ball("res://Scene/Balls/baseball.tscn")
+			
 		
 		#target.set_scene(GameTimer.selectedBallScene)
 		#target.spawn()
