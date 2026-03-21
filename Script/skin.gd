@@ -31,7 +31,7 @@ var scenes := [
 		"id": 2,
 		"name": "Rugby Ball",
 		"scene": preload( "res://Scene/skin_single_display.tscn"),
-		"icon": preload("res://Assets/ball image/rubgy.png"),
+		"icon": preload("res://Assets/ball image/rubgy2.tga"),
 		"cost": 20000,
 		"is_open":GameTimer.is_bought_rugby_ball,
 		"is_selected":true if  "res://Scene/Balls/football_ruggy.tscn" == GameTimer.selectedBallScene else false
@@ -67,6 +67,18 @@ var scenes := [
 		"is_open":GameTimer.is_bought_base_ball,
 		"is_selected":true if  "res://Scene/Balls/baseball.tscn" == GameTimer.selectedBallScene else false
 	},
+	
+	{
+		"id": 6,
+		"name": "Soccer Ball",
+		"scene": preload( "res://Scene/skin_single_display.tscn"),
+		"icon": preload("res://Assets/ball image/soccerball.png"),
+		"cost": 40000,
+		"is_open":GameTimer.is_bought_soccer_ball,
+		"is_selected":true if  "res://Scene/Balls/soccer_ball.tscn" == GameTimer.selectedBallScene else false
+	},
+
+
 
 
 
@@ -130,6 +142,9 @@ func _on_cell_selected(data: Dictionary):
 				elif data.name == "Base Ball":
 					GameTimer.bought_base_ball()
 					pass
+				elif data.name == "Soccer Ball":
+					GameTimer.bought_soccer_ball()
+					pass
 				var index = find_index_by_id(data.id)
 				scenes[index].is_open = true
 				var my_data =data
@@ -138,6 +153,7 @@ func _on_cell_selected(data: Dictionary):
 			
 				#scene.s
 			else:
+				show_insufficency()
 				return
 				
 					
@@ -162,7 +178,10 @@ func _on_cell_selected(data: Dictionary):
 	elif nameBall == 'Base Ball' :
 		GameTimer.selected_ball("res://Scene/Balls/baseball.tscn")
 			
-		
+	elif nameBall == 'Soccer Ball' :
+		GameTimer.selected_ball("res://Scene/Balls/soccer_ball.tscn")
+			
+			
 		#target.set_scene(GameTimer.selectedBallScene)
 		#target.spawn()
 	get_tree().call_group("Player", "free_palayer")
@@ -185,3 +204,7 @@ func find_index_by_id(id: int) -> int:
 		if scenes[i].id == id:
 			return i
 	return -1
+func show_insufficency():
+	var scene = preload("res://Scene/Ui/insufficient_bal.tscn")
+	var instance = scene.instantiate()
+	add_child(instance)

@@ -24,6 +24,7 @@ var is_bought_rugby_ball = false
 var is_bought_coin_ball = false
 var is_bought_monkey_ball = false
 var is_bought_base_ball = false
+var is_bought_soccer_ball = false
 
 func _ready() -> void:
 	load_data()
@@ -125,6 +126,10 @@ func bought_monkey_ball():
 	save()
 func bought_base_ball():
 	is_bought_base_ball  = true
+	save()
+
+func bought_soccer_ball():
+	is_bought_soccer_ball  = true
 	save()
 	
 func selected_ball(ball_link:String):
@@ -228,6 +233,7 @@ func save():
  		"is_bought_coin_ball" : is_bought_coin_ball,
  		"is_bought_monkey_ball" : is_bought_monkey_ball,
  		"is_bought_base_ball" : is_bought_base_ball,
+ 		"is_bought_soccer_ball" : is_bought_soccer_ball,
  		"selectedBallScene" : selectedBallScene,
 	}))
 	file.close()
@@ -255,6 +261,7 @@ func load_data():
 		is_bought_coin_ball = data.get("is_bought_coin_ball",false )
 		is_bought_monkey_ball = data.get("is_bought_monkey_ball",false )
 		is_bought_base_ball = data.get("is_bought_base_ball",false )
+		is_bought_soccer_ball = data.get("is_bought_soccer_ball",false )
 		selectedBallScene= data.get("selectedBallScene","res://Scene/Balls/ball.tscn" )
 
 
