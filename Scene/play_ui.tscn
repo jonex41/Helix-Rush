@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://basfrid6ctsk8" path="res://Assets/images/Pause.png" id="2_xgsag"]
 [ext_resource type="PackedScene" uid="uid://d48wb720j85h" path="res://Scene/objective.tscn" id="2_xh8jd"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="3_44xlo"]
+[ext_resource type="Script" uid="uid://co34b4x5utkda" path="res://Script/margin_container_safe_area.gd" id="3_utxmd"]
 [ext_resource type="Texture2D" uid="uid://bwb7wa7qcr3xr" path="res://Assets/Atlas/COIN5.PNG" id="3_xgsag"]
 [ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="5_1ngca"]
 [ext_resource type="PackedScene" uid="uid://cssagjqmnhxme" path="res://Scene/Ui/play_ui_bottom.tscn" id="5_44xlo"]
@@ -35,13 +36,14 @@ layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=482600830]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 378.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 20
+script = ExtResource("3_utxmd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1585860343]
 layout_mode = 2

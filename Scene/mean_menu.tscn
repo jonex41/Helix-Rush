@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cjjl1y3eyfvk0"]
 
 [ext_resource type="Texture2D" uid="uid://5h8nrph4ngi" path="res://Assets/images/ButtonText_Small_Orange_Round.png" id="1_4r8hx"]
+[ext_resource type="Script" uid="uid://co34b4x5utkda" path="res://Script/margin_container_safe_area.gd" id="1_oaj43"]
 [ext_resource type="Script" uid="uid://dxdximcf148u3" path="res://Script/mean_menu.gd" id="1_ouvks"]
+[ext_resource type="Script" uid="uid://cfvus7a6mnxfp" path="res://Script/safe_area_top.gd" id="2_0ccua"]
 [ext_resource type="PackedScene" uid="uid://l7ysbryrqk6b" path="res://Scene/coin_bar.tscn" id="2_38suq"]
 [ext_resource type="Texture2D" uid="uid://cphm1hgf5v8sy" path="res://Assets/Atlas/SETTINGS.PNG" id="2_72c26"]
 [ext_resource type="FontFile" uid="uid://c6reqbpdnikfh" path="res://Assets/Fonts/Pixel Game.otf" id="3_4kkba"]
@@ -117,8 +119,9 @@ grow_vertical = 2
 [node name="MarginContainer2" type="MarginContainer" parent="MeanMenu/VBoxContainer" unique_id=788982685]
 layout_mode = 2
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 45
 theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+script = ExtResource("2_0ccua")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MeanMenu/VBoxContainer/MarginContainer2" unique_id=703682082]
 layout_mode = 2
@@ -506,6 +509,15 @@ texture_normal = ExtResource("10_oj5b4")
 [node name="Shop" type="TextureButton" parent="MeanMenu/VBoxContainer2/HBoxContainer" unique_id=1199425025]
 layout_mode = 2
 texture_normal = ExtResource("11_vvd8s")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=225359970]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oaj43")
 
 [connection signal="pressed" from="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer/MarginContainer/Panel/HBoxContainer/Power1Add" to="MeanMenu" method="_on_power_1_add_pressed"]
 [connection signal="pressed" from="MeanMenu/VBoxContainer/MarginContainer3/VBoxContainer2/VBoxContainer2/MarginContainer/Panel/HBoxContainer/Power2Add" to="MeanMenu" method="_on_power_2_add_pressed"]

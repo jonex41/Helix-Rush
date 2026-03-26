@@ -52,6 +52,7 @@ func animate_score(from: int, to: int, total_score: Label ):
 
 func _on_continue_pressed() -> void:
 	#queue_free()
+	print("ffffffffffffffff")
 	
 	ScoreManager.green=0
 	ScoreManager.green_yellow=0
@@ -59,5 +60,6 @@ func _on_continue_pressed() -> void:
 	if total >=75:
 		get_parent().get_parent().get_parent().swap()
 	else :
+		
 		get_tree().reload_current_scene()
 	pass # Replace with function body.
