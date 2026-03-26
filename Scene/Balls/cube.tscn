@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b7bc3ujb0e7pe"]
+
+[ext_resource type="Script" uid="uid://c6ytgjujfgx21" path="res://Script/square.gd" id="1_08m72"]
+[ext_resource type="PackedScene" uid="uid://6g3boq6kf5pn" path="res://Scene/jet_pack.tscn" id="2_q7sti"]
+[ext_resource type="PackedScene" uid="uid://cs7swq4j8v48s" path="res://Scene/gpu_trail_3d.tscn" id="3_8k8fr"]
+[ext_resource type="AudioStream" uid="uid://df1mco6cf2uif" path="res://Assets/Audio/coin.ogg" id="4_6o1ad"]
+[ext_resource type="PackedScene" uid="uid://bfyultrpsmhks" path="res://Assets/glbFiles/Cube.fbx" id="5_6w8py"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2f4g"]
+friction = 0.0
+bounce = 1.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_081tg"]
+
+[node name="Cube" type="RigidBody3D" unique_id=1920554658 groups=["Player"]]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_c2f4g")
+script = ExtResource("1_08m72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=283269209]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
+shape = SubResource("BoxShape3D_081tg")
+
+[node name="JetPack" parent="." unique_id=742175032 instance=ExtResource("2_q7sti")]
+transform = Transform3D(0.003141239, 0, -0.11995887, 0, 0.12, 0, 0.11995887, 0, 0.003141239, 0, -0.07844024, -0.285881)
+visible = false
+
+[node name="GPUTrail3D" parent="." unique_id=621842027 instance=ExtResource("3_8k8fr")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1021725698]
+stream = ExtResource("4_6o1ad")
+volume_db = 44.484
+
+[node name="MeshInstance3D" parent="." unique_id=2100375938 instance=ExtResource("5_6w8py")]
+transform = Transform3D(0.106, 0, 0, 0, 0.106, 0, 0, 0, 0.106, -0.003127594, 0.003229188, 0.0051457966)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

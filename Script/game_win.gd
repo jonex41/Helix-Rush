@@ -12,14 +12,17 @@ func _ready() -> void:
 
 	spawn_firewaork()
 	EventBus.send_has_spin.connect(check_has_spin)
+	EventBus.spin_finish.connect(spin_finished)
 	ScoreManager.reset()
 	#await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://reward_system.tscn")
-
+func spin_finished(spinned: bool):
+	print("i am here ffffffff", spinned)
+	$Control/VBoxContainer/ContinueReplay.visible = spinned
 
 	pass # Replace with function body.
 func check_has_spin(has_spin:bool, is_key:bool):
-	$Control/VBoxContainer/ContinueReplay.visible = has_spin
+	
 	
 	if is_key:
 		animate_texture_move(

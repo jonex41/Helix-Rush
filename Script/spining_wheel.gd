@@ -108,6 +108,7 @@ func _process(_delta: float) -> void:
 #for spinning
 func spin_wheel():
 	spinning = true
+	EventBus.spin_finish.emit(false)
 	if GameTimer.can_play_sound :
 		$"../../AudioStreamPlayer3D".play()
 	var slice_count = options.size()
@@ -154,8 +155,9 @@ func spin_wheel():
 
 	tween.finished.connect(func():
 		rotation_degrees = fmod(rotation_degrees, 360)
-		print("Winner:", options[slice_index].name)
+		#print("Winner:", options[slice_index].name)
 		spinning = false
+		EventBus.spin_finish.emit(true)
 		if int(options[slice_index].name)>2:
 			EventBus.send_has_spin.emit(true, false)
 		else :
@@ -262,6 +264,8 @@ func spin_wheel():
 	
 func _on_spin_finished():
 	EventBus.send_has_spin.emit(true, is_key)
+	
+	
 	spinning = false
 
 	# Normalize rotation so it stays clean

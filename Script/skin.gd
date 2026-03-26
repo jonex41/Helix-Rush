@@ -77,6 +77,18 @@ var scenes := [
 		"is_open":GameTimer.is_bought_soccer_ball,
 		"is_selected":true if  "res://Scene/Balls/soccer_ball.tscn" == GameTimer.selectedBallScene else false
 	},
+		{
+		"id": 7,
+		"name": "Cube Ball",
+		"scene": preload( "res://Scene/skin_single_display.tscn"),
+		"icon": preload("res://Assets/ball image/cube.png"),
+		"cost": "Level 100",
+		"is_open":true if GameTimer.current_level >= 100 else false,
+		"is_selected":true if  "res://Scene/Balls/cube.tscn" == GameTimer.selectedBallScene else false
+
+
+
+	},
 
 
 
@@ -180,6 +192,8 @@ func _on_cell_selected(data: Dictionary):
 			
 	elif nameBall == 'Soccer Ball' :
 		GameTimer.selected_ball("res://Scene/Balls/soccer_ball.tscn")
+	elif nameBall == 'Cube Ball' :
+		GameTimer.selected_ball("res://Scene/Balls/cube.tscn")
 			
 			
 		#target.set_scene(GameTimer.selectedBallScene)

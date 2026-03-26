@@ -35,7 +35,7 @@ func _on_button_pressed() -> void:
 		spin_wheel()
 	else:
 		print('spin for ad')
-		AdManager.show_rewarded_ad(spin_wheel, true)
+		#AdManager.show_rewarded_ad(spin_wheel, true)
 		#shop_admob.show_rewarded_ad()
 	
 	pass # Replace with function body.
