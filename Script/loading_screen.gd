@@ -82,5 +82,5 @@ func _process(delta):
 
 func finish_loading():
 	print("All scenes loaded")
-	await get_tree().create_timer(2.0).timeout
+	#await get_tree().create_timer(2.0).timeout
 	get_tree().change_scene_to_file("res://Scene/main.tscn")

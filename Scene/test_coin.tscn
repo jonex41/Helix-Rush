@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cvgryr3goapfm"]
+
+[ext_resource type="Script" uid="uid://dccwdkjumtkac" path="res://Script/test.gd" id="1_fgb2f"]
+[ext_resource type="PackedScene" uid="uid://cjd74swjem5nq" path="res://Scene/coin_2d.tscn" id="2_36moy"]
+
+[node name="Control" type="Control" unique_id=2112743043 node_paths=PackedStringArray("coin_target")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgb2f")
+coin_scene = ExtResource("2_36moy")
+coin_target = NodePath("Node2D")
+
+[node name="TestCoinMove" type="Node2D" parent="." unique_id=699115074]
+position = Vector2(552, 1677)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2043638975]
+position = Vector2(90, 58)

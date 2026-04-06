@@ -76,8 +76,9 @@ func start_rotation():
 
 
 func _on_pressed() -> void:
-	var scene = preload("res://Scene/Ui/not_available.tscn")
-	var instance = scene.instantiate()
-	
-	add_child(instance)
+	PurchaseManager.buy_remove_ads()
+	#var scene = preload("res://Scene/Ui/not_available.tscn")
+	#var instance = scene.instantiate()
+	#
+	#add_child(instance)
 	pass # Replace with function body.

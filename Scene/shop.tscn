@@ -1216,9 +1216,19 @@ text = "$1.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="Control/ScrollContainer" unique_id=391115678]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+text = "v.11"
+horizontal_alignment = 1
+
 [node name="ShopAdmob" type="Node" parent="." unique_id=1156681291]
 script = ExtResource("16_fi8yd")
+is_real = true
 android_debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+android_real_application_id = "ca-app-pub-4937388545307675~1142936758"
+android_real_rewarded_id = "ca-app-pub-4937388545307675/1649873648"
 metadata/_custom_type_script = "uid://ctr4wc8onnroy"
 
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cjd74swjem5nq"]
+
+[ext_resource type="Texture2D" uid="uid://8ilo7uqi2sl1" path="res://Assets/images/Icon_Small_CoinDollar.png" id="1_w3086"]
+
+[node name="Coin" type="Node2D" unique_id=2119399693]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1739116132]
+texture = ExtResource("1_w3086")

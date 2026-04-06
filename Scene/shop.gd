@@ -200,27 +200,32 @@ func _process_consent_status() -> void:
 
 
 func _on_texture_rect_remove_ad_pressed() -> void:
-	goto_not_avialable()
+	PurchaseManager.buy_remove_ads()
+	#goto_not_avialable()
 	pass # Replace with function body.
 
 
 func _on_texture_rect_2100000000_pressed() -> void:
-	goto_not_avialable()
+	PurchaseManager.buy_coin_100000()
+	#goto_not_avialable()
 	pass # Replace with function body.
 
 
 func _on_texture_rect_40000_pressed() -> void:
-	goto_not_avialable()
+	PurchaseManager.buy_coin_40000()
+	#goto_not_avialable()
 	pass # Replace with function body.
 
 
 func _on_texture_rect_20000_pressed() -> void:
-	goto_not_avialable()
+	PurchaseManager.buy_coin_20000()
+	#goto_not_avialable()
 	pass # Replace with function body.
 
 
 func _on_texture_rect_5000_pressed() -> void:
-	goto_not_avialable()
+	PurchaseManager.buy_coin_5000()
+	#goto_not_avialable()
 	pass # Replace with function body.
 func goto_not_avialable():
 	var scene = preload("res://Scene/Ui/not_available.tscn")

@@ -25,6 +25,7 @@ var is_bought_coin_ball = false
 var is_bought_monkey_ball = false
 var is_bought_base_ball = false
 var is_bought_soccer_ball = false
+var allow_ads = true
 
 func _ready() -> void:
 	load_data()
@@ -42,6 +43,10 @@ func reduce_power_antigravity()-> void:
 	
 func reduce_power_collision()-> void:
 	initial_power_collision-=1
+	save()
+
+func is_allow_ads(allowads)-> void:
+	allow_ads = allowads
 	save()
 	
 func add_power_antigravity()-> void:
@@ -235,6 +240,7 @@ func save():
  		"is_bought_base_ball" : is_bought_base_ball,
  		"is_bought_soccer_ball" : is_bought_soccer_ball,
  		"selectedBallScene" : selectedBallScene,
+ 		"allow_ads" : allow_ads,
 	}))
 	file.close()
 
@@ -262,6 +268,7 @@ func load_data():
 		is_bought_monkey_ball = data.get("is_bought_monkey_ball",false )
 		is_bought_base_ball = data.get("is_bought_base_ball",false )
 		is_bought_soccer_ball = data.get("is_bought_soccer_ball",false )
+		allow_ads = data.get("allow_ads",false )
 		selectedBallScene= data.get("selectedBallScene","res://Scene/Balls/ball.tscn" )
 
 

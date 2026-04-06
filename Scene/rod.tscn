@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vevt57njipou" path="res://Script/rod.gd" id="1_q2jf2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdf8x"]
-albedo_color = Color(0.6293669, 0.6295537, 0.21805972, 0)
+albedo_color = Color(0.627451, 0.6313726, 0.21960784, 0)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wdf8x"]
 

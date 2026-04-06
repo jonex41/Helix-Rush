@@ -60,10 +60,11 @@ func revive_game()->void:
 
 		queue_free()
 	else :
-		get_tree().reload_current_scene()
-		print("i am here 23")
-		#var scene = preload("res://Scene/shop.tscn")
-		#var instance = scene.instantiate()
+		#().reload_current_scene()
+		#print("i am here 23")
+		var scene = preload("res://Scene/shop.tscn")
+		var instance = scene.instantiate()
+		add_child(instance)
 		#get_tree().current_scene.add_child(instance)
 		#queue_free()
 

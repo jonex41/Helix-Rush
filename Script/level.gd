@@ -145,12 +145,12 @@ func spawn_level_block():
 	var currentLevel = GameTimer.current_level-1
 	
 	print(grid.size())
-	print("Level")
+	#print("Level")
 	print(str(currentLevel))
 	var listOfBlocks = grid[currentLevel]
 	
 	for n in range(listOfBlocks.size()):
-		print(listOfBlocks[n])
+		#print(n)
 		if listOfBlocks[n]==1:
 			addScenes(level_block1, n,currentLevel)
 			pass
@@ -237,7 +237,7 @@ func addScenes (scene : PackedScene,  index:int, currentLevel :int):
 	var instance := scene.instantiate()
 	var spawn_pos = $Node3D/Level/SpawnBlock1.global_position if index ==0 else $Node3D/Level/SpawnBlock2.global_position
 	instance.global_position.y = spawn_pos.y
-	if currentLevel % 11 == 0:
+	if currentLevel % 11 == 0 && index == 0:
 		instance.show_key_jetpack()
 	else :
 		instance.hide_key_jetpack()

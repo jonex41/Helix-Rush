@@ -16,9 +16,14 @@ func _ready() -> void:
 	ScoreManager.reset()
 	#await get_tree().create_timer(3.0).timeout
 	#get_tree().change_scene_to_file("res://reward_system.tscn")
-func spin_finished(spinned: bool):
+func spin_finished(spinned: bool, is_key:bool):
 	print("i am here ffffffff", spinned)
+	
 	$Control/VBoxContainer/ContinueReplay.visible = spinned
+	if !is_key && spinned:
+		var scene = preload("res://Scene/test_coin.tscn")
+		var instance = scene.instantiate()
+		add_child(instance)
 
 	pass # Replace with function body.
 func check_has_spin(has_spin:bool, is_key:bool):
@@ -33,12 +38,13 @@ func check_has_spin(has_spin:bool, is_key:bool):
 		)
 		print("is key")
 	else :
-		animate_texture_move(
-		preload("res://Assets/images/Icon_Small_CoinDollar.png"),
-		$Marker2DCenter,
-		$Marker2DCoin
-		)
-		print('is coin')
+		pass
+		#animate_texture_move(
+		#preload("res://Assets/images/Icon_Small_CoinDollar.png"),
+		#$Marker2DCenter,
+		#$Marker2DCoin
+		#)
+		#print('is coin')
 	pass
 func spawn_firewaork():
 	var firework = fireworks_scene.instantiate()
