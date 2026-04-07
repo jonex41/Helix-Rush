@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://n6ks8opx8hi0" path="res://Script/key_bar.gd" id="1_opawk"]
 [ext_resource type="Texture2D" uid="uid://bd06aulcvmb1t" path="res://Assets/images/ButtonText_Small_GreyOutline_Round.png" id="2_bwcx8"]
-[ext_resource type="Texture2D" uid="uid://droyp2di7jcmp" path="res://Assets/Atlas/key.png" id="3_bwcx8"]
+[ext_resource type="Shader" uid="uid://ihcaq5drhggn" path="res://shader/round_corner.gdshader" id="3_bwcx8"]
+[ext_resource type="Texture2D" uid="uid://c3gh1jqm1hbrh" path="res://Assets/images/key_circle.png" id="4_r4x1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o5jvf"]
+shader = ExtResource("3_bwcx8")
+shader_parameter/radius = 0.510000024225
 
 [node name="KeyBar" type="Control" unique_id=698228342]
 layout_mode = 3
@@ -41,19 +46,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="TextureRect" unique_id=1821014363]
+custom_minimum_size = Vector2(170, 200)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
+offset_left = -20.0
 offset_top = -85.0
 offset_bottom = 85.0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect2" type="TextureRect" parent="TextureRect/CenterContainer" unique_id=1289149473]
-custom_minimum_size = Vector2(170, 170)
+material = SubResource("ShaderMaterial_o5jvf")
+clip_contents = true
+custom_minimum_size = Vector2(95.545, 170)
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("3_bwcx8")
-expand_mode = 5
+texture = ExtResource("4_r4x1g")
+expand_mode = 2
+stretch_mode = 5
 flip_h = true

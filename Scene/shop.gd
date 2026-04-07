@@ -232,3 +232,8 @@ func goto_not_avialable():
 	var instance = scene.instantiate()
 	
 	add_child(instance)
+
+
+func _on_supportdev_pressed() -> void:
+	PurchaseManager.buy_support_dev()
+	pass # Replace with function body.

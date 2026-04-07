@@ -5,6 +5,7 @@ const PRODUCT_ID_20000 = "coin20000"
 const PRODUCT_ID_40000 = "coin40000"
 const PRODUCT_ID_100000 = "coin100000"
 const PRODUCT_ID_removead = "remove_ads_forever"
+const PRODUCT_ID_supportdev = "support_developer"
 
 var billing
 var is_ready := false
@@ -94,6 +95,13 @@ func buy_coin_100000():
 	print("Starting purchase...")
 	billing.purchase(PRODUCT_ID_100000)
 
+func buy_support_dev():
+	if not is_ready:
+		print("Billing not ready")
+		return
+	print("Starting purchase...")
+	billing.purchase(PRODUCT_ID_supportdev)
+
 # =========================
 # HANDLE PURCHASE RESULT
 # =========================
@@ -119,6 +127,8 @@ func _process_purchase(purchases):
 		update(purchases,PRODUCT_ID_40000)
 	elif PRODUCT_ID_100000 in products:
 		update(purchases,PRODUCT_ID_100000)
+	elif PRODUCT_ID_supportdev in products:
+		update(purchases,PRODUCT_ID_supportdev)
 
 			
 			
@@ -155,6 +165,9 @@ func _save_purchase(product_id):
 		GameTimer.update_initial_coin_balance(40000, false)
 		pass
 	elif product_id == PRODUCT_ID_100000:
+		GameTimer.update_initial_coin_balance(100000, false)
+		pass
+	elif product_id == PRODUCT_ID_supportdev:
 		GameTimer.update_initial_coin_balance(100000, false)
 		pass
 	elif product_id == PRODUCT_ID_removead:

@@ -1216,12 +1216,62 @@ text = "$1.99"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Control/ScrollContainer" unique_id=391115678]
+[node name="ad7" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer" unique_id=479368337]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 10
-text = "v.11"
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/VBoxContainer/ad7" unique_id=1278456880]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer" unique_id=431805187]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("7_fpr2n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer" unique_id=870730216]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 40
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer/MarginContainer" unique_id=13438652]
+layout_mode = 2
+size_flags_stretch_ratio = 4.9
+theme_override_font_sizes/font_size = 70
+text = "Support Dev"
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer" unique_id=597653259]
+layout_mode = 2
+size_flags_stretch_ratio = 1.35
+
+[node name="supportdev" type="TextureButton" parent="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer/CenterContainer" unique_id=1754040522]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = SubResource("GradientTexture1D_7rex1")
+stretch_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer/CenterContainer/supportdev" unique_id=852413230]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.5
+offset_top = -45.5
+offset_right = 84.5
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "$1.99"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ShopAdmob" type="Node" parent="." unique_id=1156681291]
 script = ExtResource("16_fi8yd")
@@ -1243,6 +1293,7 @@ metadata/_custom_type_script = "uid://ctr4wc8onnroy"
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad4/HBoxContainer/CenterContainer/TextureRect40000" to="." method="_on_texture_rect_40000_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad5/HBoxContainer/CenterContainer/TextureRect2100000000" to="." method="_on_texture_rect_2100000000_pressed"]
 [connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad6/HBoxContainer/CenterContainer/TextureRectRemoveAd" to="." method="_on_texture_rect_remove_ad_pressed"]
+[connection signal="pressed" from="Control/ScrollContainer/VBoxContainer/ad7/HBoxContainer/CenterContainer/supportdev" to="." method="_on_supportdev_pressed"]
 [connection signal="consent_form_loaded" from="ShopAdmob" to="." method="_on_shop_admob_consent_form_loaded"]
 [connection signal="consent_info_updated" from="ShopAdmob" to="." method="_on_shop_admob_consent_info_updated"]
 [connection signal="initialization_completed" from="ShopAdmob" to="." method="_on_shop_admob_initialization_completed"]
